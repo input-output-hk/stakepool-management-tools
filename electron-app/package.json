@@ -1,0 +1,98 @@
+{
+  "name": "stake-pool-management",
+  "version": "0.1.0",
+  "main": "public/main.js",
+  "description": "Node management application for stake pool operators",
+  "productName": "Stake Pool Management",
+  "author": {
+    "name": "Leonel Gobbi",
+    "email": "leonel.gobbi@iohk.io",
+    "url": "https://iohk.io"
+  },
+  "homepage": "https://github.com/input-output-hk/stakepool-management-tools",
+  "scripts": {
+    "start": "npm-run-all --parallel start:react start:electron",
+    "start:electron": "electron . --disable-gpu",
+    "start:react": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "bundle:react": "webpack --mode production",
+    "dist": "npm run \"bundle:react\" && build",
+    "eslint": "./node_modules/eslint/bin/eslint.js . --ext .jsx --ext .js"
+  },
+  "build": {
+    "appId": "io.iohk.spm",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb",
+        "rpm",
+        "snap",
+        "AppImage"
+      ],
+      "category": "development"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "icon": "public/assets/app.ico"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "7.1.2",
+    "@babel/plugin-proposal-class-properties": "7.4.0",
+    "@babel/preset-env": "7.1.0",
+    "@babel/preset-react": "7.0.0",
+    "babel-eslint": "10.0.3",
+    "babel-loader": "8.0.4",
+    "babel-plugin-import": "1.12.2",
+    "css-loader": "3.2.0",
+    "electron": "5.0.12",
+    "electron-builder": "20.39.0",
+    "electron-devtools-installer": "2.2.4",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "4.2.0",
+    "eslint-plugin-flowtype": "3.8.1",
+    "eslint-plugin-import": "2.17.2",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-prettier": "3.0.1",
+    "eslint-plugin-promise": "4.1.1",
+    "eslint-plugin-react": "7.13.0",
+    "less-loader": "5.0.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "1.17.0",
+    "react-hot-loader": "4.3.11",
+    "sass-loader": "8.0.0",
+    "style-loader": "1.0.0",
+    "webpack": "4.40.2",
+    "webpack-cli": "3.1.2",
+    "webpack-dev-server": "3.1.11"
+  },
+  "dependencies": {
+    "antd": "3.25.1",
+    "electron-is-dev": "1.1.0",
+    "less": "3.10.3",
+    "node-sass": "4.13.0",
+    "react": "16.11.0",
+    "react-dom": "16.11.0"
+  }
+}
