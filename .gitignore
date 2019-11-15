@@ -1,0 +1,8 @@
+node_modules/
+release-builds/
+out/
+dist/
+
+**-lock.json
+
+public/app.js

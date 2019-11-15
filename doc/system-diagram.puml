@@ -1,0 +1,37 @@
+@startuml SPM-System_Diagram
+
+package "Local SPM" {
+  package "Desktop App" {
+    [UI]
+    [Lib] as desktopLib
+  }
+
+  package "Command Line" {
+    [CLI]
+    [Lib] as cliLib
+  }
+
+  () "HTTP / REST" as HTTP
+
+  desktopLib ..> HTTP
+  cliLib ..> HTTP
+  
+  HTTP - mainNode
+
+  node "Jörmungandr" as mainNode {
+  }
+}
+
+node "node" as node1 {
+
+}
+
+node "node" as node2 {
+
+}
+
+mainNode ..> node1
+mainNode ..> node2
+
+
+@enduml
