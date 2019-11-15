@@ -1,0 +1,21 @@
+@import '../../../css/general_styling';
+
+.TitlePrimary {
+  .smallTitle {
+    @include primary-text($label, $white, 600);
+  }
+  h2 {
+    @include primary-title($title-main, $white, 600);
+    margin-bottom: 0.5em;
+    line-height: $title-main;
+  }
+}
+
+.themeTitleColor {
+  .smallTitle {
+    color: $ternary-color;
+  }
+  h2 {
+    color: $ternary-color;
+  }
+}

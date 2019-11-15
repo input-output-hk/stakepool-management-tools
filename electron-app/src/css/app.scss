@@ -1,0 +1,18 @@
+@import './_general_styling.scss';
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scrollbar-color:$dark-grey lightgrey;
+  scrollbar-width: thin;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  background:$black;
+
+}

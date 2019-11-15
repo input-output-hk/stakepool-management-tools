@@ -1,0 +1,30 @@
+@import '../../../css/general_styling';
+
+.container404 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10em 5em 5em 5em;
+  justify-content: center;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  .imageSection {
+    text-align: center;
+    min-width: 100%;
+  }
+  h1 {
+    @include primary-title($title_main, $primary-color, 600);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container404 {
+    padding: 0;
+    .imageSection {
+      text-align: center;
+      width: 40%;
+    }
+  }
+}

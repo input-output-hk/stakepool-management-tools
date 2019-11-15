@@ -12,7 +12,8 @@ const createWindow = () => {
     show: false,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
+    icon: 'favicon.ico'
   });
 
   if (isDev) {

@@ -1,0 +1,108 @@
+@import '../../../css/general_styling';
+
+.ButtonPrimary {
+  background: $primary-color;
+  border-radius: 5px;
+  width: max-content;
+  padding: 0.5em 5em;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  -webkit-transition: 500ms ease-out;
+  -moz-transition: 500ms ease-out;
+  -o-transition: 500ms ease-out;
+
+  p {
+    @include primary-text($label, $light-grey, 600);
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    background: #016ca5;
+
+  }
+}
+
+.ThemeDisable {
+  background: white;
+  cursor: auto;
+  p {
+    color: $dark-grey;
+  }
+
+  &:hover {
+    background: $light-grey;
+    box-shadow: $shadow-blue;
+  }
+}
+
+.ThemeSecondary {
+  background: $primary-color;
+  cursor: pointer;
+  p {
+    color: white;
+  }
+
+  &:hover {
+    background: #01469C;
+    box-shadow: $shadow-blue;
+  }
+}
+
+.ThemePrimary {
+  background: $light-grey;
+  cursor: pointer;
+  p {
+    color: $dark-grey;
+  }
+
+  &:hover {
+    background:$primary-color;
+    p {
+      color: $white;
+    }
+  }
+}
+
+.ThemeWhite {
+  background: $white;
+  cursor: pointer;
+  p {
+    color: $primary-color;
+  }
+
+  &:hover {
+    background: #ccc;
+  }
+}
+
+.unselected {
+  background: $white;
+  border: 1px solid $primary-color;
+  cursor: pointer;
+  p {
+    color: $primary-color;
+  }
+
+  &:hover {
+    background: $primary-color;
+    border: 1px solid $primary-color;
+    cursor: pointer;
+    p {
+      color: $white;
+    }
+  }
+}
+
+.selected {
+  background: $primary-color;
+  cursor: pointer;
+  p {
+    color: $white;
+  }
+
+  &:hover {
+    background: #016ca5;
+
+  }
+}
