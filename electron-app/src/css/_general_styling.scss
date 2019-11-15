@@ -1,0 +1,59 @@
+// Colors
+// Colors
+$background: #2d2c2c;
+
+$primary-color: #5b7eeb;
+
+$dark-grey: #3d3737;
+$medium-grey: #4F4F4F;
+$light-grey:#C4C4C4;
+$danger-color: #e74c3c;
+$success-color:#1ED700;
+
+$white: #d4d4d4;
+$black: black;
+
+$border:1px sold #2e2d2d;
+
+// Typographic Scale
+$title-main: 36px;
+$title-secondary:24px;
+$subtitle: 18px;
+$button: 12px;
+$body: 15px;
+$label: 12px;
+
+// Shadow
+$shadow: 0 1px 6px rgba(147, 141, 158, 0.16), 0 2px 6px rgba(52, 53, 62, 0.16);
+$shadow-header: 0 1px 1px 0 rgba(0, 0, 0, 0.05);
+$shadow-blue: 0 1px 6px rgba(1, 108, 165, 0.16), 0 2px 6px rgba(1, 108, 165, 0.16);
+
+//Text
+
+@mixin primary-text($font-size, $font-color, $font-weight) {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  @if $font-color {
+    color: $font-color;
+  }
+}
+
+@mixin primary-title($font-size, $font-color, $font-weight) {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  @if $font-color {
+    color: $font-color;
+  }
+}
+
+// Container
+
+@mixin container($color, $border, $radius) {
+  background: #3d3737;
+  border: 1px solid black;
+  border-radius: $radius;
+}

@@ -1,0 +1,54 @@
+@import '../../../css/general_styling';
+
+.box {
+  text-align: left;
+  p {
+    margin:0;
+    @include primary-text($body, $primary-color, normal);
+  }
+  background: $dark-grey;
+  border-radius: 5px;
+  border:1px solid #212121;
+  padding:8px;
+  margin: 1em 0;
+}
+
+.ant-modal-header {
+  background-color: $background;
+  .ant-modal-title {color:$primary-color;}
+}
+
+.ant-modal-content {
+  background-color: $background;
+  p {
+    @include primary-text($body, $white, normal);
+    margin-bottom: 1em;
+  }
+}
+
+.TitleModal {
+  @include primary-title($title-secondary, $primary-color, bold);
+  margin-bottom: 1em;
+}
+
+.ant-btn.ant-btn-primary {
+  background: $primary-color;
+  text-transform: uppercase;
+  border:none;
+  &:hover {
+    background: #016ca5;
+  }
+}
+
+.ant-btn {
+  background: #C4C4C4;
+  font-family: 'Open Sans', sans-serif;
+font-size: 12px;
+font-weight: 600;
+border:none;
+text-transform: uppercase;
+ &:hover {
+   background: #5b7eeb;
+  color:$white;
+ }
+}

@@ -1,0 +1,67 @@
+@import '../../../css/general_styling';
+
+.ButtonPrimary {
+  background: $primary-color;
+  border-radius: 5px;
+  width: max-content;
+  padding: 0.5em 2em;
+  border: none;
+  cursor: pointer;
+  box-shadow: $shadow;
+  box-sizing: border-box;
+  -webkit-transition: 500ms ease-out;
+  -moz-transition: 500ms ease-out;
+  -o-transition: 500ms ease-out;
+
+  p {
+    @include primary-text($label, white, 500);
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    background: #016ca5;
+    box-shadow: $shadow;
+  }
+}
+
+.ThemeDisable {
+  background: white;
+  cursor: auto;
+  p {
+    color: $dark-grey;
+  }
+
+  &:hover {
+    background: $light-grey;
+    box-shadow: $shadow-blue;
+  }
+}
+
+.ThemeSecondary {
+  background: $primary-color;
+  cursor: pointer;
+  p {
+    color: white;
+  }
+
+  &:hover {
+    background: $light-grey;
+    box-shadow: $shadow-blue;
+  }
+}
+
+.ThemePrimary {
+  background: $primary-color;
+  cursor: pointer;
+  p {
+    color: white;
+  }
+
+  &:hover {
+    background: $white;
+    border:1px solid $primary-color;
+    p {
+      color: $primary-color;
+    }
+  }
+}

@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './components/home';
+import Home from './components/pages/home/Home';
 import 'antd/dist/antd.css';
-import '../public/app.scss';
 
 ReactDOM.render(
   <div>
