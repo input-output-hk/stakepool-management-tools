@@ -7,13 +7,13 @@ let win;
 
 const createWindow = () => {
   win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1024,
+    height: 768,
     show: false,
     webPreferences: {
       nodeIntegration: true
     },
-    icon: 'favicon.ico'
+    icon: './favicon.ico'
   });
 
   if (isDev) {
