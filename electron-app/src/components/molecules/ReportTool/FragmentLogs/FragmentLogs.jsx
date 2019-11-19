@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Input, Icon } from 'antd';
+import { Input } from 'antd';
 import ButtonPrimary from '../../../atoms/ButtonPrimary/ButtonPrimary';
 import { getMessage } from '../../../../utils/messages';
+import TableFragments from './TableFragments';
 
 const FragmentLogs = ({
   fragments,
@@ -21,26 +22,7 @@ const FragmentLogs = ({
         onClick={onSearch}
       />
     </div>
-    <div className="data4">
-      <div className="col">
-        <h4>{getMessage('report.fragments.columns.fragment')}</h4>
-      </div>
-      <div className="col">
-        <h4>{getMessage('report.fragments.columns.received')}</h4>
-      </div>
-      <div className="col">
-        <h4>{getMessage('report.fragments.columns.updated')}</h4>
-      </div>
-      <div className="col">
-        <h4>{getMessage('report.fragments.columns.status')}</h4>
-      </div>
-    </div>
-    {(!fragments || !fragments.length) && (
-      <div className="data5">
-        <Icon type="exclamation-circle" />
-        <p>{getMessage('report.fragments.missing')}</p>
-      </div>
-    )}
+    <TableFragments fragments={fragments} />
     <div className="bottomBar">
       <ButtonPrimary
         text={getMessage('report.fragments.pagination.back')}

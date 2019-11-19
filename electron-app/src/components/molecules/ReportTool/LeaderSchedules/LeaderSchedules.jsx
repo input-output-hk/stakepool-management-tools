@@ -2,48 +2,64 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ButtonPrimary from '../../../atoms/ButtonPrimary/ButtonPrimary';
 import { getMessage } from '../../../../utils/messages';
+import TableSchedules from './TableSchedules';
 
-const LeaderSchedules = ({}) => (
+// TODO: REMOVE. only for UI work
+const dummySchedules = [
+  {
+    schedule: '10/29/2019, 18:10:17',
+    startedAt: 'Pending...',
+    finishedAt: '18:06:17'
+  },
+  {
+    schedule: '10/29/2019, 18:10:17',
+    startedAt: 'Pending...',
+    finishedAt: '18:06:17'
+  },
+  {
+    schedule: '10/29/2019, 18:10:17',
+    startedAt: 'Pending...',
+    finishedAt: '18:06:17'
+  },
+  {
+    schedule: '10/29/2019, 18:10:17',
+    startedAt: 'Pending...',
+    finishedAt: '18:06:17'
+  },
+  {
+    schedule: '10/29/2019, 18:10:17',
+    startedAt: 'Pending...',
+    finishedAt: '18:06:17'
+  },
+  {
+    schedule: '10/29/2019, 18:10:17',
+    startedAt: 'Pending...',
+    finishedAt: '18:06:17'
+  }
+];
+
+const LeaderSchedules = ({ schedules }) => (
   <div className="card">
     <div className="titleCard3">
-      <h4>Transactions</h4>
+      <h4>{getMessage('report.leader.title')}</h4>
       <ButtonPrimary text="UPDATE" />
     </div>
-    <div className="data3">
-      <div className="col">
-        <h4>Schedule</h4>
-        <p>10/29/2019, 18:10:17</p>
-        <p>10/29/2019, 18:10:17</p>
-        <p>10/29/2019, 18:10:17</p>
-        <p>10/29/2019, 18:10:17</p>
-        <p>10/29/2019, 18:10:17</p>
-        <p>10/29/2019, 18:10:17</p>
-        <p>10/29/2019, 18:10:17</p>
-      </div>
-      <div className="col">
-        <h4>Started At</h4>
-        <p>Pending...</p>
-        <p>Pending...</p>
-        <p>Pending...</p>
-        <p>Pending...</p>
-        <p>Pending...</p>
-        <p>Pending...</p>
-        <p>Pending...</p>
-      </div>
-      <div className="col">
-        <h4>Finished At</h4>
-        <p>18:06:17</p>
-        <p>18:06:17</p>
-        <p>18:06:17</p>
-        <p>18:06:17</p>
-        <p>18:06:17</p>
-        <p>18:06:17</p>
-        <p>18:06:17</p>
-      </div>
-    </div>
+    <TableSchedules schedules={dummySchedules} />
   </div>
 );
 
-LeaderSchedules.propTypes = {};
+LeaderSchedules.defaultProps = {
+  schedules: []
+};
+
+LeaderSchedules.propTypes = {
+  schedules: PropTypes.arrayOf(
+    PropTypes.shape({
+      schedule: PropTypes.string.isRequired,
+      startedAt: PropTypes.string.isRequired,
+      finishedAt: PropTypes.string.isRequired
+    })
+  )
+};
 
 export default LeaderSchedules;

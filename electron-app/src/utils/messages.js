@@ -28,6 +28,15 @@ const messages = {
       },
       title: 'Fragment Logs'
     },
+    leader: {
+      columns: {
+        finished: 'Finished At',
+        schedule: 'Schedule',
+        started: 'Started At'
+      },
+      title: 'Leader Schedules',
+      update: 'Update'
+    },
     node: {
       blocksRcv: 'Blocks Received',
       date: 'Date / Length',
