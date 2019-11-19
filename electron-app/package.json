@@ -91,6 +91,7 @@
     "antd": "3.25.1",
     "electron-is-dev": "1.1.0",
     "less": "3.10.3",
+    "lodash": "4.17.15",
     "node-sass": "4.13.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
