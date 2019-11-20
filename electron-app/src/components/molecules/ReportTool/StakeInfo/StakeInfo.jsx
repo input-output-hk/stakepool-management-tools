@@ -1,11 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import PieChart from 'react-minimal-pie-chart';
+import { Tooltip } from 'antd';
 import ButtonPrimary from '../../../atoms/ButtonPrimary/ButtonPrimary';
 import { getMessage } from '../../../../utils/messages';
 import { getStakeInfo } from '../../../../utils/api';
 
 const StakeInfo = ({ nodeAddress }) => {
   const [stakeInfo, setStakeInfo] = useState();
+  const [totalStake, setTotalStake] = useState();
+  const [totalValue, setTotalValue] = useState();
 
   const fetchData = async () => {
     if (nodeAddress && nodeAddress !== '') {
@@ -15,6 +19,11 @@ const StakeInfo = ({ nodeAddress }) => {
       setStakeInfo(undefined);
     }
   };
+
+  useEffect(() => {
+    setTotalStake(calculateTotalStake());
+    setTotalValue(calculateTotalValue());
+  }, [stakeInfo]);
 
   const calculateTotalValue = noUnassigned => {
     if (!stakeInfo || !stakeInfo.stake) return 0;
@@ -39,9 +48,36 @@ const StakeInfo = ({ nodeAddress }) => {
 
   const calculateTotalStake = () => calculateTotalValue(true);
 
+  const getStakePieData = () => [
+    {
+      title: getMessage('report.stake.totalValue'),
+      value: totalValue || 0,
+      color: '#5b7eeb'
+    },
+    {
+      title: getMessage('report.stake.totalStake'),
+      value: totalStake || 0,
+      color: '#d4d4d4'
+    }
+  ];
+
+  // TODO: change values by state when it's done
+  const getRewardsPieData = () => [
+    {
+      title: getMessage('report.stake.rewardsPending'),
+      value: calculateRewardsPending() || 0,
+      color: '#5b7eeb'
+    },
+    {
+      title: getMessage('report.stake.rewardsEarned'),
+      value: calculateRewardsEarned() || 0,
+      color: '#d4d4d4'
+    }
+  ];
+
   // TODO: figure out where to get this information
   const calculateRewardsPending = () => 2000;
-  const calculateRewardsEarned = () => 2000;
+  const calculateRewardsEarned = () => 5000;
 
   useEffect(() => {
     fetchData();
@@ -60,19 +96,40 @@ const StakeInfo = ({ nodeAddress }) => {
       {stakeInfo ? (
         <div className="data2">
           <h2>
-            {getMessage('report.stake.totalValue')} <br />{' '}
-            {calculateTotalValue()} <br />
-            {getMessage('report.stake.totalStake')} <br />{' '}
-            {calculateTotalStake()}
+            {getMessage('report.stake.totalValue')} <br /> {totalValue || 0}
+            <br />
+            {getMessage('report.stake.totalStake')} <br /> {totalStake || 0}
           </h2>
-          <div className="circle" />
+          <PieChart
+            data={getStakePieData()}
+            radius={25}
+            label={({ data, dataIndex }) =>
+              `${Math.round(data[dataIndex].percentage)}%`
+            }
+            labelStyle={{
+              fontSize: '50%',
+              fontFamily: 'sans-serif',
+              fill: '#121212'
+            }}
+          />
           <h2>
             {getMessage('report.stake.rewardsPending')} <br />{' '}
             {calculateRewardsPending()} <br />
             {getMessage('report.stake.rewardsEarned')} <br />{' '}
             {calculateRewardsEarned()}
           </h2>
-          <div className="circle" />
+          <PieChart
+            data={getRewardsPieData()}
+            radius={25}
+            label={({ data, dataIndex }) =>
+              `${Math.round(data[dataIndex].percentage)}%`
+            }
+            labelStyle={{
+              fontSize: '50%',
+              fontFamily: 'sans-serif',
+              fill: '#121212'
+            }}
+          />
         </div>
       ) : (
         <div>Loading...</div>

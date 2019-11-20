@@ -43,6 +43,6 @@ export const stakeInfo = {
         6000000000000
       ]
     ],
-    unassigned: 5894720
+    unassigned: 12323465894720
   }
 };
