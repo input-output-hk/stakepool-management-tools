@@ -28,3 +28,43 @@ export const nodeInfo = {
   txRecvCnt: 0,
   uptime: 3971
 };
+
+export const leaderSchedules = [
+  {
+    created_at_time: '2019-08-19T12:25:00.417263555+00:00',
+    scheduled_at_time: '2019-08-19T23:18:35+00:00',
+    scheduled_at_date: '0.3923',
+    wake_at_time: null,
+    finished_at_time: null,
+    enclave_leader_id: 1,
+    status: 'Pending'
+  },
+  {
+    created_at_time: '2019-08-19T12:25:00.417263555+00:00',
+    scheduled_at_time: '2019-08-19T23:18:35+00:00',
+    scheduled_at_date: '0.3923',
+    wake_at_time: '2019-08-19T23:18:35.001254555+00:00',
+    finished_at_time: '2019-08-19T23:19:05.010113333+00:00',
+    enclave_leader_id: 1,
+    status: {
+      Block: {
+        chain_length: 201910,
+        block:
+          'd9040ca57e513a36ecd3bb54207dfcd10682200929cad6ada46b521417964174'
+      }
+    }
+  },
+  {
+    created_at_time: '2019-08-19T12:25:00.417263555+00:00',
+    scheduled_at_time: '2019-08-19T23:18:35+00:00',
+    scheduled_at_date: '0.3923',
+    wake_at_time: '2019-08-19T23:18:35.001254555+00:00',
+    finished_at_time: '2019-08-19T23:19:05.010113333+00:00',
+    enclave_leader_id: 1,
+    status: {
+      Rejected: {
+        reason: 'Missed the deadline to compute the schedule'
+      }
+    }
+  }
+];

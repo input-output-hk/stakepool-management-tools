@@ -20,7 +20,7 @@ const ReportTab = ({ nodeAddress }) => (
       />
     </div>
     <div className="rightColumn">
-      <LeaderSchedules />
+      <LeaderSchedules nodeAddress={nodeAddress} />
       <FragmentLogs
         fragments={[]}
         currentPage={1}

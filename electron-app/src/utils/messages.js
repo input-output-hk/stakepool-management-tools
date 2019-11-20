@@ -35,7 +35,8 @@ const messages = {
         started: 'Started At'
       },
       title: 'Leader Schedules',
-      update: 'Update'
+      update: 'Update',
+      missing: 'No logs found'
     },
     node: {
       blocksRcv: 'Blocks Received',

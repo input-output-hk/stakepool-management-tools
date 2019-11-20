@@ -1,4 +1,4 @@
-import { blockchainInfo, nodeInfo } from '../content/mockApi';
+import { blockchainInfo, nodeInfo, leaderSchedules } from '../content/mockApi';
 
 const isMock = process.env.MOCK;
 
@@ -11,6 +11,12 @@ export const getBlockchainInfo = async node => {
 export const getNodeInfo = async node => {
   if (isMock) return nodeInfo;
   const response = await makeGetRequest(`${node}/api/v0/node/stats`);
+  return response;
+};
+
+export const getLeaderSchedules = async node => {
+  if (isMock) return leaderSchedules;
+  const response = await makeGetRequest(`${node}/api/v0/leaders/logs`);
   return response;
 };
 
