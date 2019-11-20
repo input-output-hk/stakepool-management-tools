@@ -306,3 +306,35 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .ant-tabs-bar {
+    padding:0;
+  }
+  .ant-tabs-bar {
+    text-align: center;
+  }
+  .ContainerApp {
+    .containerTab {
+      display: flex;
+      flex-direction: column;
+      padding:2.9em;
+      
+      .rightColumn {
+        width: 100%;
+        img {
+          margin-bottom: 2em;
+        }
+        margin-bottom: 2em;
+      }
+      
+      .leftColumn {
+        width: 100%;
+        text-align: center;
+        padding: 2em 8em;
+        border-top: 1px solid $black;
+        border-left: none;
+      }
+    }
+  }
+}
