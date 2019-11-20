@@ -7,8 +7,8 @@ let win;
 
 const createWindow = () => {
   win = new BrowserWindow({
-    width: 1024,
-    height: 768,
+    // width: 1024,
+    // height: 768,
     show: false,
     webPreferences: {
       nodeIntegration: true
@@ -24,6 +24,7 @@ const createWindow = () => {
 
   // wait until webpack build html page
   win.webContents.on('did-finish-load', () => {
+    win.maximize();
     win.show();
     win.focus();
   });
@@ -35,16 +36,6 @@ const createWindow = () => {
     }
     win = null;
   });
-
-  if (isDev) {
-    const {
-      REACT_DEVELOPER_TOOLS,
-      default: installExtension
-    } = require('electron-devtools-installer');
-    installExtension(REACT_DEVELOPER_TOOLS).then(() =>
-      win.webContents.openDevTools()
-    );
-  }
 };
 
 app.on('ready', createWindow);

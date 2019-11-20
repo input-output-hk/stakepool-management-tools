@@ -28,3 +28,21 @@ export const nodeInfo = {
   txRecvCnt: 0,
   uptime: 3971
 };
+
+export const stakeInfo = {
+  epoch: 0,
+  stake: {
+    dangling: 10000000,
+    pools: [
+      [
+        'd882fc32c4b4b901cb29dfb4162e070d7650e937abb7bc2947d3a7d48b6c86a6',
+        2000000000000
+      ],
+      [
+        'd882fc32c4b4b901cb29dfb4162e070d762ee937abb7bc2947d3a7d48b6c86a6',
+        6000000000000
+      ]
+    ],
+    unassigned: 5894720
+  }
+};
