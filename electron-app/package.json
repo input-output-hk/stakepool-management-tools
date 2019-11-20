@@ -12,6 +12,7 @@
   "homepage": "https://github.com/input-output-hk/stakepool-management-tools",
   "scripts": {
     "start": "npm-run-all --parallel start:react start:electron",
+    "start:mock": "MOCK=true npm-run-all --parallel start:react start:electron",
     "start:electron": "electron . --disable-gpu",
     "start:react": "webpack-dev-server --config ./webpack.config.js --mode development",
     "bundle:react": "webpack --mode production",
@@ -40,8 +41,7 @@
         "rpm",
         "snap",
         "AppImage"
-      ],
-      "category": "development"
+      ]
     },
     "win": {
       "target": [
@@ -92,6 +92,8 @@
     "electron-is-dev": "1.1.0",
     "less": "3.10.3",
     "lodash": "4.17.15",
+    "moment": "2.24.0",
+    "moment-timezone": "0.5.27",
     "node-sass": "4.13.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
