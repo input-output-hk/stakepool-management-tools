@@ -36,10 +36,12 @@
     flex-direction: row;
     width: 100%;
     padding:2.9em 5em 2em 5em;
+    
     .rightColumn {
       width: 50%;
       text-align: center;
       //border-right: 1px solid $black;
+      
       .card {
         width: 90%;
         margin:1em auto;
@@ -120,16 +122,13 @@
             align-self: center;
           }
         }
-        .data3 {
+        /*.data3 {
+          background:red;
           display: flex;
           flex-direction: row;
           justify-content: space-between;
           padding:0.5em;
           width: 100%;
-          .col {
-            text-align: left;
-             width: 33%;
-             padding:0 1em;
              h4 {
               @include primary-text($body, $white, bold);
              }
@@ -137,8 +136,8 @@
               @include primary-text($label, $white, 100);
               margin: 1em 0;
             }
-          }
-        }
+          
+        }*/
         .bottomBar {
           background: #302828;
           border-radius:0 0 10px 10px;
@@ -216,6 +215,7 @@
           background-color:$primary-color;
         }
       }
+      
       img {
         margin-bottom: 5em;
       }
@@ -239,6 +239,7 @@
         @include primary-text($label, $white, bold);
       }
     }
+    
     .leftColumn {
       width: 50%;
       text-align: center;
@@ -269,6 +270,38 @@
       p {
         @include primary-text($label, $white, normal);
         margin-bottom: 1em;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .ant-tabs-bar {
+    padding:0;
+  }
+  .ant-tabs-bar {
+    text-align: center;
+  }
+  .ContainerApp {
+    .containerTab {
+      display: flex;
+      flex-direction: column;
+      padding:2.9em;
+      
+      .rightColumn {
+        width: 100%;
+        img {
+          margin-bottom: 2em;
+        }
+        margin-bottom: 2em;
+      }
+      
+      .leftColumn {
+        width: 100%;
+        text-align: center;
+        padding: 2em 8em;
+        border-top: 1px solid $black;
+        border-left: none;
       }
     }
   }
