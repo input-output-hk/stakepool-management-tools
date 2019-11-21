@@ -155,8 +155,9 @@ In the below command, for the `SOURCE-SK` parameter, you need to use the private
 
 ```
 
-## Check that your stake pool is visible
+## Test Stake Pool
 
+### Check that your stake pool is visible
 
 Check that your Stake Pool appears in the list of available stake pools.
 
