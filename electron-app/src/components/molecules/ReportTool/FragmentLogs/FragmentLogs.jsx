@@ -83,7 +83,7 @@ const FragmentLogs = ({ nodeAddress }) => {
 
   useEffect(() => {
     if (fragmentLogs && fragmentLogs.length > 0) {
-      setTotalPages(Math.ceil(fragmentLogs.length / PAGE_SIZE))
+      setTotalPages(Math.ceil(fragmentLogs.length / PAGE_SIZE));
     } else {
       setTotalPages(1);
     }
