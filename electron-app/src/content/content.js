@@ -4,8 +4,6 @@ import ConfigureNode from './modals/ConfigureNode';
 import FundAccount from './modals/FundAccount';
 import TestStake from './modals/TestStake';
 
-
-
 export const menuItems = [
   {
     option: 1,

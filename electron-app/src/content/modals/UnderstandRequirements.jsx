@@ -6,8 +6,6 @@ const UnderstandRequirement = () => (
     <h2 className="TitleModal">Hardware</h2>
     <ul>
       <li>4 GB of RAM</li>
-      <li>A Good network connection and about 1 GB of * bandwidth / hour</li>
-      <li>A public ip4 address</li>
       <li>Processor speed is not a significant factor</li>
     </ul>
     <h2 className="TitleModal">Operating System</h2>
