@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { menuItems } from '../../../content/content';
 import WelcomeGuide from '../../molecules/WelcomeGuide/WelcomeGuide';
 import InputContainer from '../../molecules/InputContainer/InputContainer';
 import { getMessage } from '../../../utils/messages';
 import ModalData from '../../molecules/ModalData/ModalData';
 
-const WelcomeTab = () => {
+const WelcomeTab = ({ connectNode }) => {
   const [visible, setVisible] = useState(false);
   const [modalTopic, setModalTopic] = useState();
   const [modalTitle, setModalTitle] = useState();
   const [modalContent, setModalContent] = useState();
+  const [addressInput, setAddressInput] = useState();
 
   const showModal = () => {
     setVisible(true);
@@ -19,6 +21,10 @@ const WelcomeTab = () => {
     setVisible(false);
   };
 
+  const handleInputChange = ({ target: { value } }) => {
+    setAddressInput(value);
+  };
+
   const loadModal = ({ title, content, topic }) => {
     setModalTitle(title);
     setModalContent(content);
@@ -26,10 +32,10 @@ const WelcomeTab = () => {
     showModal();
   };
 
-  // may have to move this to Home component
-  const loadNodeAddress = nodeAddress => {
-    console.log(nodeAddress);
+  const loadNodeAddress = () => {
+    connectNode(addressInput);
   };
+
   const handleCheck = e => {
     console.log(`checked = ${e.target.checked}`);
   };
@@ -63,10 +69,15 @@ const WelcomeTab = () => {
           placeholder={getMessage('welcome.nodeInput.placeholder')}
           buttonText={getMessage('welcome.nodeInput.button')}
           onClick={loadNodeAddress}
+          onChange={handleInputChange}
         />
       </div>
     </div>
   );
+};
+
+WelcomeTab.propTypes = {
+  connectNode: PropTypes.func.isRequired
 };
 
 export default WelcomeTab;

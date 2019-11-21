@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Tabs } from 'antd';
 import WelcomeTab from '../../organisms/WelcomeTab/WelcomeTab';
 import ReportTab from '../../organisms/ReportTab/ReportTab';
@@ -9,18 +9,16 @@ import { getMessage } from '../../../utils/messages';
 const Home = () => {
   const { TabPane } = Tabs;
 
-  const handleTabChange = key => {
-    console.log(key);
-  };
+  const [nodeAddress, setNodeAddress] = useState();
 
   return (
     <div className="ContainerApp">
-      <Tabs defaultActiveKey="1" onChange={handleTabChange}>
+      <Tabs defaultActiveKey="1">
         <TabPane tab={getMessage('tabs.welcome')} key="1">
-          <WelcomeTab />
+          <WelcomeTab connectNode={setNodeAddress} />
         </TabPane>
         <TabPane tab={getMessage('tabs.report')} key="2">
-          <ReportTab />
+          <ReportTab nodeAddress={nodeAddress} />
         </TabPane>
       </Tabs>
     </div>
