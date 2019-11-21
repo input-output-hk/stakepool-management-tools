@@ -95,6 +95,7 @@
     "node-sass": "4.13.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
+    "react-minimal-pie-chart": "5.0.2",
     "react-router-dom": "5.1.2"
   }
 }
