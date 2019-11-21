@@ -1,25 +1,34 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Table } from 'antd';
 import { getMessage } from '../../../../utils/messages';
+import './_style.scss';
 
 const TableSchedules = ({ schedules }) => {
+  const columns = [
+    {
+      title: getMessage('report.leader.columns.schedule'),
+      dataIndex: 'schedule',
+      key: 'schedule'
+    },
+    {
+      title: getMessage('report.leader.columns.started'),
+      dataIndex: 'startedAt',
+      key: 'startedAt'
+    },
+    {
+      title: getMessage('report.leader.columns.finished'),
+      dataIndex: 'finishedAt',
+      key: 'finishedAt'
+    }
+  ];
+
   const renderData = column =>
     schedules.map(schedule => <p>{schedule[column]}</p>);
 
   return (
-    <div className="data3">
-      <div className="col">
-        <h4>{getMessage('report.leader.columns.schedule')}</h4>
-        {renderData('schedule')}
-      </div>
-      <div className="col">
-        <h4>{getMessage('report.leader.columns.started')}</h4>
-        {renderData('startedAt')}
-      </div>
-      <div className="col">
-        <h4>{getMessage('report.leader.columns.finished')}</h4>
-        {renderData('finishedAt')}
-      </div>
+    <div className="tabla">
+      <Table columns={columns} dataSource={schedules} pagination={false} size="small" />
     </div>
   );
 };
