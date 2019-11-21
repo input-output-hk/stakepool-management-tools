@@ -46,7 +46,7 @@
         width: 90%;
         margin:1em auto;
         @include container(#3d3737, $border, 10px);
-        padding-bottom: 2em;
+        padding-bottom: 1em;
         .titleCard4 {
           display: flex;
           flex-direction: row;
@@ -190,11 +190,10 @@
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          padding:1em;
           .col1 {
             text-align: right;
              width: 30%;
-             padding:0 1em;
+             padding:1em;
             p {
               @include primary-text($body, $white, 100);
             }
@@ -202,7 +201,7 @@
           .col2 {
             text-align: left;
              width: 70%;
-             padding:0 1em;
+             padding:1em;
             p {
               @include primary-text($body, $white, 100);
             }
@@ -334,6 +333,23 @@
         padding: 2em 8em;
         border-top: 1px solid $black;
         border-left: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+
+  .ContainerApp {
+    .containerTab {
+      padding:1em;
+      
+      .rightColumn {
+        margin-bottom: 2em;
+      }
+      
+      .leftColumn {
+        padding: 2em;
       }
     }
   }
