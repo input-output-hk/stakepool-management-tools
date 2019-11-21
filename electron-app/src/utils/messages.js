@@ -34,6 +34,12 @@ const messages = {
         schedule: 'Schedule',
         started: 'Started At'
       },
+      pagination: {
+        back: '<<',
+        next: '>>',
+        current: 'Page ',
+        total: ' of '
+      },
       title: 'Leader Schedules',
       update: 'Update',
       missing: 'No logs found'
