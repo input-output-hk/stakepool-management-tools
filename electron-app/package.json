@@ -38,9 +38,7 @@
     "linux": {
       "target": [
         "deb",
-        "rpm",
-        "snap",
-        "AppImage"
+        "rpm"
       ]
     },
     "win": {

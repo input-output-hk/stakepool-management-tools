@@ -23,12 +23,14 @@ const TableSchedules = ({ schedules }) => {
     }
   ];
 
-  const renderData = column =>
-    schedules.map(schedule => <p>{schedule[column]}</p>);
-
   return (
     <div className="tabla">
-      <Table columns={columns} dataSource={schedules} pagination={false} size="small" />
+      <Table
+        columns={columns}
+        dataSource={schedules}
+        pagination={false}
+        size="small"
+      />
     </div>
   );
 };

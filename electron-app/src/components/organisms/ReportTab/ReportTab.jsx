@@ -14,7 +14,7 @@ const ReportTab = ({ nodeAddress }) => (
       <StakeInfo nodeAddress={nodeAddress} />
     </div>
     <div className="rightColumn">
-      <LeaderSchedules />
+      <LeaderSchedules nodeAddress={nodeAddress} />
       <FragmentLogs
         fragments={[]}
         currentPage={1}
