@@ -4,6 +4,7 @@ import ButtonPrimary from '../../../atoms/ButtonPrimary/ButtonPrimary';
 import { getMessage } from '../../../../utils/messages';
 import { getNodeInfo } from '../../../../utils/api';
 import { formatDateTime } from '../../../../utils/formatters';
+import './_style.scss';
 
 const NodeInfo = ({ nodeAddress }) => {
   const [nodeInfo, setNodeInfo] = useState();
@@ -29,18 +30,22 @@ const NodeInfo = ({ nodeAddress }) => {
 
       {nodeInfo ? (
         <div>
-          <div className="data">
+          <div className="data node node2">
             <div className="col1">
-              <p>{getMessage('report.node.uptime')}</p>
-              <p>{getMessage('report.node.blocksRcv')}</p>
-              <p>{getMessage('report.node.lastBlock')}</p>
-              <p>{getMessage('report.node.date')}</p>
+              <p className="heightNode">{getMessage('report.node.uptime')}</p>
+              <p className="heightNode">
+                {getMessage('report.node.blocksRcv')}
+              </p>
+              <p className="heightNode">
+                {getMessage('report.node.lastBlock')}
+              </p>
+              <p className="heightNode">{getMessage('report.node.date')}</p>
             </div>
             <div className="col2">
-              <p>{formatDateTime(nodeInfo.uptime)}</p>
-              <p>{nodeInfo.blockRecvCnt}</p>
-              <p>{nodeInfo.lastBlockHash}</p>
-              <p>
+              <p className="heightNode2">{formatDateTime(nodeInfo.uptime)}</p>
+              <p className="heightNode2">{nodeInfo.blockRecvCnt}</p>
+              <p className="heightNode2 scroll">{nodeInfo.lastBlockHash}</p>
+              <p className="heightNode2">
                 {nodeInfo.lastBlockDate}/{nodeInfo.lastBlockHeight}
               </p>
             </div>
@@ -52,18 +57,26 @@ const NodeInfo = ({ nodeAddress }) => {
               onClick={fetchData}
             />
           </div>
-          <div className="data">
+          <div className="data node node2">
             <div className="col1">
-              <p>{getMessage('report.node.transactions.txRcv')}</p>
-              <p>{getMessage('report.node.transactions.txs')}</p>
-              <p>{getMessage('report.node.transactions.outputs')}</p>
-              <p>{getMessage('report.node.transactions.fees')}</p>
+              <p className="heightNode">
+                {getMessage('report.node.transactions.txRcv')}
+              </p>
+              <p className="heightNode">
+                {getMessage('report.node.transactions.txs')}
+              </p>
+              <p className="heightNode">
+                {getMessage('report.node.transactions.outputs')}
+              </p>
+              <p className="heightNode">
+                {getMessage('report.node.transactions.fees')}
+              </p>
             </div>
             <div className="col2">
-              <p>{nodeInfo.txRecvCnt}</p>
-              <p>{nodeInfo.lastBlockTx}</p>
-              <p>{nodeInfo.lastBlockSum}</p>
-              <p>{nodeInfo.lastBlockFees}</p>
+              <p className="heightNode2">{nodeInfo.txRecvCnt}</p>
+              <p className="heightNode2">{nodeInfo.lastBlockTx}</p>
+              <p className="heightNode2">{nodeInfo.lastBlockSum}</p>
+              <p className="heightNode2">{nodeInfo.lastBlockFees}</p>
             </div>
           </div>
         </div>

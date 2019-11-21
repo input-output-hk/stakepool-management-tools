@@ -76,8 +76,8 @@ const StakeInfo = ({ nodeAddress }) => {
   ];
 
   // TODO: figure out where to get this information
-  const calculateRewardsPending = () => 2000;
-  const calculateRewardsEarned = () => 5000;
+  const calculateRewardsPending = () => 0;
+  const calculateRewardsEarned = () => 0;
 
   useEffect(() => {
     fetchData();
@@ -112,7 +112,7 @@ const StakeInfo = ({ nodeAddress }) => {
               fill: '#121212'
             }}
           />
-          <h2>
+          {/* <h2>
             {getMessage('report.stake.rewardsPending')} <br />{' '}
             {calculateRewardsPending()} <br />
             {getMessage('report.stake.rewardsEarned')} <br />{' '}
@@ -129,7 +129,7 @@ const StakeInfo = ({ nodeAddress }) => {
               fontFamily: 'sans-serif',
               fill: '#121212'
             }}
-          />
+          /> */}
         </div>
       ) : (
         <div>Loading...</div>

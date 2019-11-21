@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { getMessage } from '../../../../utils/messages';
 import { formatDateTime } from '../../../../utils/formatters';
 import { getBlockchainInfo } from '../../../../utils/api';
+import './_style.scss';
 
 const BlockchainInfo = ({ nodeAddress }) => {
   const [blockchainInfo, setBlockchainInfo] = useState();
@@ -26,16 +27,24 @@ const BlockchainInfo = ({ nodeAddress }) => {
         <h4>{getMessage('report.blockchain.title')}</h4>
       </div>
       {blockchainInfo ? (
-        <div className="data">
+        <div className="data node node2">
           <div className="col1">
-            <p>{getMessage('report.blockchain.block0')}</p>
-            <p>{getMessage('report.blockchain.started')}</p>
-            <p>{getMessage('report.blockchain.consensus')}</p>
+            <p className="heightNode">
+              {getMessage('report.blockchain.block0')}
+            </p>
+            <p className="heightNode">
+              {getMessage('report.blockchain.started')}
+            </p>
+            <p className="heightNode">
+              {getMessage('report.blockchain.consensus')}
+            </p>
           </div>
           <div className="col2">
-            <p>{blockchainInfo.block0Hash}</p>
-            <p>{formatDateTime(blockchainInfo.block0Time)}</p>
-            <p>{blockchainInfo.consensusVersion}</p>
+            <p className="heightNode2 scroll">{blockchainInfo.block0Hash}</p>
+            <p className="heightNode2">
+              {formatDateTime(blockchainInfo.block0Time)}
+            </p>
+            <p className="heightNode2">{blockchainInfo.consensusVersion}</p>
           </div>
         </div>
       ) : (
