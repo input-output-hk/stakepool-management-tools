@@ -110,7 +110,7 @@ const FragmentLogs = ({ nodeAddress }) => {
             beginningArray,
             fragmentLogs.length - beginningArray < PAGE_SIZE
               ? fragmentLogs.length
-              : PAGE_SIZE
+              : beginningArray + PAGE_SIZE
           )}
         />
       ) : (
