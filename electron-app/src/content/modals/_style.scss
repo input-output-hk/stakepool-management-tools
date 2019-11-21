@@ -1,0 +1,18 @@
+@import '../../css/general_styling';
+
+.contentModal {
+    height: 300px;
+    overflow-y:scroll;
+    padding:0.5em 2em;
+.TitleModal {
+    @include primary-title(20px, $primary-color, bold);
+    margin-bottom: 1em;
+  }
+  .SubTitleModal {
+    @include primary-title(16px, $white, bold);
+    margin-bottom: 1em;
+  }
+  p {
+      font-size: $body;
+  }
+}

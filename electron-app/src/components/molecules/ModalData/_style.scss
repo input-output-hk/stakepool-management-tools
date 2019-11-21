@@ -1,5 +1,10 @@
 @import '../../../css/general_styling';
 
+.ant-modal {
+  margin-top:-50px;
+  width: 768px!important;
+}
+
 .box {
   text-align: left;
   p {
