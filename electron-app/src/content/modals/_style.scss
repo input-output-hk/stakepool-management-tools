@@ -4,6 +4,18 @@
     height: 300px;
     overflow-y:scroll;
     padding:0.5em 2em;
+    .listStyle {
+      list-style-type: none;
+      li {
+        list-style-type: none;
+
+      }
+    }
+    .code {
+      background: black;
+      padding:5px;
+      display: block;
+    }
 .TitleModal {
     @include primary-title(20px, $primary-color, bold);
     margin-bottom: 1em;

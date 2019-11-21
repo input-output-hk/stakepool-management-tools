@@ -11,26 +11,26 @@ const FundAccount = () => (
 
     <ul>
       <li>
-        Download the <strong>`createStakePool.sh`</strong> and{' '}
-        <strong>`send-certificate.sh` scripts</strong>
+        Download the <code className="code">createStakePool.sh</code> and{' '}
+        <code className="code">send-certificate.sh</code> scripts.
       </li>
       <li>
         Open the terminal in the location where you have the rest of the files
-        (jcli, jormungandr, `node-config.yaml, etc)
+        (jcli, jormungandr, node-config.yaml, etc)
       </li>
       <li>
         Run the below commands to download the createStakePool.sh and
         send-certificate.sh scripts into that location:
       </li>
-      <li>
+      <li className="listStyle">
         <ul>
-          <li>
-            `wget
-            https://raw.githubusercontent.com/input-output-hk/jormungandr-qa/master/scripts/createStakePool.sh`
+          <li className="code">
+            wget
+            https://raw.githubusercontent.com/input-output-hk/jormungandr-qa/master/scripts/createStakePool.sh
           </li>
-          <li>
-            `wget
-            https://raw.githubusercontent.com/input-output-hk/jormungandr-qa/master/scripts/send-certificate.sh`
+          <li className="code">
+            wget
+            https://raw.githubusercontent.com/input-output-hk/jormungandr-qa/master/scripts/send-certificate.sh
           </li>
         </ul>
       </li>
@@ -41,17 +41,16 @@ const FundAccount = () => (
       <li>
         Change the scripts permissions in order to be able to execute them
       </li>
-      <li>
+      <li className="listStyle">
         <ul>
-          <li>`chmod +x createStakePool.sh`</li>
-          <li>`chmod +x send-certificate.sh`</li>
+          <li className="code">chmod +x createStakePool.sh</li>
+          <li className="code">chmod +x send-certificate.sh</li>
         </ul>
       </li>
       <li>Check the parameters required by the script</li>
     </ul>
 
-    <p>
-      <p>```</p>
+    <code className="code">
       <p>./createStakePool.sh --help</p>
       <p>
         usage: ./createStakePool.sh &lt;REST-LISTEN-PORT&gt; &lt;ACCOUNT_SK&gt;
@@ -61,8 +60,7 @@ const FundAccount = () => (
         3101)
       </p>
       <p>&lt;SOURCE-SK&gt; The Secret key of the Source address`</p>
-      <p>```</p>
-    </p>
+    </code>
 
     <p>Execute the createStakePool script</p>
 
@@ -72,23 +70,17 @@ const FundAccount = () => (
       (node-config.yaml) for the rest/listen parameter.
     </p>
 
-    <ul>
-      <li>
-        Update the value of the second parameter with the Private Key of your
-        own Account address
-      </li>
-    </ul>
+    <p className="SubTitleModal">
+      Update the value of the second parameter with the Private Key of your own
+      Account address
+    </p>
 
-    <p>```</p>
-    <p>
+    <code className="code">
       ./createStakePool.sh 3101
       ed25519e_sk1nqh6fk0dm9p3tgvqcgt9had3ajn5pcmme04qp256p3g7tahxd9q9j4wgn2n250huxc5t38u0yjd9rtalrzae9t7xcwzhcz98jf4hamsgfmydk
-    </p>
-    <p>```</p>
+    </code>
 
-    <ul>
-      <li>Check the results</li>
-    </ul>
+    <p className="SubTitleModal">Check the results</p>
 
     <p>
       If everything is fine and you did not receive any error, the last line of
@@ -139,24 +131,25 @@ const FundAccount = () => (
       <strong>Check the parameters</strong>required by the script
     </p>
 
-    <p>```</p>
-    <p>$ ./send-certificate.sh --help</p>
-    <p>
-      usage: send-certificate.sh &lt;CERTIFICATE-PATH&gt;
-      &lt;REST-LISTEN-PORT&gt; &lt;ACCOUNT-SOURCE-SK&gt;
-    </p>
-    <p>&lt;CERT-PATH&gt; Path to a readable certificate file</p>
-    <p>
-      &lt;REST-PORT&gt; The REST Listen Port set in node-config.yaml file (EX:
-      3101)
-    </p>
-    <p>&lt;SOURCE-SK&gt; The Secret key of the Source address</p>
-    <p>```</p>
+    <code className="code">
+      <p>$ ./send-certificate.sh --help</p>
+      <p>
+        usage: send-certificate.sh &lt;CERTIFICATE-PATH&gt;
+        &lt;REST-LISTEN-PORT&gt; &lt;ACCOUNT-SOURCE-SK&gt;
+      </p>
+      <p>&lt;CERT-PATH&gt; Path to a readable certificate file</p>
+      <p>
+        &lt;REST-PORT&gt; The REST Listen Port set in node-config.yaml file (EX:
+        3101)
+      </p>
+      <p>&lt;SOURCE-SK&gt; The Secret key of the Source address</p>
+    </code>
 
     <h2 className="TitleModal">Execute the send-certificate.sh script</h2>
 
     <p>
-      <strong>Notes:</strong> In the below command, for the `&lt;REST-PORT&gt;`
+      <strong>Notes:</strong> In the below command, for the{' '}
+      <code className="code">&lt;REST-PORT&gt;</code>
       parameter, make sure to use the same value you used in node configuration
       (node-config.yaml) for the rest/listen parameter.
     </p>
@@ -172,12 +165,10 @@ const FundAccount = () => (
       private key of an account with enough funds for the transaction fees.{' '}
     </p>
 
-    <p>```</p>
-    <p>
+    <code className="code">
       ./send-certificate.sh stake_pool.signcert 3101
       ed25519e_sk1nqh6fk0dm9p3tgvqcgt9had3ajn5pcmme04qp256p3g7tahxd9q9j4wgn2n250huxc5t38u0yjd9rtalrzae9t7xcwzhcz98jf4hamsgfmydk
-    </p>
-    <p>```</p>
+    </code>
   </div>
 );
 

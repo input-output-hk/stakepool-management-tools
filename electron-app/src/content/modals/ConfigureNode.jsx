@@ -4,8 +4,12 @@ import './_style.scss';
 const ConfigureNode = () => (
   <div className="contentModal">
     <p>
-      <strong>**Download**</strong> the node-config.yaml file from this{' '}
-      <a href="https://hydra.iohk.io/job/Cardano/jormungandr/jormungandrConfigs.itn_balance_check/latest">
+      <strong>Download</strong> the node-config.yaml file from this{' '}
+      <a
+        href="https://hydra.iohk.io/job/Cardano/jormungandr/jormungandrConfigs.itn_balance_check/latest"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         link
       </a>{' '}
       and save it to the same location that jormungandr and jcli.
@@ -19,37 +23,35 @@ const ConfigureNode = () => (
       <li>Blocks and messages update priority</li>
     </ul>
 
-    <p>
-      ```
+    <code className="code">
       <p>
         &quot;p2p&quot;: {'{'}
-        listen_address: &apos;/ip4/0.0.0.0/tcp/3100&apos;,
         <br />
-        public_address: &apos;/ip4/0.0.0.0/tcp/3100&apos;,
+        &emsp;listen_address: &apos;/ip4/0.0.0.0/tcp/3100&apos;,
         <br />
-        topics_of_interest: {'{'}
+        &emsp;public_address: &apos;/ip4/0.0.0.0/tcp/3100&apos;,
         <br />
-        blocks: &apos;high&apos;,
+        &emsp;topics_of_interest: {'{'}
         <br />
-        messages: &apos;high&apos;
+        &emsp;&emsp;blocks: &apos;high&apos;,
+        <br />
+        &emsp;&emsp;messages: &apos;high&apos;
+        <br />
+        &emsp;{'}'}
         <br />
         {'}'}
-        <br />
-        {'}'}
-        <br />
       </p>
-      ```
-    </p>
+    </code>
 
     <p>
-      <strong>**Start the node**</strong> by executing the below command in the
-      same location where all 3 files were saved.{' '}
+      <strong>Start the node</strong> by executing the below command in the same
+      location where all 3 files were saved.{' '}
     </p>
     <p>
-      <strong>
-        `./jormungandr --config node-config.yaml --genesis-block-hash
-        adbdd5ede31637f6c9bad5c271eec0bc3d0cb9efb86a5b913bb55cba549d0770`
-      </strong>
+      <code className="code">
+        ./jormungandr --config node-config.yaml --genesis-block-hash
+        adbdd5ede31637f6c9bad5c271eec0bc3d0cb9efb86a5b913bb55cba549d0770
+      </code>
     </p>
   </div>
 );

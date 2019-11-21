@@ -6,12 +6,20 @@ const InstallNode = () => (
     <p>
       NOTE: If you have any issues while installing Jormungandr and JCLI, please
       refer to our zendesk{' '}
-      <a href="https://iohk.zendesk.com/hc/en-us/articles/360036898153">
+      <a
+        href="https://iohk.zendesk.com/hc/en-us/articles/360036898153"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         macOS/Linux instructions
       </a>{' '}
       or{' '}
-      <a href="https://iohk.zendesk.com/hc/en-us/articles/360036898353-How-to-Install-Jormungandr-Networking-Windows-">
-        Windos instructions
+      <a
+        href="https://iohk.zendesk.com/hc/en-us/articles/360036898353-How-to-Install-Jormungandr-Networking-Windows-"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Windows instructions
       </a>{' '}
       to make sure you are following the most up to date procedure.
     </p>
@@ -22,7 +30,11 @@ const InstallNode = () => (
 
     <p>
       1. Download the latest version jormungandr from{' '}
-      <a href="https://github.com/input-output-hk/jormungandr/releases/">
+      <a
+        href="https://github.com/input-output-hk/jormungandr/releases/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         GitHub
       </a>
     </p>
