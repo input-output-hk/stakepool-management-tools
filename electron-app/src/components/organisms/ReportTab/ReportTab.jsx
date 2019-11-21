@@ -11,13 +11,7 @@ const ReportTab = ({ nodeAddress }) => (
     <div className="rightColumn">
       <BlockchainInfo nodeAddress={nodeAddress} />
       <NodeInfo nodeAddress={nodeAddress} />
-      <StakeInfo
-        totalValue={2000}
-        totalStake={2000}
-        rewardsPending={2000}
-        rewardsEarned={2000}
-        onUpdate={() => console.log('UPDATING STAKE INFO')}
-      />
+      <StakeInfo nodeAddress={nodeAddress} />
     </div>
     <div className="rightColumn">
       <LeaderSchedules />
