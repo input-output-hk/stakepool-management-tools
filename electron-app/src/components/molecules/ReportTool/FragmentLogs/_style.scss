@@ -1,0 +1,21 @@
+@import '../../../../css/general_styling';
+
+
+.ContainerApp {
+.tabla {
+    .ant-table-small {
+        border:none;
+        padding:0 1em;
+        .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr:hover {
+            td {color:$background;}
+        }
+    }
+    .ant-table-header-column {
+        @include primary-text($body, $white, bold);
+    }
+    td {
+        @include primary-text($label, $white, 100);
+        margin: 1em 0;
+    }
+}
+}
