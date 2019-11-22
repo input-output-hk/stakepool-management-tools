@@ -1,4 +1,4 @@
-#Get started
+# Get started
 ## Understand stake pool minimal system requirements 
 
 ### Hardware 
@@ -79,7 +79,7 @@ Use a plain text editor to open the config.yaml and add
 
 * Run the following command to download the `createAddress.sh` script into that location
 
-`curl -SLOJ https://raw.githubusercontent.com/input-output-hk/jormungandr-qa/master/scripts/createAddress.sh`
+`curl -sLOJ https://raw.githubusercontent.com/input-output-hk/jormungandr-qa/master/scripts/createAddress.sh`
 
 * You can check that the script was downloaded into the current location by executing `ls` command.
 
@@ -120,9 +120,9 @@ OR
 
 * Open the terminal in the location where you have the rest of the files (jcli, jormungandr, config.yaml, etc) and run the below commands to download the `createStakePool.sh` and `send-certificate.sh` scripts into that location:
 
-`curl -SLOJ https://raw.githubusercontent.com/input-output-hk/jormungandr-qa/master/scripts/createStakePool.sh`
+`curl -sLOJ https://raw.githubusercontent.com/input-output-hk/jormungandr-qa/master/scripts/createStakePool.sh`
 
-`curl - SLOJ https://raw.githubusercontent.com/input-output-hk/jormungandr-qa/master/scripts/send-certificate.sh`
+`curl - sLOJ https://raw.githubusercontent.com/input-output-hk/jormungandr-qa/master/scripts/send-certificate.sh`
 
 * Check that the scripts were downloaded into the current location by executing ls command into the terminal
 
