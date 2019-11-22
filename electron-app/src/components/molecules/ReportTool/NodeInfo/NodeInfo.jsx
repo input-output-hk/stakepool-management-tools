@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { Typography } from 'antd';
 import ButtonPrimary from '../../../atoms/ButtonPrimary/ButtonPrimary';
 import { getMessage } from '../../../../utils/messages';
 import { getNodeInfo } from '../../../../utils/api';
 import { formatDateTime } from '../../../../utils/formatters';
 import './_style.scss';
+
+const { Paragraph } = Typography;
 
 const NodeInfo = ({ nodeAddress }) => {
   const [nodeInfo, setNodeInfo] = useState();
@@ -44,7 +47,9 @@ const NodeInfo = ({ nodeAddress }) => {
             <div className="col2">
               <p className="heightNode2">{formatDateTime(nodeInfo.uptime)}</p>
               <p className="heightNode2">{nodeInfo.blockRecvCnt}</p>
-              <p className="heightNode2 scroll">{nodeInfo.lastBlockHash}</p>
+              <Paragraph copyable>
+                <p className="hash">{nodeInfo.lastBlockHash}</p>
+              </Paragraph>
               <p className="heightNode2">
                 {nodeInfo.lastBlockDate}/{nodeInfo.lastBlockHeight}
               </p>

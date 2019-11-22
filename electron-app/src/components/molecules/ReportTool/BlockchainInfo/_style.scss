@@ -10,13 +10,25 @@
 }
 
 .node2 {
+    .col2 {
+        .ant-typography {
+            display: flex;
+            align-items: center;
+            height: 50px;
+            margin-bottom: 0;
+        }
+    }
     .heightNode2 {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         height: 50px;
+        
     }
-    .scroll {
-        overflow-x: scroll;
+    .hash {
+        width: 90%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
     }
 }

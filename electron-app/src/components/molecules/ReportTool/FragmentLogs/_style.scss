@@ -1,8 +1,29 @@
 @import '../../../../css/general_styling';
 
+th.ant-table-row-cell-break-word {
+   background-color:$dark-grey!important;
+}
+
+.ant-table-content > .ant-table-body > table > .ant-table-tbody > tr:hover {
+    td {color:$background;}
+}
+
 
 .ContainerApp {
 .tabla {
+    .ant-typography {
+        display: flex;
+        p{
+            width: 110px;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            &:hover {
+                color: $background;
+            }
+        }
+    }
+    
     .ant-table-small {
         border:none;
         padding:0 1em;
