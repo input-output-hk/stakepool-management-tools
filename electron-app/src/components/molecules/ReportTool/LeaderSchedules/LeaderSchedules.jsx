@@ -12,7 +12,10 @@ import {
 import { getLeaderSchedules } from '../../../../utils/api';
 
 const LeaderSchedules = ({ nodeAddress }) => {
+  const PAGE_SIZE = 8;
   const [leaderSchedules, setLeaderSchedules] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
   const fetchData = async () => {
     if (nodeAddress && nodeAddress !== '') {
@@ -24,15 +27,20 @@ const LeaderSchedules = ({ nodeAddress }) => {
     }
   };
 
+  const goToNextPage = () => {
+    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+  };
+
+  const goToPreviousPage = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
   const formatSchedules = schedules => {
-    const size = 8; // how many schedules should show
-    const sortedSchedules = schedules
-      .sort(
-        (a, b) =>
-          moment(b.scheduled_at_time).format('YYYYMMDDHHmmss') -
-          moment(a.scheduled_at_time).format('YYYYMMDDHHmmss')
-      )
-      .slice(0, size);
+    const sortedSchedules = schedules.sort(
+      (a, b) =>
+        moment(b.scheduled_at_time).format('YYYYMMDDHHmmss') -
+        moment(a.scheduled_at_time).format('YYYYMMDDHHmmss')
+    );
 
     const formattedSchedules = sortedSchedules.map(schedule => {
       const scheduleDate = `${formatDateTimeWithComma(
@@ -61,6 +69,16 @@ const LeaderSchedules = ({ nodeAddress }) => {
     fetchData(nodeAddress);
   }, [nodeAddress]);
 
+  useEffect(() => {
+    if (leaderSchedules && leaderSchedules.length > 0) {
+      setTotalPages(Math.ceil(leaderSchedules.length / PAGE_SIZE));
+    } else {
+      setTotalPages(1);
+    }
+  }, [leaderSchedules]);
+
+  const beginningArray = (currentPage - 1) * PAGE_SIZE;
+
   return (
     <div className="card">
       <div className="titleCard3">
@@ -71,13 +89,36 @@ const LeaderSchedules = ({ nodeAddress }) => {
         />
       </div>
       {leaderSchedules && leaderSchedules.length > 0 ? (
-        <TableSchedules schedules={leaderSchedules} />
+        <TableSchedules
+          schedules={leaderSchedules.slice(
+            beginningArray,
+            leaderSchedules.length - beginningArray < PAGE_SIZE
+              ? leaderSchedules.length
+              : beginningArray + PAGE_SIZE
+          )}
+        />
       ) : (
         <div className="data5">
           <Icon type="exclamation-circle" />
           <p>{getMessage('report.leader.missing')}</p>
         </div>
       )}
+      <div className="bottomBar">
+        <ButtonPrimary
+          text={getMessage('report.leader.pagination.back')}
+          onClick={goToPreviousPage}
+        />
+        <p>
+          {getMessage('report.leader.pagination.current')}
+          {currentPage}
+          {getMessage('report.leader.pagination.total')}
+          {totalPages}
+        </p>
+        <ButtonPrimary
+          text={getMessage('report.leader.pagination.next')}
+          onClick={goToNextPage}
+        />
+      </div>
     </div>
   );
 };
