@@ -33,8 +33,7 @@
           "type": "link",
           "path": "/Applications"
         }
-      ],
-      "category": "public.app-category.developer-tools"
+      ]
     },
     "linux": {
       "target": [
