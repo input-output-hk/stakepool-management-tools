@@ -17,7 +17,11 @@
     "start:react": "webpack-dev-server --config ./webpack.config.js --mode development",
     "bundle:react": "webpack --mode production",
     "dist": "npm run \"bundle:react\" && electron-builder",
-    "eslint": "./node_modules/eslint/bin/eslint.js . --ext .jsx --ext .js"
+    "eslint": "./node_modules/eslint/bin/eslint.js . --ext .jsx --ext .js",
+    "dist:win": "npm run \"bundle:react\" && electron-builder -w",
+    "dist:linux": "npm run \"bundle:react\" && electron-builder -l",
+    "dist:mac": "npm run \"bundle:react\" && electron-builder -m",    
+    "dist:all": "npm run \"bundle:react\" && electron-builder -wml"
   },
   "build": {
     "appId": "io.iohk.spm",
@@ -46,7 +50,7 @@
     "win": {
       "target": [
         {
-          "target": "nsis",
+          "target": "msi",
           "arch": [
             "x64",
             "ia32"

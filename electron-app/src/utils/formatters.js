@@ -8,3 +8,10 @@ export const formatDateTimeWithComma = date =>
 
 export const formatTime = date =>
   date ? moment.tz(date, 'UTC').format('HH:mm:ss z') : '';
+
+export const calculateTimeDifference = seconds =>
+  seconds
+    ? moment()
+        .subtract(seconds, 'seconds')
+        .toDate()
+    : new Date();

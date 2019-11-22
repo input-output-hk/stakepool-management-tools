@@ -9,7 +9,15 @@ const WelcomeGuide = ({ onCheck }) => (
     <h4>{getMessage('welcome.guide.title')}</h4>
     <p>{getMessage('welcome.guide.subtitle')}</p>
     <ul>
-      <li>{getMessage('welcome.guide.links.incentives')}</li>
+      <li>
+        <a
+          href="https://staking.cardano.org/en/calculator"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {getMessage('welcome.guide.links.incentives')}
+        </a>
+      </li>
       <li>
         <a
           href="https://testnet.iohkdev.io/en/"
@@ -30,7 +38,7 @@ const WelcomeGuide = ({ onCheck }) => (
       </li>
       <li>
         <a
-          href="https://testnet.iohkdev.io/en/kevm/tools/explorer/"
+          href="https://shelleyexplorer.cardano.org/"
           target="_blank"
           rel="noopener noreferrer"
         >

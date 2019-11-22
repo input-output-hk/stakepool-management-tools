@@ -1,8 +1,8 @@
 import UnderstandRequirement from './modals/UnderstandRequirements';
 import InstallNode from './modals/InstallNode';
 import ConfigureNode from './modals/ConfigureNode';
-import FundAccount from './modals/FundAccount';
 import TestStake from './modals/TestStake';
+import CreateCertificate from './modals/CreateCertificate';
 
 export const menuItems = [
   {
@@ -25,26 +25,14 @@ export const menuItems = [
   },
   {
     option: 4,
-    topic: '4. Setup Account',
+    topic: '4. Create and Send Certificate',
     title: '',
-    content: '4 test content'
+    content: CreateCertificate
   },
   {
     option: 5,
-    topic: '5. Fund Account + Create Transaction',
-    title: '',
-    content: FundAccount
-  },
-  {
-    option: 6,
-    topic: '6. Test Stake Pool',
+    topic: '5. Test Stake Pool',
     title: '',
     content: TestStake
-  },
-  {
-    option: 7,
-    topic: '7. View Reporting',
-    title: 'View Reporting',
-    content: '7 test content'
   }
 ];
