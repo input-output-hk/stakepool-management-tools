@@ -4,7 +4,10 @@ import { Typography } from 'antd';
 import ButtonPrimary from '../../../atoms/ButtonPrimary/ButtonPrimary';
 import { getMessage } from '../../../../utils/messages';
 import { getNodeInfo } from '../../../../utils/api';
-import { formatDateTime } from '../../../../utils/formatters';
+import {
+  formatDateTime,
+  calculateTimeDifference
+} from '../../../../utils/formatters';
 import './_style.scss';
 
 const { Paragraph } = Typography;
@@ -45,7 +48,9 @@ const NodeInfo = ({ nodeAddress }) => {
               <p className="heightNode">{getMessage('report.node.date')}</p>
             </div>
             <div className="col2">
-              <p className="heightNode2">{formatDateTime(nodeInfo.uptime)}</p>
+              <p className="heightNode2">
+                {formatDateTime(calculateTimeDifference(nodeInfo.uptime))}
+              </p>
               <p className="heightNode2">{nodeInfo.blockRecvCnt}</p>
               <Paragraph copyable>
                 <p className="hash">{nodeInfo.lastBlockHash}</p>

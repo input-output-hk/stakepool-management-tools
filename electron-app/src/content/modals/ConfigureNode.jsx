@@ -4,13 +4,13 @@ import './_style.scss';
 const ConfigureNode = () => (
   <div className="contentModal">
     <p>
-      <strong>Download</strong> the node-config.yaml file from this{' '}
+      <strong>Download</strong> the node-config.yaml{' '}
       <a
         href="https://hydra.iohk.io/job/Cardano/jormungandr/jormungandrConfigs.itn_balance_check/latest"
         target="_blank"
         rel="noopener noreferrer"
       >
-        link
+        file
       </a>{' '}
       and save it to the same location that jormungandr and jcli.
     </p>
@@ -18,7 +18,7 @@ const ConfigureNode = () => (
     <p>Use a plain text editor to open the node-config.yaml and add</p>
 
     <ul>
-      <li>Public ip address and,</li>
+      <li>Public ip address</li>
       <li>Listen address</li>
       <li>Blocks and messages update priority</li>
     </ul>
@@ -42,6 +42,7 @@ const ConfigureNode = () => (
         {'}'}
       </p>
     </code>
+    <br />
 
     <p>
       <strong>Start the node</strong> by executing the below command in the same

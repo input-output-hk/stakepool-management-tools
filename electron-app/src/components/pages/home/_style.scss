@@ -29,13 +29,14 @@
 .ContainerApp {
   display:flex;
   flex-direction: row;
+  margin-top: 2em;
   .containerTab {
     margin-top: 0;
     background-color:$background;
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding:2.9em 5em 2em 5em;
+    padding: 5em 2em;
     
     .rightColumn {
       width: 50%;
