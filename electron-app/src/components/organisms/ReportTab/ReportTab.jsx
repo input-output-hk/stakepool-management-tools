@@ -15,14 +15,7 @@ const ReportTab = ({ nodeAddress }) => (
     </div>
     <div className="rightColumn">
       <LeaderSchedules nodeAddress={nodeAddress} />
-      <FragmentLogs
-        fragments={[]}
-        currentPage={1}
-        totalPages={1}
-        onSearch={() => console.log('FILTERING FRAGMENTS')}
-        onBackPage={() => console.log('GO PREVIOUS PAGE')}
-        onNextPage={() => console.log('GO NEXT PAGE')}
-      />
+      <FragmentLogs nodeAddress={nodeAddress} />
     </div>
   </div>
 );

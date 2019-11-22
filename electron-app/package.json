@@ -16,7 +16,7 @@
     "start:electron": "electron . --disable-gpu",
     "start:react": "webpack-dev-server --config ./webpack.config.js --mode development",
     "bundle:react": "webpack --mode production",
-    "dist": "npm run \"bundle:react\" && build",
+    "dist": "npm run \"bundle:react\" && electron-builder",
     "eslint": "./node_modules/eslint/bin/eslint.js . --ext .jsx --ext .js"
   },
   "build": {
@@ -38,8 +38,10 @@
     "linux": {
       "target": [
         "deb",
-        "rpm"
-      ]
+        "rpm",
+        "AppImage"
+      ],
+      "category": "Development"
     },
     "win": {
       "target": [
@@ -50,8 +52,7 @@
             "ia32"
           ]
         }
-      ],
-      "icon": "public/assets/app.ico"
+      ]
     }
   },
   "devDependencies": {

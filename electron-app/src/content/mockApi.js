@@ -69,6 +69,168 @@ export const leaderSchedules = [
   }
 ];
 
+export const fragmentLogs = [
+  {
+    fragment_id:
+      'a50a80e0ce6cb8e19d4381dc2a521c1d3ab8a532029131e440548625b2a4d3e8',
+    received_from: 'Rest',
+    received_at: '2019-08-12T11:20:52.316544007+00:00',
+    last_updated_at: '2019-08-12T11:20:52.316544079+00:00',
+    status: 'Pending'
+  },
+  {
+    fragment_id:
+      'a50a80e0ce6cb8e19d4381dc2a521c1d3ab8a532029131e440548625b2a4d3e8',
+    received_from: 'Rest',
+    received_at: '2019-08-12T11:20:57.758070884+00:00',
+    last_updated_at: '2019-08-12T11:20:58.005548031+00:00',
+    status: 'Pending'
+  },
+  {
+    fragment_id:
+      'a50a80e0ce6cb8e19d4381dc2a521c1d3ab8a532029131e440548625b2a4d3e8',
+    received_from: 'Rest',
+    received_at: '2019-08-12T11:21:11.314829989+00:00',
+    last_updated_at: '2019-08-12T11:21:12.017821060+00:00',
+    status: {
+      InABlock: {
+        date: '114237.32',
+        block:
+          'd9040ca57e513a36ecd3bb54207dfcd10682200929cad6ada46b521417964174'
+      }
+    }
+  },
+  {
+    fragment_id:
+      'a50a80e0ce6cb8e19d4381dc2a521c1d3ab8a532029131e440548625b2a4d3e8',
+    received_from: 'Rest',
+    received_at: '2019-08-12T11:20:57.758070884+00:00',
+    last_updated_at: '2019-08-12T11:20:58.005548031+00:00',
+    status: {
+      Rejected: {
+        reason:
+          'The UTxO value (99) in the transaction does not match the actually state value: 100'
+      }
+    }
+  },
+  {
+    fragment_id:
+      'a50a80e0ce6cb8e19d4381dc2a521c1d3ab8a532029131e440548625b2a4d3e8',
+    received_from: 'Rest',
+    received_at: '2019-08-12T11:21:11.314829989+00:00',
+    last_updated_at: '2019-08-12T11:21:12.017821060+00:00',
+    status: {
+      InABlock: {
+        date: '114237.32',
+        block:
+          'd9040ca57e513a36ecd3bb54207dfcd10682200929cad6ada46b521417964174'
+      }
+    }
+  },
+  {
+    fragment_id:
+      'a50a80e0ce6cb8e19d4381dc2a521c1d3ab8a532029131e440548625b2a4d3e8',
+    received_from: 'Rest',
+    received_at: '2019-08-12T11:20:57.758070884+00:00',
+    last_updated_at: '2019-08-12T11:20:58.005548031+00:00',
+    status: {
+      Rejected: {
+        reason:
+          'The UTxO value (99) in the transaction does not match the actually state value: 100'
+      }
+    }
+  },
+  {
+    fragment_id:
+      'a50a80e0ce6cb8e19d4381dc2a521c1d3ab8a532029131e440548625b2a4d3e8',
+    received_from: 'Rest',
+    received_at: '2019-08-12T11:21:11.314829989+00:00',
+    last_updated_at: '2019-08-12T11:21:12.017821060+00:00',
+    status: {
+      InABlock: {
+        date: '114237.32',
+        block:
+          'd9040ca57e513a36ecd3bb54207dfcd10682200929cad6ada46b521417964174'
+      }
+    }
+  },
+  {
+    fragment_id:
+      'a50a80e0ce6cb8e19d4381dc2a521c1d3ab8a532029131e440548625b2a4d3e8',
+    received_from: 'Rest',
+    received_at: '2019-08-12T11:20:57.758070884+00:00',
+    last_updated_at: '2019-08-12T11:20:58.005548031+00:00',
+    status: {
+      Rejected: {
+        reason:
+          'The UTxO value (99) in the transaction does not match the actually state value: 100'
+      }
+    }
+  },
+  {
+    fragment_id:
+      'a50a80e0ce6cb8e19d4381dc2a521c1d3ab8a532029131e440548625b2a4d3e8',
+    received_from: 'Rest',
+    received_at: '2019-08-12T11:21:11.314829989+00:00',
+    last_updated_at: '2019-08-12T11:21:12.017821060+00:00',
+    status: {
+      InABlock: {
+        date: '114237.32',
+        block:
+          'd9040ca57e513a36ecd3bb54207dfcd10682200929cad6ada46b521417964174'
+      }
+    }
+  },
+  {
+    fragment_id:
+      'a50a80e0ce6cb8e19d4381dc2a521c1d3ab8a532029131e440548625b2a4d3e8',
+    received_from: 'Rest',
+    received_at: '2019-08-12T11:20:57.758070884+00:00',
+    last_updated_at: '2019-08-12T11:20:58.005548031+00:00',
+    status: {
+      Rejected: {
+        reason:
+          'The UTxO value (99) in the transaction does not match the actually state value: 100'
+      }
+    }
+  },
+  {
+    fragment_id:
+      '68b36b0e244ff571d4d01026c149a3986bbd7d7deaabac5e3b994171d9c50856',
+    received_from: 'Rest',
+    received_at: '2019-08-12T11:20:57.758070884+00:00',
+    last_updated_at: '2019-08-12T11:20:58.005548031+00:00',
+    status: 'Pending'
+  },
+  {
+    fragment_id:
+      '68b36b0e244ff571d4d01026c149a3986bbd7d7deaabac5e3b994171d9c50856',
+    received_from: 'Rest',
+    received_at: '2019-08-12T11:21:11.314829989+00:00',
+    last_updated_at: '2019-08-12T11:21:12.017821060+00:00',
+    status: {
+      InABlock: {
+        date: '114237.32',
+        block:
+          'd9040ca57e513a36ecd3bb54207dfcd10682200929cad6ada46b521417964174'
+      }
+    }
+  },
+  {
+    fragment_id:
+      '68b36b0e244ff571d4d01026c149a3986bbd7d7deaabac5e3b994171d9c50856',
+    received_from: 'Rest',
+    received_at: '2019-08-12T11:20:57.758070884+00:00',
+    last_updated_at: '2019-08-12T11:20:58.005548031+00:00',
+    status: {
+      Rejected: {
+        reason:
+          'The UTxO value (99) in the transaction does not match the actually state value: 100'
+      }
+    }
+  }
+];
+
 export const stakeInfo = {
   epoch: 0,
   stake: {
