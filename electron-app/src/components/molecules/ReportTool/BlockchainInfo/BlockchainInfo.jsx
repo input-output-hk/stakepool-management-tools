@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import { Typography } from 'antd';
 import { getMessage } from '../../../../utils/messages';
 import { formatDateTime } from '../../../../utils/formatters';
 import { getBlockchainInfo } from '../../../../utils/api';
 import './_style.scss';
+
+const { Paragraph } = Typography;
 
 const BlockchainInfo = ({ nodeAddress }) => {
   const [blockchainInfo, setBlockchainInfo] = useState();
@@ -40,7 +43,9 @@ const BlockchainInfo = ({ nodeAddress }) => {
             </p>
           </div>
           <div className="col2">
-            <p className="heightNode2 scroll">{blockchainInfo.block0Hash}</p>
+            <Paragraph copyable>
+              <p className="hash">{blockchainInfo.block0Hash}</p>
+            </Paragraph>
             <p className="heightNode2">
               {formatDateTime(blockchainInfo.block0Time)}
             </p>
