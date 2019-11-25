@@ -1,0 +1,27 @@
+@import '../../../../css/general_styling';
+
+.data2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding:0 2em;
+    text-align: left;
+    .Info {
+        align-self: center;
+        .TitleResult {
+            @include primary-text(15px!important, $white, bold);
+            align-self: center;
+        }
+        .color {
+            @include primary-text(20px!important, #5b7eeb, bold);
+        }
+        .color2 {
+            @include primary-text(20px!important, $white!important, bold);
+        }
+    }
+    .PieChart {
+        svg {
+            height: 200px;
+        }
+    }
+  }

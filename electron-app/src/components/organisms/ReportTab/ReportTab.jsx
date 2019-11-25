@@ -5,9 +5,10 @@ import NodeInfo from '../../molecules/ReportTool/NodeInfo/NodeInfo';
 import StakeInfo from '../../molecules/ReportTool/StakeInfo/StakeInfo';
 import LeaderSchedules from '../../molecules/ReportTool/LeaderSchedules/LeaderSchedules';
 import FragmentLogs from '../../molecules/ReportTool/FragmentLogs/FragmentLogs';
+import './_style.scss';
 
 const ReportTab = ({ nodeAddress }) => (
-  <div className="containerTab">
+  <div className="containerTabReport">
     <div className="rightColumn">
       <BlockchainInfo nodeAddress={nodeAddress} />
       <NodeInfo nodeAddress={nodeAddress} />

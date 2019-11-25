@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { Modal } from 'antd';
 import './_style.scss';
 
-const ModalData = ({ visible, onOk, onCancel, title, content, topic }) => (
-  <Modal title={topic} visible={visible} onOk={onOk} onCancel={onCancel}>
+const ModalData = ({ visible, onOk, title, content, topic, onCancel }) => (
+  <Modal title={topic} visible={visible} onOk={onOk} onCancel={onCancel} maskClosable cancelButtonProps={{style:{display:'none'}}}>
     <h2 className="TitleModal">{title}</h2>
     <p>{content}</p>
   </Modal>

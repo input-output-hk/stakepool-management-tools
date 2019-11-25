@@ -43,8 +43,8 @@ const BlockchainInfo = ({ nodeAddress }) => {
             </p>
           </div>
           <div className="col2">
-            <Paragraph copyable>
-              <p className="hash">{blockchainInfo.block0Hash}</p>
+            <Paragraph ellipsis copyable>
+              {blockchainInfo.block0Hash}
             </Paragraph>
             <p className="heightNode2">
               {formatDateTime(blockchainInfo.block0Time)}
