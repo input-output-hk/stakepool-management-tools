@@ -32,6 +32,10 @@ const NodeInfo = ({ nodeAddress }) => {
     <div className="card">
       <div className="titleCard">
         <h4>{getMessage('report.node.title')}</h4>
+        <ButtonPrimary
+              text={getMessage('report.node.transactions.update')}
+              onClick={fetchData}
+            />
       </div>
 
       {nodeInfo ? (
@@ -53,7 +57,7 @@ const NodeInfo = ({ nodeAddress }) => {
               </p>
               <p className="heightNode2">{nodeInfo.blockRecvCnt}</p>
               <Paragraph copyable>
-                <p className="hash">{nodeInfo.lastBlockHash}</p>
+                {nodeInfo.lastBlockHash}
               </Paragraph>
               <p className="heightNode2">
                 {nodeInfo.lastBlockDate}/{nodeInfo.lastBlockHeight}
@@ -62,10 +66,6 @@ const NodeInfo = ({ nodeAddress }) => {
           </div>
           <div className="titleCard2">
             <h4>{getMessage('report.node.transactions.title')}</h4>
-            <ButtonPrimary
-              text={getMessage('report.node.transactions.update')}
-              onClick={fetchData}
-            />
           </div>
           <div className="data node node2">
             <div className="col1">

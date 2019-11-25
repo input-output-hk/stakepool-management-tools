@@ -5,6 +5,7 @@ import { Tooltip } from 'antd';
 import ButtonPrimary from '../../../atoms/ButtonPrimary/ButtonPrimary';
 import { getMessage } from '../../../../utils/messages';
 import { getStakeInfo } from '../../../../utils/api';
+import './_style.scss';
 
 const StakeInfo = ({ nodeAddress }) => {
   const [stakeInfo, setStakeInfo] = useState();
@@ -95,14 +96,17 @@ const StakeInfo = ({ nodeAddress }) => {
       </div>
       {stakeInfo ? (
         <div className="data2">
-          <h2>
-            {getMessage('report.stake.totalValue')} <br /> {totalValue || 0}
-            <br />
-            {getMessage('report.stake.totalStake')} <br /> {totalStake || 0}
-          </h2>
+          <div className="Info">
+          <p className="TitleResult">{getMessage('report.stake.totalValue')}</p>
+             <p><span className="color"> {totalValue || 0}</span></p>
+             <br />
+          <p className="TitleResult">{getMessage('report.stake.totalStake')}</p>
+          <p className="color2">{totalStake || 0}</p>
+          </div>
+          <div className="PieChart">
           <PieChart
             data={getStakePieData()}
-            radius={25}
+            radius={40}
             label={({ data, dataIndex }) =>
               `${Math.round(data[dataIndex].percentage)}%`
             }
@@ -112,6 +116,9 @@ const StakeInfo = ({ nodeAddress }) => {
               fill: '#121212'
             }}
           />
+          </div>
+
+
           {/* <h2>
             {getMessage('report.stake.rewardsPending')} <br />{' '}
             {calculateRewardsPending()} <br />

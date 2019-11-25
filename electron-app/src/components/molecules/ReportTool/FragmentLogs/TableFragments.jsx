@@ -14,9 +14,11 @@ const TableFragments = ({ fragments }) => {
       width: '25%',
       key: 'fragmentId',
       render: text => (
-        <Paragraph copyable>
-          <p>{text}</p>
-        </Paragraph>
+        <div className="rowHash">
+        <div className="copyHash">
+          <Paragraph copyable>{text}</Paragraph>
+        </div>
+        </div>
       )
     },
     {
@@ -35,7 +37,14 @@ const TableFragments = ({ fragments }) => {
       title: getMessage('report.fragments.columns.status'),
       dataIndex: 'status',
       width: '25%',
-      key: 'status'
+      key: 'status',
+      render: text => (
+        <div className="rowMessage">
+        <div className="copyMessage">
+          <Paragraph copyable>{text}</Paragraph>
+        </div>
+        </div>
+      )
     }
   ];
 

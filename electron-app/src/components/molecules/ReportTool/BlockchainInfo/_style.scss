@@ -1,34 +1,70 @@
 @import '../../../../css/general_styling';
 
+.card {
+    .data {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .col1 {
+          text-align: right;
+           width: 25%;
+           padding:0 1em;
+          p {
+            @include primary-text($body, $white, 100);
+          }
+        }
+        .col2 {
+          text-align: left;
+           width: 75%;
+           padding:0 1em;
+          p {
+            @include primary-text($body, $white, 100);
+            margin:0;
+          }
+        }
+      }
+}
+
 .node {
     .heightNode {
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        height: 50px;
+        height: 40px;
     }
 }
 
 .node2 {
     .col2 {
+      position: relative;
         .ant-typography {
             display: flex;
             align-items: center;
-            height: 50px;
+            height: 40px;
             margin-bottom: 0;
+            width: 85%;
+            overflow: hidden;
+            font-size: $body;
+            color: $white;
+            white-space: nowrap;
+            //  text-overflow: ellipsis;
+        }
+        .ant-typography-copy {
+          position: absolute;
+          right: 2em;
         }
     }
     .heightNode2 {
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        height: 50px;
+        height: 40px;
         
     }
-    .hash {
+    /*.hash {
         width: 90%;
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-    }
+    }*/
 }

@@ -1,13 +1,13 @@
 @import '../../../../css/general_styling';
 
-
 .ContainerApp {
+
 .tabla {
     .ant-table-small {
         border:none;
         padding:0 1em;
         .ant-table-content > .ant-table-body > table > .ant-table-tbody > tr:hover {
-            td {color:$background;}
+            td {color:$white!important;}
         }
     }
     .ant-table-header-column {
