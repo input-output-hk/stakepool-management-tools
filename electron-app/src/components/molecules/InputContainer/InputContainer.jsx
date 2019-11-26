@@ -13,7 +13,11 @@ const InputContainer = ({
   <div>
     <div className="dataContainer">
       {description && <p>{description}</p>}
-      <Input placeholder={placeholder} onChange={onChange} />
+      <Input
+        placeholder={placeholder}
+        onChange={onChange}
+        onPressEnter={onClick}
+      />
     </div>
     <ButtonPrimary text={buttonText} theme="ThemePrimary" onClick={onClick} />
   </div>
