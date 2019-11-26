@@ -14,7 +14,7 @@ const FragmentLogs = ({ nodeAddress }) => {
   const [fragmentLogs, setFragmentLogs] = useState();
   const [inputFragmentId, setInputFragmentId] = useState();
   const [errorMessage, setErrorMessage] = useState(
-    getMessage('report.fragments.missing')
+    getMessage('report.fragments.notfound')
   );
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -30,14 +30,18 @@ const FragmentLogs = ({ nodeAddress }) => {
   };
 
   const findFragments = fragments => {
-    if (!inputFragmentId || inputFragmentId === '') {
-      setErrorMessage(getMessage('report.fragments.missing'));
+    if (!fragments) {
+      setErrorMessage(getMessage('report.fragments.notfound'));
       return;
     }
 
-    const filteredFragments = fragments.filter(
-      fragment => fragment.fragment_id === inputFragmentId
-    );
+    const filteredFragments =
+      !inputFragmentId || inputFragmentId === ''
+        ? fragments
+        : fragments.filter(
+            fragment => fragment.fragment_id === inputFragmentId
+          );
+
     const sortedFragments = filteredFragments.sort(
       (a, b) =>
         moment(b.last_updated_at).format('YYYYMMDDHHmmss') -
@@ -51,9 +55,9 @@ const FragmentLogs = ({ nodeAddress }) => {
       let { status } = fragment;
 
       if (status && status.Rejected) {
-        status = status.Rejected.reason;
+        status = `Rejected: ${status.Rejected.reason}`;
       } else if (status && status.InABlock) {
-        status = status.InABlock.date;
+        status = `In a Block: ${status.InABlock.date}`;
       }
 
       return {
@@ -78,6 +82,10 @@ const FragmentLogs = ({ nodeAddress }) => {
   };
 
   useEffect(() => {
+    setInputFragmentId();
+    setFragmentLogs();
+    setCurrentPage(1);
+    setTotalPages(1);
     fetchData(nodeAddress);
   }, [nodeAddress]);
 
@@ -96,6 +104,7 @@ const FragmentLogs = ({ nodeAddress }) => {
       <div className="titleCard4">
         <h4>{getMessage('report.fragments.title')}</h4>
         <Input
+          value={inputFragmentId}
           placeholder={getMessage('report.fragments.search.placeholder')}
           onChange={({ target: { value } }) => setInputFragmentId(value)}
         />
