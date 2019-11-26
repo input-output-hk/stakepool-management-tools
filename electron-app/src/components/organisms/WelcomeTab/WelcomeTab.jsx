@@ -36,11 +36,6 @@ const WelcomeTab = ({ connectNode }) => {
     connectNode(addressInput);
   };
 
-  const handleCheck = e => {
-    console.log(`checked = ${e.target.checked}`);
-  };
-
-  // TODO: UI - change div to button and apply styles
   const renderGetStartedMenu = () =>
     menuItems.map(item => (
       <div className="box" onClick={() => loadModal(item)} key={item.option}>
@@ -51,7 +46,7 @@ const WelcomeTab = ({ connectNode }) => {
   return (
     <div className="containerTab">
       <div className="rightColumn">
-        <WelcomeGuide onCheck={handleCheck} />
+        <WelcomeGuide />
       </div>
       <div className="leftColumn">
         <h2>{getMessage('welcome.getStarted.title')}</h2>
