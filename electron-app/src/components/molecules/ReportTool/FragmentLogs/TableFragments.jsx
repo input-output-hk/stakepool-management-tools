@@ -15,34 +15,34 @@ const TableFragments = ({ fragments }) => {
       key: 'fragmentId',
       render: text => (
         <div className="rowHash">
-        <div className="copyHash">
-          <Paragraph copyable>{text}</Paragraph>
-        </div>
+          <div className="copyHash">
+            <Paragraph copyable>{text}</Paragraph>
+          </div>
         </div>
       )
     },
     {
       title: getMessage('report.fragments.columns.received'),
       dataIndex: 'receivedAt',
-      width: '25%',
+      width: '20%',
       key: 'receivedAt'
     },
     {
       title: getMessage('report.fragments.columns.updated'),
       dataIndex: 'updatedAt',
-      width: '25%',
+      width: '20%',
       key: 'updatedAt'
     },
     {
       title: getMessage('report.fragments.columns.status'),
       dataIndex: 'status',
-      width: '25%',
+      width: '35%',
       key: 'status',
       render: text => (
         <div className="rowMessage">
-        <div className="copyMessage">
-          <Paragraph copyable>{text}</Paragraph>
-        </div>
+          <div className="copyMessage">
+            <Paragraph copyable>{text}</Paragraph>
+          </div>
         </div>
       )
     }

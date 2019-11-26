@@ -16,7 +16,7 @@ const messages = {
         status: 'Status'
       },
       missing: 'Please enter a Fragment ID',
-      notfound: 'Fragment not found',
+      notfound: 'Fragments not found',
       pagination: {
         back: '<<',
         next: '>>',
