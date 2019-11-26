@@ -53,17 +53,17 @@ const messages = {
       transactions: {
         title: 'Transactions',
         update: 'Update',
-        txRcv: 'Tx Received',
-        txs: 'Txs',
-        outputs: 'Outputs',
-        fees: 'Fees'
+        txRcv: 'Total Tx received',
+        txs: 'Txs in last block',
+        outputs: 'Total Outputs in last block',
+        fees: 'Total Fees in last block'
       },
       uptime: 'Up Since'
     },
     stake: {
       rewardsEarned: 'Rewards Earned',
       rewardsPending: 'Rewards Pending',
-      title: 'Stake State and Rewards',
+      title: 'Stake State',
       totalValue: 'Total Value',
       totalStake: 'Total Stake',
       update: 'Update'
