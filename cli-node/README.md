@@ -1,5 +1,12 @@
 # SPM CLI
 
+### Install Dependencies
+
+In project folder run:
+```console
+npm install
+```
+
 ### Usage/Run
 
 In project folder run:
@@ -24,3 +31,11 @@ Once connection is established, you can run these commands:
       * `<fragment-id>` well formed fragment id
   * `help` displays this help message
   * `exit` texits the CLI
+
+### Building package and Installation
+
+* Install production dependencies: `npm install --production`
+
+* Create distribution package (spm-0.1.0.tgz): `npm pack`
+
+* Install spm globally: `npm install -g spm-0.1.0.tgz`
