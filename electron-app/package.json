@@ -48,15 +48,13 @@
       "category": "Development"
     },
     "win": {
-      "target": [
-        {
-          "target": "msi",
-          "arch": [
-            "x64",
-            "ia32"
-          ]
-        }
-      ]
+      "target": { 
+        "target": "zip",
+        "arch": [
+          "x64",
+          "ia32"
+        ]
+      }
     }
   },
   "devDependencies": {
