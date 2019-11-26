@@ -38,6 +38,20 @@ export const getFragmentLogs = async node => {
   return response;
 };
 
+export const checkConnection = async node => {
+  if (isMock) return true;
+  const restUrl = `${node}/api/v0/settings`;
+  try {
+    const response = await fetch(restUrl, {
+      method: 'GET'
+    });
+    await response.json();
+  } catch (error) {
+    return false;
+  }
+  return true;
+};
+
 const makeGetRequest = async url => {
   try {
     const response = await fetch(url, {
