@@ -193,9 +193,6 @@
           @include primary-text($label, $primary-color, bold);
         }
       }
-      .checkbox {
-        @include primary-text($label, $white, bold);
-      }
     }
     
     .leftColumn {

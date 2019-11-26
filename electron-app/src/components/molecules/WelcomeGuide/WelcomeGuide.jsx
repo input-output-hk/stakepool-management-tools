@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Checkbox } from 'antd';
 import { getMessage } from '../../../utils/messages';
 
 const WelcomeGuide = ({ onCheck }) => (
@@ -46,9 +45,6 @@ const WelcomeGuide = ({ onCheck }) => (
         </a>
       </li>
     </ul>
-    <Checkbox className="checkbox" onChange={onCheck}>
-      {getMessage('welcome.guide.check')}
-    </Checkbox>
   </div>
 );
 
