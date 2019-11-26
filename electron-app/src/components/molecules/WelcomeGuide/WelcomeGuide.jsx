@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { getMessage } from '../../../utils/messages';
 
-const WelcomeGuide = ({ onCheck }) => (
+const WelcomeGuide = () => (
   <div>
     <img src="img/logo.png" alt="cardanoLogo" />
     <h4>{getMessage('welcome.guide.title')}</h4>
@@ -47,9 +46,5 @@ const WelcomeGuide = ({ onCheck }) => (
     </ul>
   </div>
 );
-
-WelcomeGuide.propTypes = {
-  onCheck: PropTypes.func.isRequired
-};
 
 export default WelcomeGuide;
