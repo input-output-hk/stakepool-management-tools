@@ -4,17 +4,17 @@
 
 In project folder run:
 ```console
-npm install
+yarn install
 ```
 
 ### Usage/Run
 
 In project folder run:
 ```console
-npm start -- [ARGS]
+yarn start [ARGS]
 ```
 
-or `npm link` and run with `spm [ARGS]`
+or `yarn link` and run with `spm [ARGS]`
 
 ARGS:
   * `settings -p <node-rest-port>` establish a connection with the local node
@@ -30,12 +30,14 @@ Once connection is established, you can run these commands:
   * `fragment-logs <fragment-id>` displays fragment logs: fragment, received, uploaded, status
       * `<fragment-id>` well formed fragment id
   * `help` displays this help message
-  * `exit` texits the CLI
+  * `exit` exits the CLI
 
 ### Building package and Installation
 
-* Install production dependencies: `npm install --production`
+* Install production dependencies: `yarn install --prod`
 
-* Create distribution package (spm-0.1.0.tgz): `npm pack`
+* Create distribution package (spm-v0.1.0.tgz): `yarn pack`
 
-* Install spm globally: `npm install -g spm-0.1.0.tgz`
+> **NOTE**: you can also omit these two previous steps by using the `build` script located in the `package.json` file by running `yarn run build`.
+
+* Install spm globally: `npm install -g spm-v0.1.0.tgz`

@@ -4,5 +4,6 @@ out/
 dist/
 
 **-lock.json
+**.lock
 
 public/app.js
