@@ -57,15 +57,7 @@ const commands = [
   },
   {
     command: 'fragment-logs(.*)?',
-    action: async ({ nodeAddress, query }) => {
-      if (!query) {
-        console.log(
-          'Missing fragment ID. Usage: `fragment-logs <fragment-id>`'
-        );
-        return;
-      }
-      await showFragmentLogs(nodeAddress, query);
-    }
+    action: ({ nodeAddress, query }) => showFragmentLogs(nodeAddress, query)
   }
 ];
 

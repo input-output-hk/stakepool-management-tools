@@ -1,4 +1,5 @@
 const moment = require('moment-timezone');
+const util = require('util')
 
 const {
   getBlockchainInfo,
@@ -15,6 +16,8 @@ const {
   formatTime,
   calculateTimeDifference
 } = require('./formatters');
+
+const TABLE_SIZE = 250;
 
 const calculateTotalValue = (stakeInfo, noUnassigned) => {
   if (!stakeInfo || !stakeInfo.stake) return 0;
@@ -41,6 +44,7 @@ const calculateTotalStake = stakeInfo => calculateTotalValue(stakeInfo, true);
 
 const formatSchedules = schedules =>
   schedules
+    .slice(0, schedules.length < TABLE_SIZE ? schedules.length : TABLE_SIZE)
     .sort(
       (a, b) =>
         moment(b.scheduled_at_time).format('YYYYMMDDHHmmss') -
@@ -68,7 +72,10 @@ const formatSchedules = schedules =>
 
 const findFragments = (fragments, inputFragmentId) =>
   fragments
-    .filter(fragment => fragment.fragment_id === inputFragmentId)
+    .filter(fragment =>
+      inputFragmentId ? fragment.fragment_id === inputFragmentId : fragment
+    )
+    .slice(0, fragments.length < TABLE_SIZE ? fragments.length : TABLE_SIZE)
     .sort(
       (a, b) =>
         moment(b.last_updated_at).format('YYYYMMDDHHmmss') -
@@ -81,9 +88,9 @@ const findFragments = (fragments, inputFragmentId) =>
       let { status } = fragment;
 
       if (status && status.Rejected) {
-        status = status.Rejected.reason;
+        status = `Rejected: ${status.Rejected.reason}`;
       } else if (status && status.InABlock) {
-        status = status.InABlock.date;
+        status = `In a block: ${status.InABlock.date}`;
       }
 
       return {
@@ -127,12 +134,12 @@ const showCommandsHelp = () => {
     '\tstake-state \t\t\tdisplays Stake state Information: total value, total stake'
   );
   console.log(
-    '\tleader-schedules \t\tdisplays Leader schedules logs: schedule, started at, finished at'
+    '\tleader-schedules \t\tdisplays last 250 Leader schedules logs: schedule, started at, finished at'
   );
   console.log(
-    '\tfragment-logs <fragment-id> \tdisplays fragment logs: fragment, received, uploaded, status'
+    '\tfragment-logs [fragment-id] \tdisplays last 250 fragment logs: fragment, received, uploaded, status'
   );
-  console.log('\t\t\t\t\t<fragment-id>: well formed fragment id');
+  console.log('\t\t\t\t\t[fragment-id]: well formed fragment id');
   console.log('\thelp \t\t\t\tdisplays this help message');
   console.log('\texit \t\t\t\texits the CLI');
 };
@@ -182,7 +189,11 @@ const showLeaderSchedules = async nodeAddress => {
   const leaderSchedules = await getLeaderSchedules(nodeAddress);
   const formattedSchedules = formatSchedules(leaderSchedules);
   console.log('Leader Schedules: ');
-  console.table(formattedSchedules);
+  if (!formattedSchedules || formattedSchedules.length <= 0) {
+    console.log(`Leader schedules not found.`);
+  } else {
+    console.table(formattedSchedules);
+  }
 };
 
 const showFragmentLogs = async (nodeAddress, fragmentId) => {
@@ -190,9 +201,9 @@ const showFragmentLogs = async (nodeAddress, fragmentId) => {
   const foundFragments = findFragments(fragmentLogs, fragmentId);
   console.log('Fragment Logs: ');
   if (!foundFragments || foundFragments.length <= 0) {
-    console.log(`Fragment ${fragmentId} not found.`);
+    console.log(`Fragment logs not found.`);
   } else {
-    console.table(foundFragments);
+    console.log(util.inspect(foundFragments, { maxArrayLength: TABLE_SIZE, colors: true }));
   }
 };
 
