@@ -5,6 +5,7 @@
   "main": "spm.js",
   "scripts": {
     "start": "node spm",
+    "build": "yarn install --prod && yarn pack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

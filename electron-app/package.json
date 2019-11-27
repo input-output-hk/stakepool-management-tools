@@ -16,12 +16,12 @@
     "start:electron": "electron . --disable-gpu",
     "start:react": "webpack-dev-server --config ./webpack.config.js --mode development",
     "bundle:react": "webpack --mode production",
-    "dist": "npm run \"bundle:react\" && electron-builder",
+    "dist": "yarn run \"bundle:react\" && electron-builder",
     "eslint": "./node_modules/eslint/bin/eslint.js . --ext .jsx --ext .js",
-    "dist:win": "npm run \"bundle:react\" && electron-builder -w",
-    "dist:linux": "npm run \"bundle:react\" && electron-builder -l",
-    "dist:mac": "npm run \"bundle:react\" && electron-builder -m",    
-    "dist:all": "npm run \"bundle:react\" && electron-builder -wml"
+    "dist:win": "yarn run \"bundle:react\" && electron-builder -w",
+    "dist:linux": "yarn run \"bundle:react\" && electron-builder -l",
+    "dist:mac": "yarn run \"bundle:react\" && electron-builder -m",
+    "dist:all": "yarn run \"bundle:react\" && electron-builder -wml"
   },
   "build": {
     "appId": "io.iohk.spm",
@@ -67,7 +67,7 @@
       "category": "Development"
     },
     "win": {
-      "target": { 
+      "target": {
         "target": "zip",
         "arch": [
           "x64",
@@ -98,14 +98,14 @@
     "eslint-plugin-promise": "4.1.1",
     "eslint-plugin-react": "7.13.0",
     "less-loader": "5.0.0",
-    "npm-run-all": "4.1.5",
     "prettier": "1.17.0",
     "react-hot-loader": "4.3.11",
     "sass-loader": "8.0.0",
     "style-loader": "1.0.0",
     "webpack": "4.40.2",
     "webpack-cli": "3.1.2",
-    "webpack-dev-server": "3.1.11"
+    "webpack-dev-server": "3.1.11",
+    "yarn-run-all": "3.1.1"
   },
   "dependencies": {
     "antd": "3.25.1",
