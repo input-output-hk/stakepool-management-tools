@@ -92,7 +92,11 @@ const messages = {
       button: 'Connect',
       description:
         'To use Report Tool, enter node REST address and Port Number.',
-      placeholder: 'For example http://localhost:8080'
+      placeholder: 'For example http://localhost:8080',
+      alerts: {
+        error: 'Error connecting to node',
+        success: 'Connected'
+      }
     }
   }
 };
