@@ -78,8 +78,8 @@ const findFragments = (fragments, inputFragmentId) =>
     .slice(0, fragments.length < TABLE_SIZE ? fragments.length : TABLE_SIZE)
     .sort(
       (a, b) =>
-        moment(a.last_updated_at).format('YYYYMMDDHHmmss') -
-        moment(b.last_updated_at).format('YYYYMMDDHHmmss')
+        moment(b.last_updated_at).format('YYYYMMDDHHmmss') -
+        moment(a.last_updated_at).format('YYYYMMDDHHmmss')
     )
     .map(fragment => {
       const fragmentId = fragment.fragment_id;
