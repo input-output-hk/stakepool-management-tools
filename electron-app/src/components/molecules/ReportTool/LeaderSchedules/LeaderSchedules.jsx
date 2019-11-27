@@ -13,6 +13,7 @@ import { getLeaderSchedules } from '../../../../utils/api';
 
 const LeaderSchedules = ({ nodeAddress }) => {
   const PAGE_SIZE = 8;
+  const TABLE_SIZE = 200;
   const [leaderSchedules, setLeaderSchedules] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -36,7 +37,12 @@ const LeaderSchedules = ({ nodeAddress }) => {
   };
 
   const formatSchedules = schedules => {
-    const sortedSchedules = schedules.sort(
+    const slicedSchedules = schedules.slice(
+      0,
+      schedules.length < TABLE_SIZE ? schedules.length : TABLE_SIZE
+    );
+
+    const sortedSchedules = slicedSchedules.sort(
       (a, b) =>
         moment(b.scheduled_at_time).format('YYYYMMDDHHmmss') -
         moment(a.scheduled_at_time).format('YYYYMMDDHHmmss')

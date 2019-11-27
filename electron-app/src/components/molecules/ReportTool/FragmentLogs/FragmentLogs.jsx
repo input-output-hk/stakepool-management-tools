@@ -10,6 +10,7 @@ import { formatDateTimeWithComma } from '../../../../utils/formatters';
 
 const FragmentLogs = ({ nodeAddress }) => {
   const PAGE_SIZE = 8;
+  const TABLE_SIZE = 200;
 
   const [fragmentLogs, setFragmentLogs] = useState();
   const [inputFragmentId, setInputFragmentId] = useState();
@@ -42,7 +43,14 @@ const FragmentLogs = ({ nodeAddress }) => {
             fragment => fragment.fragment_id === inputFragmentId
           );
 
-    const sortedFragments = filteredFragments.sort(
+    const slicedFragments = filteredFragments.slice(
+      0,
+      filteredFragments.length < TABLE_SIZE
+        ? filteredFragments.length
+        : TABLE_SIZE
+    );
+
+    const sortedFragments = slicedFragments.sort(
       (a, b) =>
         moment(b.last_updated_at).format('YYYYMMDDHHmmss') -
         moment(a.last_updated_at).format('YYYYMMDDHHmmss')
