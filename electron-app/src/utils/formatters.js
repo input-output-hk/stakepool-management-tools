@@ -15,3 +15,8 @@ export const calculateTimeDifference = seconds =>
         .subtract(seconds, 'seconds')
         .toDate()
     : new Date();
+
+export const formatNumberToLocale = number =>
+  number && !Number.isNaN(number)
+    ? Number(number).toLocaleString('en-US')
+    : number;

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import PieChart from 'react-minimal-pie-chart';
-import { Tooltip } from 'antd';
 import ButtonPrimary from '../../../atoms/ButtonPrimary/ButtonPrimary';
 import { getMessage } from '../../../../utils/messages';
 import { getStakeInfo } from '../../../../utils/api';
+import { formatNumberToLocale } from '../../../../utils/formatters';
 import './_style.scss';
 
 const StakeInfo = ({ nodeAddress }) => {
@@ -97,27 +97,35 @@ const StakeInfo = ({ nodeAddress }) => {
       {stakeInfo ? (
         <div className="data2">
           <div className="Info">
-          <p className="TitleResult">{getMessage('report.stake.totalValue')}</p>
-             <p><span className="color"> {totalValue || 0}</span></p>
-             <br />
-          <p className="TitleResult">{getMessage('report.stake.totalStake')}</p>
-          <p className="color2">{totalStake || 0}</p>
+            <p className="TitleResult">
+              {getMessage('report.stake.totalValue')}
+            </p>
+            <p>
+              <span className="color">
+                {' '}
+                {formatNumberToLocale(totalValue) || 0}
+              </span>
+            </p>
+            <br />
+            <p className="TitleResult">
+              {getMessage('report.stake.totalStake')}
+            </p>
+            <p className="color2">{formatNumberToLocale(totalStake) || 0}</p>
           </div>
           <div className="PieChart">
-          <PieChart
-            data={getStakePieData()}
-            radius={40}
-            label={({ data, dataIndex }) =>
-              `${Math.round(data[dataIndex].percentage)}%`
-            }
-            labelStyle={{
-              fontSize: '50%',
-              fontFamily: 'sans-serif',
-              fill: '#121212'
-            }}
-          />
+            <PieChart
+              data={getStakePieData()}
+              radius={40}
+              label={({ data, dataIndex }) =>
+                `${Math.round(data[dataIndex].percentage)}%`
+              }
+              labelStyle={{
+                fontSize: '50%',
+                fontFamily: 'sans-serif',
+                fill: '#121212'
+              }}
+            />
           </div>
-
 
           {/* <h2>
             {getMessage('report.stake.rewardsPending')} <br />{' '}
