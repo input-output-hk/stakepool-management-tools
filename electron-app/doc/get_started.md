@@ -107,7 +107,7 @@ Executing the command in the same location where all 3 files were saved.
 Execute the following command in your command-line interface to check if your node is syncing.
 
 ``` shell
-./jcli rest v0 node stats get --host "http://127.0.0.1:3101/api"
+./jcli rest v0 node stats get --host "http://127.0.0.1:3100/api"
 ```
 It will output somethnig like this:
 
