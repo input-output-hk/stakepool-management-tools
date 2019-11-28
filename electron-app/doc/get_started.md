@@ -99,7 +99,7 @@ Use a plain text editor to open the config.yaml and add
 Executing the command in the same location where all 3 files were saved.
 
 ``` shell
-./jormungandr --genesise-block-hash $(cat genesis-hash) --config config.yaml
+./jormungandr --genesise-block-hash $(cat genesis-hash.txt) --config config.yaml
 ```
 
 
