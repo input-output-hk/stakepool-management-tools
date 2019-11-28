@@ -6,28 +6,31 @@ const InstallNode = () => (
     <h2 className="TitleModal">Linux/macOS</h2>
     <p>
       <strong>
-        1. Download the latest{' '}
+        1. Download{' '}
         <a
           href="https://github.com/input-output-hk/jormungandr/releases/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          version
-        </a>
+          Jormungandr
+        </a>{' '}
+        latest version
       </strong>
     </p>
     <h2 className="SubTitleModal">Linux</h2>
 
-    <p>
-      See the Assest Section in Github <br />→ jormungandr-v[the latest version
-      number]-x86_64-unknown-linux-gnu.tar.gz
+    <p>See the Assest Section in Github </p>
+    <p className="code">
+      jormungandr-v[the latest version number]-x86_64-unknown-linux-gnu.tar.gz
     </p>
 
     <h2 className="SubTitleModal">macOS</h2>
 
     <p>
-      See the Assets Section in GitHub <br />→ jormungandr-v[the latest version
-      number]-x86_64-apple-darwin.tar.gz
+      See the Assets Section in GitHub <br />
+      <code className="code">
+        jormungandr-v[the latest version number]-x86_64-apple-darwin.tar.gz
+      </code>
     </p>
 
     <h2 className="TitleModal">
@@ -37,7 +40,7 @@ const InstallNode = () => (
     <h2 className="SubTitleModal">Terminal</h2>
     <p>
       Using the command line navigate to the directory where you downloaded the
-      archive:
+      archive and execute:
       <br />
       <code className="code">
         tar -xvzf jormungandr-vx.x.x-x86_64-unknown-linux-gnu.tar.gz
@@ -46,17 +49,32 @@ const InstallNode = () => (
     <p>OR</p>
     <h2 className="SubTitleModal">Finder</h2>
     <p>
-      Double click the archive to extract it (the default is the Downloads
-      folder).
+      Navigate to the folder where you saved the archive and double click it to
+      extract it (the default is the Downloads folder).
     </p>
 
-    <h2 className="TitleModal">
-      3. Using the command line in Terminal you can list the files: ls -lrt,
-    </h2>
-
+    <h2 className="TitleModal">3. Verify the files were installed correctly</h2>
     <p>
-      You should see jormungandr and jcli successfully installed in your
-      directory.{' '}
+      In Terminal just type:
+      <br />
+      <code className="code">./jcli -V</code>
+    </p>
+    <p>
+      It should return something like:
+      <br />
+      <code className="code">jcli 0.7.2</code>
+    </p>
+    <p className="code">
+      <strong>Note:</strong> If you have any issues while installing Jormungandr
+      and JCLI, please refer to our support portal{' '}
+      <a
+        href="https://iohk.zendesk.com/hc/en-us/articles/360036898153"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        macOS/Linux instructions
+      </a>{' '}
+      to make sure you are following the most up to date procedure.
     </p>
   </div>
 );
