@@ -130,7 +130,7 @@ Your node is synced with the blockchain when it receives all the blocks that are
 1. execute the `node stats` command from above multiple times and check that the value of the lastBlockHash field is updated (with the actual blockchain values, there should bea new block created every 2-5 minutes);
 2. compare the value of the lastBlockTime field (that is in UTC) with the local time of the node. If the difference if more than 10 minutes, the node might not be `synced` even the node received blocks in the past (blockRecvCnt > 0);
 
-# Fund jcli account to pay stakepool certificate
+# Fund stake pool owner account in JCLI
 In order to register a stakepool in the blockchain, you will need to create a stake pool certificate and send it to the blockchain. This will require you to have enough funds to pay for the transaction fee.
 Note: This step is going to change with the new Daedalus
 
