@@ -87,8 +87,8 @@ Use a plain text editor to open the config.yaml and add
 
 ``` json
   "p2p": {
-    "listen_address": "/ip4/0.0.0.0/tcp/3100",
-    "public_address": "/ip4/0.0.0.0/tcp/3100", # Replace 0.0.0.0 with your public IP
+    "listen_address": "/ip4/0.0.0.0/tcp/3000",
+    "public_address": "/ip4/0.0.0.0/tcp/3000", # Replace 0.0.0.0 with your public IP
     "topics_of_interest": {
       "blocks": "high",
       "messages": "high"
