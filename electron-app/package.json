@@ -12,11 +12,16 @@
   "homepage": "https://github.com/input-output-hk/stakepool-management-tools",
   "scripts": {
     "start": "npm-run-all --parallel start:react start:electron",
+    "start:mock": "MOCK=true npm-run-all --parallel start:react start:electron",
     "start:electron": "electron . --disable-gpu",
     "start:react": "webpack-dev-server --config ./webpack.config.js --mode development",
     "bundle:react": "webpack --mode production",
-    "dist": "npm run \"bundle:react\" && build",
-    "eslint": "./node_modules/eslint/bin/eslint.js . --ext .jsx --ext .js"
+    "dist": "yarn run \"bundle:react\" && electron-builder",
+    "eslint": "./node_modules/eslint/bin/eslint.js . --ext .jsx --ext .js",
+    "dist:win": "yarn run \"bundle:react\" && electron-builder -w",
+    "dist:linux": "yarn run \"bundle:react\" && electron-builder -l",
+    "dist:mac": "yarn run \"bundle:react\" && electron-builder -m",
+    "dist:all": "yarn run \"bundle:react\" && electron-builder -wml"
   },
   "build": {
     "appId": "io.iohk.spm",
@@ -36,24 +41,39 @@
     },
     "linux": {
       "target": [
-        "deb",
-        "rpm",
-        "snap",
-        "AppImage"
-      ],
-      "category": "development"
-    },
-    "win": {
-      "target": [
         {
-          "target": "nsis",
+          "target": "deb",
           "arch": [
             "x64",
             "ia32"
           ]
-        }
+        },
+        {
+          "target": "rpm",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        },
+        "snap"
       ],
-      "icon": "public/assets/app.ico"
+      "category": "Development"
+    },
+    "win": {
+      "target": {
+        "target": "zip",
+        "arch": [
+          "x64",
+          "ia32"
+        ]
+      }
     }
   },
   "devDependencies": {
@@ -78,22 +98,26 @@
     "eslint-plugin-promise": "4.1.1",
     "eslint-plugin-react": "7.13.0",
     "less-loader": "5.0.0",
-    "npm-run-all": "4.1.5",
     "prettier": "1.17.0",
     "react-hot-loader": "4.3.11",
     "sass-loader": "8.0.0",
     "style-loader": "1.0.0",
     "webpack": "4.40.2",
     "webpack-cli": "3.1.2",
-    "webpack-dev-server": "3.1.11"
+    "webpack-dev-server": "3.1.11",
+    "yarn-run-all": "3.1.1"
   },
   "dependencies": {
     "antd": "3.25.1",
     "electron-is-dev": "1.1.0",
     "less": "3.10.3",
+    "lodash": "4.17.15",
+    "moment": "2.24.0",
+    "moment-timezone": "0.5.27",
     "node-sass": "4.13.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
+    "react-minimal-pie-chart": "5.0.2",
     "react-router-dom": "5.1.2"
   }
 }

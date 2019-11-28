@@ -1,0 +1,277 @@
+@import '../../../css/general_styling';
+
+.ContainerApp {
+    .containerTabReport {
+      margin-top: 0;
+      background-color:$background;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 100%;
+      padding: 2em;
+      .rightColumn {
+        width: 50%;
+        text-align: center;
+        .card {
+          width: 95%;
+          margin:1em auto;
+          @include container(#3d3737, $border, 10px);
+          .titleCard4 {
+            display: flex;
+            flex-direction: row;
+            background: #302828;
+            border-radius: 10px 10px 0 0;
+            padding:0.5em 1em;
+            justify-content: space-between;
+            h4 {
+              @include primary-text($body, $white, bold);
+              width: 30%;
+              text-align: left;
+            }
+            button {
+              padding:0 2em!important;
+              margin:0;
+              height: 23px;
+              align-self: center;
+            }
+            input {
+              width:40%;
+              height:25px;
+            }
+          }
+          .titleCard3 {
+            background: #302828;
+            border-radius: 10px 10px 0 0;
+            padding:0.5em 1em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            h4 {
+              @include primary-text($body, $white, bold);
+            }
+            button {
+              padding:0 2em;
+            }
+          }
+          .titleCard2 {
+            background: #575353;
+            border-radius: 0;
+            padding:0.5em 1em;
+            text-align: left;
+            h4 {
+              @include primary-text($body, $white, bold);
+            }
+          }
+          .titleCard {
+            background: #302828;
+            border-radius: 10px 10px 0 0;
+            padding:0.5em 1em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            h4 {
+              @include primary-text($body, $white, bold);
+            }
+            button {
+                padding:0 2em;
+              }
+          }
+
+          .bottomBar {
+            background: #302828;
+            border-radius:0 0 10px 10px;
+            padding:0.5em 1em;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            button {
+              padding:0 0.1em;
+            }
+            p {
+              margin:0 2em;
+            }
+          }
+          .data5 {
+            border-radius: 10px;
+            background: #575353;
+            padding:6.6em;
+            border:1px solid greem;
+            .anticon {
+              font-size: 40px;
+              color: #302828;
+            } 
+            p {
+              font-size: $body;
+              color:#302828;
+            }
+          }
+          .data4 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding:0.5em;
+            width: 100%;
+            .col {
+              text-align: left;
+               width: 30%;
+               padding:0 1em;
+               h4 {
+                @include primary-text($body, $white, bold);
+               }
+              p {
+                @include primary-text($label, $white, 100);
+                margin: 1em 0;
+              }
+            }
+          }
+          .data {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .col1 {
+              text-align: right;
+               width: 30%;
+               padding:0 1em;
+              p {
+                @include primary-text($body, $white, 100);
+              }
+            }
+            .col2 {
+              text-align: left;
+               width: 70%;
+               padding:0 1em;
+              p {
+                @include primary-text($body, $white, 100);
+              }
+            }
+          }
+          .circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 100%;
+            background-color:$primary-color;
+          }
+        }
+        
+        img {
+          margin-bottom: 5em;
+        }
+        h4 {
+          font-size: 14px;
+          color:$primary-color;
+        }
+        p {
+          @include primary-text($label, $white, 500);
+        }
+        ul {
+          text-align: left;
+          @include primary-text($label, $primary-color, bold);
+          margin: 1em auto;
+          width: 50%;
+          li {
+            @include primary-text($label, $primary-color, bold);
+          }
+        }
+      }
+      
+      .leftColumn {
+        width: 50%;
+        text-align: center;
+        padding: 0 2em;
+        h2 {
+          @include primary-title($title-secondary, $primary-color, 700);
+          margin-bottom: 1em;
+        }
+        button{ margin-top:1em;
+        float: right;}
+      }
+      .dataContainer {
+        text-align: left;
+        p {
+          @include primary-text($label, $white, normal);
+          margin-bottom: 1em;
+        }
+      }
+    }
+  }
+
+  
+@media only screen and (max-width: 960px) {
+    .ant-tabs-bar {
+      padding:0;
+    }
+    .ant-tabs-bar {
+      text-align: center;
+    }
+    .ContainerApp {
+      .containerTabReport {
+        display: flex;
+        flex-direction: column;
+        padding:2.9em;
+        
+        .rightColumn {
+          width: 100%;
+          img {
+            margin-bottom: 2em;
+          }
+        }
+        
+        .leftColumn {
+          width: 100%;
+          text-align: center;
+          padding: 2em 8em;
+          border-top: 1px solid $black;
+          border-left: none;
+          margin-top:-2em;
+        }
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .ant-tabs-bar {
+      padding:0;
+    }
+    .ant-tabs-bar {
+      text-align: center;
+    }
+    .ContainerApp {
+      .containerTabReport {
+        display: flex;
+        flex-direction: column;
+        padding:2.9em;
+        
+        .rightColumn {
+          width: 100%;
+          img {
+            margin-bottom: 2em;
+          }
+          margin-bottom: 2em;
+        }
+        
+        .leftColumn {
+          width: 100%;
+          text-align: center;
+          padding: 2em 8em;
+          border-top: 1px solid $black;
+          border-left: none;
+        }
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+  
+    .ContainerApp {
+      .containerTabReport {
+        padding:1em;
+        
+        .rightColumn {
+        }
+        
+        .leftColumn {
+          padding: 2em;
+        }
+      }
+    }
+  }

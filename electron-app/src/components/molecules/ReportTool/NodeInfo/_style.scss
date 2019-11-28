@@ -1,0 +1,22 @@
+@import '../../../../css/general_styling';
+
+.node {
+    .heightNode {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        height: 40px;
+    }
+}
+
+.node2 {
+    .heightNode2 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 40px;
+    }
+    .scroll {
+        overflow-x: scroll;
+    }
+}
