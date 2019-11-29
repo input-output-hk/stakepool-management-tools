@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { message } from 'antd';
 import PieChart from 'react-minimal-pie-chart';
 import ButtonPrimary from '../../../atoms/ButtonPrimary/ButtonPrimary';
 import { getMessage } from '../../../../utils/messages';
@@ -11,14 +12,22 @@ const StakeInfo = ({ nodeAddress }) => {
   const [stakeInfo, setStakeInfo] = useState();
   const [totalStake, setTotalStake] = useState();
   const [totalValue, setTotalValue] = useState();
+  const [loading, setLoading] = useState(false);
 
   const fetchData = async () => {
     if (nodeAddress && nodeAddress !== '') {
-      const stake = await getStakeInfo(nodeAddress);
-      setStakeInfo(stake);
+      try {
+        setLoading(true);
+        const stake = await getStakeInfo(nodeAddress);
+        setStakeInfo(stake);
+      } catch (error) {
+        message.error(getMessage('errors.api.generic'));
+        setStakeInfo(undefined);
+      }
     } else {
       setStakeInfo(undefined);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -94,7 +103,9 @@ const StakeInfo = ({ nodeAddress }) => {
           onClick={fetchData}
         />
       </div>
-      {stakeInfo ? (
+      {loading && <div>{getMessage('api.status.loading')}</div>}
+      {!loading && !stakeInfo && <div>{getMessage('api.status.noInfo')}</div>}
+      {!loading && stakeInfo && (
         <div className="data2">
           <div className="Info">
             <p className="TitleResult">
@@ -146,8 +157,6 @@ const StakeInfo = ({ nodeAddress }) => {
             }}
           /> */}
         </div>
-      ) : (
-        <div>Loading...</div>
       )}
     </div>
   );

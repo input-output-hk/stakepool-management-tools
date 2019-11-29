@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Typography } from 'antd';
+import { Typography, message } from 'antd';
 import ButtonPrimary from '../../../atoms/ButtonPrimary/ButtonPrimary';
 import { getMessage } from '../../../../utils/messages';
 import { getNodeInfo } from '../../../../utils/api';
@@ -14,14 +14,22 @@ const { Paragraph } = Typography;
 
 const NodeInfo = ({ nodeAddress }) => {
   const [nodeInfo, setNodeInfo] = useState();
+  const [loading, setLoading] = useState(false);
 
   const fetchData = async () => {
     if (nodeAddress && nodeAddress !== '') {
-      const nodeStats = await getNodeInfo(nodeAddress);
-      setNodeInfo(nodeStats);
+      try {
+        setLoading(true);
+        const nodeStats = await getNodeInfo(nodeAddress);
+        setNodeInfo(nodeStats);
+      } catch (error) {
+        message.error(getMessage('errors.api.generic'));
+        setNodeInfo(undefined);
+      }
     } else {
       setNodeInfo(undefined);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -33,12 +41,13 @@ const NodeInfo = ({ nodeAddress }) => {
       <div className="titleCard">
         <h4>{getMessage('report.node.title')}</h4>
         <ButtonPrimary
-              text={getMessage('report.node.transactions.update')}
-              onClick={fetchData}
-            />
+          text={getMessage('report.node.transactions.update')}
+          onClick={fetchData}
+        />
       </div>
-
-      {nodeInfo ? (
+      {loading && <div>{getMessage('api.status.loading')}</div>}
+      {!loading && !nodeInfo && <div>{getMessage('api.status.noInfo')}</div>}
+      {!loading && nodeInfo && (
         <div>
           <div className="data node node2">
             <div className="col1">
@@ -56,9 +65,7 @@ const NodeInfo = ({ nodeAddress }) => {
                 {formatDateTime(calculateTimeDifference(nodeInfo.uptime))}
               </p>
               <p className="heightNode2">{nodeInfo.blockRecvCnt}</p>
-              <Paragraph copyable>
-                {nodeInfo.lastBlockHash}
-              </Paragraph>
+              <Paragraph copyable>{nodeInfo.lastBlockHash}</Paragraph>
               <p className="heightNode2">
                 {nodeInfo.lastBlockDate}/{nodeInfo.lastBlockHeight}
               </p>
@@ -90,8 +97,6 @@ const NodeInfo = ({ nodeAddress }) => {
             </div>
           </div>
         </div>
-      ) : (
-        <div>Loading...</div>
       )}
     </div>
   );

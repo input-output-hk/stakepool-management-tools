@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import { Typography } from 'antd';
+import { Typography, message } from 'antd';
 import { getMessage } from '../../../../utils/messages';
 import { formatDateTime } from '../../../../utils/formatters';
 import { getBlockchainInfo } from '../../../../utils/api';
@@ -10,14 +10,22 @@ const { Paragraph } = Typography;
 
 const BlockchainInfo = ({ nodeAddress }) => {
   const [blockchainInfo, setBlockchainInfo] = useState();
+  const [loading, setLoading] = useState(false);
 
   const fetchData = async () => {
     if (nodeAddress && nodeAddress !== '') {
-      const bcInfo = await getBlockchainInfo(nodeAddress);
-      setBlockchainInfo(bcInfo);
+      try {
+        setLoading(true);
+        const bcInfo = await getBlockchainInfo(nodeAddress);
+        setBlockchainInfo(bcInfo);
+      } catch (error) {
+        message.error(getMessage('errors.api.generic'));
+        setBlockchainInfo(undefined);
+      }
     } else {
       setBlockchainInfo(undefined);
     }
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -29,7 +37,11 @@ const BlockchainInfo = ({ nodeAddress }) => {
       <div className="titleCard">
         <h4>{getMessage('report.blockchain.title')}</h4>
       </div>
-      {blockchainInfo ? (
+      {loading && <div>{getMessage('api.status.loading')}</div>}
+      {!blockchainInfo && !loading && (
+        <div>{getMessage('api.status.noInfo')}</div>
+      )}
+      {blockchainInfo && !loading && (
         <div className="data node node2">
           <div className="col1">
             <p className="heightNode">
@@ -52,8 +64,6 @@ const BlockchainInfo = ({ nodeAddress }) => {
             <p className="heightNode2">{blockchainInfo.consensusVersion}</p>
           </div>
         </div>
-      ) : (
-        <div>Loading...</div>
       )}
     </div>
   );
