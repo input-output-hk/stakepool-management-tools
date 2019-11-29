@@ -19,15 +19,18 @@ const InstallNode = () => (
     </p>
     <h2 className="SubTitleModal">Linux</h2>
 
-    <p>See the Assest Section in Github </p>
+    <p>See the Assest Section in Github</p>
+    <br />
     <p className="code">
-      jormungandr-v[the latest version number]-x86_64-unknown-linux-gnu.tar.gz
+      <code>
+        jormungandr-v[the latest version number]-x86_64-unknown-linux-gnu.tar.gz
+      </code>
     </p>
 
     <h2 className="SubTitleModal">macOS</h2>
 
+    <p>See the Assets Section in GitHub </p>
     <p>
-      See the Assets Section in GitHub <br />
       <code className="code">
         jormungandr-v[the latest version number]-x86_64-apple-darwin.tar.gz
       </code>
@@ -41,7 +44,8 @@ const InstallNode = () => (
     <p>
       Using the command line navigate to the directory where you downloaded the
       archive and execute:
-      <br />
+    </p>
+    <p>
       <code className="code">
         tar -xvzf jormungandr-vx.x.x-x86_64-unknown-linux-gnu.tar.gz
       </code>
@@ -54,14 +58,13 @@ const InstallNode = () => (
     </p>
 
     <h2 className="TitleModal">3. Verify the files were installed correctly</h2>
+    <p>In Terminal just type:</p>
+
     <p>
-      In Terminal just type:
-      <br />
       <code className="code">./jcli -V</code>
     </p>
+    <p>It should return something like:</p>
     <p>
-      It should return something like:
-      <br />
       <code className="code">jcli 0.7.2</code>
     </p>
     <p className="code">

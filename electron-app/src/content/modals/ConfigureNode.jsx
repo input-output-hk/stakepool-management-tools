@@ -15,8 +15,7 @@ const ConfigureNode = () => (
       </a>{' '}
       and save it to the same location that jormungandr and jcli. <br />
       The <code className="inline-code">config.yaml</code> file has the list of trusted peers. From this
-      list the node is going to download its copy of the blockchain.
-    </p>
+      list the node is going to download its copy of the blockchain.</p>
     <p className="SubTitleModal">2. Download the genesis-hash.txt file</p>
     <p>
       From the same location you can also download the genesis-hash.txt file.
@@ -24,9 +23,9 @@ const ConfigureNode = () => (
       The genesis-hash contains the initial configuration of the testnet. <br />
       <br />
       <p className="code">
-        curl -sLOJ
+        <code>curl -sLOJ
         https://hydra.iohk.io/job/Cardano/jormungandr/jormungandrConfigs.itn_balance_check/latest/download/2/genesis-hash.txt
-      </p>
+        </code></p>
     </p>
     <p className="SubTitleModal">3. Edit config.yaml file</p>
     <p>
@@ -107,10 +106,7 @@ const ConfigureNode = () => (
         <li>Execute the <code className="inline-code">node stats</code> command from above multiple times and check that the value of the
       <code className="inline-code">lastBlockHash</code>lastBlockHash field is updated (with the actual blockchain values, there
       should bea new block created every 2-5 minutes);</li>
-      <li>Compare the value of
-      the <code className="inline-code">lastBlockTime</code> field (that is in UTC) with the local time of the node.
-      If the difference if more than 10 minutes, the node might not be synced
-      even the node received blocks in the past (<code className="inline-code">blockRecvCnt</code> > 0);</li>
+      <li>Compare the value of the <code className="inline-code">lastBlockTime</code> field (that is in UTC) with the local time of the node. If the difference if more than 10 minutes, the node might not be synced even the node received blocks in the past <code className="inline-code">(blockRecvCnt > 0);</code></li>
       </ol> 
   </div>
 );
