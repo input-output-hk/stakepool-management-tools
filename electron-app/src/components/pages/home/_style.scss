@@ -29,13 +29,15 @@
 .ContainerApp {
   display:flex;
   flex-direction: row;
+  margin-top: 2em;
   .containerTab {
     margin-top: 0;
     background-color:$background;
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding:2.9em 5em 2em 5em;
+    padding: 5em 2em;
+    
     .rightColumn {
       width: 50%;
       text-align: center;
@@ -52,7 +54,7 @@
           border-radius: 10px 10px 0 0;
           padding:0.5em 1em;
           margin-bottom: 1em;
-          justify-content: flex-start;
+          justify-content: space-between;
           h4 {
             @include primary-text($body, $white, bold);
             width: 30%;
@@ -60,8 +62,9 @@
           }
           button {
             padding:0 2em!important;
-            width: 20%;
-            margin:0 2em;
+            margin:0;
+            height: 23px;
+            align-self: center;
           }
           input {
             width:40%;
@@ -71,22 +74,6 @@
         .titleCard3 {
           background: #302828;
           border-radius: 10px 10px 0 0;
-          padding:0.5em 1em;
-          margin-bottom: 1em;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          h4 {
-            @include primary-text($body, $white, bold);
-          }
-          button {
-            padding:0 2em;
-          }
-        }
-        .titleCard2 {
-          margin:2em 0;
-          background: #575353;
-          border-radius: 0;
           padding:0.5em 1em;
           margin-bottom: 1em;
           display: flex;
@@ -109,36 +96,8 @@
             @include primary-text($body, $white, bold);
           }
         }
-        .data2 {
-          padding:0 2em;
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          text-align: left;
-          h2 {
-            @include primary-text($body, $white, bold);
-            align-self: center;
-          }
-        }
-        .data3 {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          padding:0.5em;
-          width: 100%;
-          .col {
-            text-align: left;
-             width: 33%;
-             padding:0 1em;
-             h4 {
-              @include primary-text($body, $white, bold);
-             }
-            p {
-              @include primary-text($label, $white, 100);
-              margin: 1em 0;
-            }
-          }
-        }
+
+
         .bottomBar {
           background: #302828;
           border-radius:0 0 10px 10px;
@@ -191,7 +150,6 @@
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          padding:1em;
           .col1 {
             text-align: right;
              width: 30%;
@@ -216,6 +174,7 @@
           background-color:$primary-color;
         }
       }
+      
       img {
         margin-bottom: 5em;
       }
@@ -235,10 +194,8 @@
           @include primary-text($label, $primary-color, bold);
         }
       }
-      .checkbox {
-        @include primary-text($label, $white, bold);
-      }
     }
+    
     .leftColumn {
       width: 50%;
       text-align: center;
@@ -248,19 +205,6 @@
         @include primary-title($title-secondary, $primary-color, 700);
         margin-bottom: 1em;
       }
-      /*
-      .box {
-        text-align: left;
-        p {
-          margin:0;
-          @include primary-text($body, $primary-color, normal);
-        }
-        background: $dark-grey;
-        border-radius: 5px;
-        border:1px solid #212121;
-        padding:8px;
-        margin: 1em 0;
-      }*/
       button{ margin-top:1em;
       float: right;}
     }
@@ -269,6 +213,87 @@
       p {
         @include primary-text($label, $white, normal);
         margin-bottom: 1em;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .ant-tabs-bar {
+    padding:0;
+  }
+  .ant-tabs-bar {
+    text-align: center;
+  }
+  .ContainerApp {
+    .containerTab {
+      display: flex;
+      flex-direction: column;
+      padding:2.9em;
+      
+      .rightColumn {
+        width: 100%;
+        img {
+          margin-bottom: 2em;
+        }
+        margin-bottom: 2em;
+      }
+      
+      .leftColumn {
+        width: 100%;
+        text-align: center;
+        padding: 2em 8em;
+        border-top: 1px solid $black;
+        border-left: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .ant-tabs-bar {
+    padding:0;
+  }
+  .ant-tabs-bar {
+    text-align: center;
+  }
+  .ContainerApp {
+    .containerTab {
+      display: flex;
+      flex-direction: column;
+      padding:2.9em;
+      
+      .rightColumn {
+        width: 100%;
+        img {
+          margin-bottom: 2em;
+        }
+        margin-bottom: 2em;
+      }
+      
+      .leftColumn {
+        width: 100%;
+        text-align: center;
+        padding: 2em 8em;
+        border-top: 1px solid $black;
+        border-left: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .ContainerApp {
+    .containerTab {
+      padding:1em;
+      
+      .rightColumn {
+        margin-bottom: 2em;
+      }
+      
+      .leftColumn {
+        padding: 2em;
       }
     }
   }

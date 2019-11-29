@@ -1,54 +1,80 @@
 @import '../../../css/general_styling';
 
+.ant-modal {
+  margin-top: -50px;
+  width: 80% !important;
+}
+
 .box {
+  cursor: pointer;
   text-align: left;
   p {
-    margin:0;
+    margin: 0;
     @include primary-text($body, $primary-color, normal);
   }
   background: $dark-grey;
   border-radius: 5px;
-  border:1px solid #212121;
-  padding:8px;
+  border: 1px solid #212121;
+  padding: 8px;
   margin: 1em 0;
 }
 
 .ant-modal-header {
-  background-color: $background;
-  .ant-modal-title {color:$primary-color;}
+  background-color: #131325;
+  .ant-modal-title {
+    color: $white;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+  }
 }
 
 .ant-modal-content {
-  background-color: $background;
+  background-color: #1f1f30;
+    .anticon-close {
+    color: $white;
+  }
   p {
-    @include primary-text($body, $white, normal);
+    @include primary-text(1em, rgba(255, 255, 255, 0.7), normal);
     margin-bottom: 1em;
+    font-family: 'Open Sans', 'sans-serif';
+    font-weight: 600;
   }
 }
 
 .TitleModal {
-  @include primary-title($title-secondary, $primary-color, bold);
-  margin-bottom: 1em;
+  @include primary-title(2em!important, rgba(255, 255, 255, 0.7)!important, 300!important);
+  margin-bottom: 0.5em!important;
+  font-family: 'Open Sans', 'sans-serif'!important;
 }
 
 .ant-btn.ant-btn-primary {
-  background: $primary-color;
+  background: #747FE4;
   text-transform: uppercase;
-  border:none;
+  border: none;
+  color:#1F1F30;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  border-radius: 20px;
   &:hover {
-    background: #016ca5;
+    background: #747FE4;
+    color:#1F1F30;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
   }
 }
 
 .ant-btn {
-  background: #C4C4C4;
+  border-radius: 20px;
+  background: #747FE4;
+  text-transform: uppercase;
+  border: none;
+  color:#1F1F30;
+  font-weight: 600;
   font-family: 'Open Sans', sans-serif;
-font-size: 12px;
-font-weight: 600;
-border:none;
-text-transform: uppercase;
- &:hover {
-   background: #5b7eeb;
-  color:$white;
- }
-}
+  &:hover {
+    background: #747FE4;
+    color:#1F1F30;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+  }
+  }
