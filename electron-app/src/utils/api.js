@@ -10,32 +10,52 @@ const isMock = process.env.MOCK;
 
 export const getBlockchainInfo = async node => {
   if (isMock) return blockchainInfo;
-  const response = await makeGetRequest(`${node}/api/v0/settings`);
-  return response;
+  try {
+    const response = await makeGetRequest(`${node}/api/v0/settings`);
+    return response;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const getNodeInfo = async node => {
   if (isMock) return nodeInfo;
-  const response = await makeGetRequest(`${node}/api/v0/node/stats`);
-  return response;
+  try {
+    const response = await makeGetRequest(`${node}/api/v0/node/stats`);
+    return response;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const getLeaderSchedules = async node => {
   if (isMock) return leaderSchedules;
-  const response = await makeGetRequest(`${node}/api/v0/leaders/logs`);
-  return response;
+  try {
+    const response = await makeGetRequest(`${node}/api/v0/leaders/logs`);
+    return response;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const getStakeInfo = async node => {
   if (isMock) return stakeInfo;
-  const response = await makeGetRequest(`${node}/api/v0/stake`);
-  return response && response.stake ? response : undefined;
+  try {
+    const response = await makeGetRequest(`${node}/api/v0/stake`);
+    return response && response.stake ? response : undefined;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const getFragmentLogs = async node => {
   if (isMock) return fragmentLogs;
-  const response = await makeGetRequest(`${node}/api/v0/fragment/logs`);
-  return response;
+  try {
+    const response = await makeGetRequest(`${node}/api/v0/fragment/logs`);
+    return response;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const checkConnection = async node => {
@@ -60,7 +80,6 @@ const makeGetRequest = async url => {
     const json = await response.json();
     return json;
   } catch (error) {
-    console.log('ERROR: ', error);
-    // TODO: handle error
+    throw error;
   }
 };

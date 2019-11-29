@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from 'antd';
+import { Icon, message } from 'antd';
 import moment from 'moment';
 import ButtonPrimary from '../../../atoms/ButtonPrimary/ButtonPrimary';
 import { getMessage } from '../../../../utils/messages';
@@ -15,17 +15,25 @@ const LeaderSchedules = ({ nodeAddress }) => {
   const PAGE_SIZE = 8;
   const TABLE_SIZE = 200;
   const [leaderSchedules, setLeaderSchedules] = useState();
+  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
   const fetchData = async () => {
     if (nodeAddress && nodeAddress !== '') {
-      const schedules = await getLeaderSchedules(nodeAddress);
-      const formattedSchedules = formatSchedules(schedules);
-      setLeaderSchedules(formattedSchedules);
+      try {
+        setLoading(true);
+        const schedules = await getLeaderSchedules(nodeAddress);
+        const formattedSchedules = formatSchedules(schedules);
+        setLeaderSchedules(formattedSchedules);
+      } catch (error) {
+        message.error(getMessage('errors.api.generic'));
+        setLeaderSchedules(undefined);
+      }
     } else {
       setLeaderSchedules(undefined);
     }
+    setLoading(false);
   };
 
   const goToNextPage = () => {
@@ -94,7 +102,19 @@ const LeaderSchedules = ({ nodeAddress }) => {
           onClick={fetchData}
         />
       </div>
-      {leaderSchedules && leaderSchedules.length > 0 ? (
+      {loading && (
+        <div className="data5">
+          <Icon type="loading" spin />
+          <p>{getMessage('api.status.loading')}</p>
+        </div>
+      )}
+      {!loading && (!leaderSchedules || leaderSchedules.length <= 0) && (
+        <div className="data5">
+          <Icon type="exclamation-circle" />
+          <p>{getMessage('report.leader.missing')}</p>
+        </div>
+      )}
+      {!loading && leaderSchedules && leaderSchedules.length > 0 && (
         <TableSchedules
           schedules={leaderSchedules.slice(
             beginningArray,
@@ -103,11 +123,6 @@ const LeaderSchedules = ({ nodeAddress }) => {
               : beginningArray + PAGE_SIZE
           )}
         />
-      ) : (
-        <div className="data5">
-          <Icon type="exclamation-circle" />
-          <p>{getMessage('report.leader.missing')}</p>
-        </div>
       )}
       <div className="bottomBar">
         <ButtonPrimary

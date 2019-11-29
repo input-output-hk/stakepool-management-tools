@@ -1,6 +1,17 @@
 import { get } from 'lodash';
 
 const messages = {
+  api: {
+    status: {
+      loading: 'Loading...',
+      noInfo: 'No information available'
+    }
+  },
+  errors: {
+    api: {
+      generic: 'An error occurred while getting a response from the Node API'
+    }
+  },
   report: {
     blockchain: {
       block0: 'Block0',

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Input, Icon } from 'antd';
+import { Input, Icon, message } from 'antd';
 import moment from 'moment';
 import ButtonPrimary from '../../../atoms/ButtonPrimary/ButtonPrimary';
 import { getMessage } from '../../../../utils/messages';
@@ -14,27 +14,29 @@ const FragmentLogs = ({ nodeAddress }) => {
 
   const [fragmentLogs, setFragmentLogs] = useState();
   const [inputFragmentId, setInputFragmentId] = useState();
-  const [errorMessage, setErrorMessage] = useState(
-    getMessage('report.fragments.notfound')
-  );
+  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
 
   const fetchData = async () => {
     if (nodeAddress && nodeAddress !== '') {
-      const fragments = await getFragmentLogs(nodeAddress);
-      const foundFragments = findFragments(fragments);
-      setFragmentLogs(foundFragments);
+      try {
+        setLoading(true);
+        const fragments = await getFragmentLogs(nodeAddress);
+        const foundFragments = findFragments(fragments);
+        setFragmentLogs(foundFragments);
+      } catch (error) {
+        message.error(getMessage('errors.api.generic'));
+        setFragmentLogs(undefined);
+      }
     } else {
       setFragmentLogs(undefined);
     }
+    setLoading(false);
   };
 
   const findFragments = fragments => {
-    if (!fragments) {
-      setErrorMessage(getMessage('report.fragments.notfound'));
-      return;
-    }
+    if (!fragments) return;
 
     const filteredFragments =
       !inputFragmentId || inputFragmentId === ''
@@ -76,8 +78,6 @@ const FragmentLogs = ({ nodeAddress }) => {
       };
     });
 
-    if (formattedFragments && formattedFragments.length <= 0)
-      setErrorMessage(getMessage('report.fragments.notfound'));
     return formattedFragments;
   };
 
@@ -121,7 +121,19 @@ const FragmentLogs = ({ nodeAddress }) => {
           onClick={fetchData}
         />
       </div>
-      {fragmentLogs && fragmentLogs.length > 0 ? (
+      {loading && (
+        <div className="data5">
+          <Icon type="loading" spin />
+          <p>{getMessage('api.status.loading')}</p>
+        </div>
+      )}
+      {!loading && (!fragmentLogs || fragmentLogs.length <= 0) && (
+        <div className="data5">
+          <Icon type="exclamation-circle" />
+          <p>{getMessage('report.fragments.notfound')}</p>
+        </div>
+      )}
+      {!loading && fragmentLogs && fragmentLogs.length > 0 && (
         <TableFragments
           fragments={fragmentLogs.slice(
             beginningArray,
@@ -130,11 +142,6 @@ const FragmentLogs = ({ nodeAddress }) => {
               : beginningArray + PAGE_SIZE
           )}
         />
-      ) : (
-        <div className="data5">
-          <Icon type="exclamation-circle" />
-          <p>{errorMessage}</p>
-        </div>
       )}
       <div className="bottomBar">
         <ButtonPrimary
