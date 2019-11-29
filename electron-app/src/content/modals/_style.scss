@@ -13,6 +13,11 @@
     padding: 5px;
     display: block;
   }
+  .inline-code {
+    background: black;
+    padding: 5px;
+    margin:0 0.2em;
+  }
   .SubTitleModal {
     @include primary-title(1.5em, $white, bold);
     margin-bottom: 1em;

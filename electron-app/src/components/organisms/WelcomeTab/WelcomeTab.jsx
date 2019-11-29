@@ -9,7 +9,6 @@ import ModalData from '../../molecules/ModalData/ModalData';
 const WelcomeTab = ({ connectNode }) => {
   const [visible, setVisible] = useState(false);
   const [modalTopic, setModalTopic] = useState();
-  const [modalTitle, setModalTitle] = useState();
   const [modalContent, setModalContent] = useState();
   const [addressInput, setAddressInput] = useState();
 
@@ -25,8 +24,7 @@ const WelcomeTab = ({ connectNode }) => {
     setAddressInput(value);
   };
 
-  const loadModal = ({ title, content, topic }) => {
-    setModalTitle(title);
+  const loadModal = ({ content, topic }) => {
     setModalContent(content);
     setModalTopic(topic);
     showModal();
@@ -55,7 +53,6 @@ const WelcomeTab = ({ connectNode }) => {
           visible={visible}
           onCancel={hideModal}
           onOk={hideModal}
-          title={modalTitle}
           content={modalContent}
           topic={modalTopic}
         />
