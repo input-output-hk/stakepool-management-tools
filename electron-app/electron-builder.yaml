@@ -1,0 +1,32 @@
+---
+appId: io.iohk.spm
+dmg:
+  contents:
+  - x: 110
+    y: 150
+  - x: 240
+    y: 150
+    type: link
+    path: "/Applications"
+linux:
+  target:
+  - target: deb
+    arch:
+    - x64
+    - ia32
+  - target: rpm
+    arch:
+    - x64
+    - ia32
+  - target: AppImage
+    arch:
+    - x64
+    - ia32
+  - snap
+  category: Development
+win:
+  target:
+    target: zip
+    arch:
+    - x64
+    - ia32
