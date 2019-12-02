@@ -21,7 +21,7 @@ const UnderstandRequirement = () => (
       <li>Windows 10</li>
     </ul>
     <h2 className="TitleModal">Cardano</h2>
-    <p>Install RUST version called{' '}</p>
+    <p>Install RUST version called </p>
     <a
       href="https://github.com/input-output-hk/jormungandr/releases"
       target="_blank"
