@@ -32,11 +32,12 @@
   margin-top: 0;
   .containerTab {
     margin-top: 0;
-    background-color:$background;
+    background-color: #2d2c2c;
     display: flex;
     flex-direction: row;
     width: 100%;
-    padding: 5em 2em;
+    padding: 6em 2em;
+    border-radius: 1em;
     
     .rightColumn {
       width: 50%;
@@ -65,6 +66,7 @@
             margin:0;
             height: 23px;
             align-self: center;
+            width: 100px;
           }
           input {
             width:40%;

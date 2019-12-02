@@ -6,7 +6,7 @@ import {
   fragmentLogs
 } from '../content/mockApi';
 
-const isMock = process.env.MOCK;
+const isMock = true; // process.env.MOCK;
 
 export const getBlockchainInfo = async node => {
   if (isMock) return blockchainInfo;
