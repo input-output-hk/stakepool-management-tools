@@ -41,7 +41,7 @@ const BlockchainInfo = ({ nodeAddress }) => {
       {loading && <div>{getMessage('api.status.loading')}</div> 
       }
       {!blockchainInfo && !loading && (
-        <Loading text={getMessage('api.status.loading')} /> //<div>{getMessage('api.status.noInfo')}</div> componente que no hay info
+        <Loading text={getMessage('api.status.loading')} />
       )}
       {blockchainInfo && !loading && (
         <div className="data node node2">
