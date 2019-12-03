@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Typography, message } from 'antd';
-import Loading from '../../../atoms/Loading/Loading';
+import StatusMessage from '../../../atoms/StatusMessage/StatusMessage';
 import { getMessage } from '../../../../utils/messages';
 import { formatDateTime } from '../../../../utils/formatters';
 import { getBlockchainInfo } from '../../../../utils/api';
@@ -38,11 +38,8 @@ const BlockchainInfo = ({ nodeAddress }) => {
       <div className="titleCard">
         <h4>{getMessage('report.blockchain.title')}</h4>
       </div>
-      {loading && <div>{getMessage('api.status.loading')}</div> 
-      }
-      {!blockchainInfo && !loading && (
-        <Loading text={getMessage('api.status.loading')} />
-      )}
+      {loading && <StatusMessage status="loading" />}
+      {!blockchainInfo && !loading && <StatusMessage status="noInfo" />}
       {blockchainInfo && !loading && (
         <div className="data node node2">
           <div className="col1">

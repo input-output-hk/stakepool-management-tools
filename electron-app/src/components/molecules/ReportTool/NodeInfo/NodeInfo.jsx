@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Typography, message } from 'antd';
 import ButtonPrimary from '../../../atoms/ButtonPrimary/ButtonPrimary';
+import StatusMessage from '../../../atoms/StatusMessage/StatusMessage';
 import { getMessage } from '../../../../utils/messages';
 import { getNodeInfo } from '../../../../utils/api';
 import {
@@ -45,8 +46,8 @@ const NodeInfo = ({ nodeAddress }) => {
           onClick={fetchData}
         />
       </div>
-      {loading && <div>{getMessage('api.status.loading')}</div>}
-      {!loading && !nodeInfo && <div>{getMessage('api.status.noInfo')}</div>}
+      {loading && <StatusMessage status="loading" />}
+      {!loading && !nodeInfo && <StatusMessage status="noInfo" />}
       {!loading && nodeInfo && (
         <div>
           <div className="data node node2">
