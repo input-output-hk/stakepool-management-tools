@@ -1,12 +1,37 @@
 @import '../../../css/general_styling';
 
+.react-resizable {
+  position: relative;
+}
+.react-resizable-handle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  bottom: 0;
+  right: 0;
+  border-bottom: 4px solid $white;
+  border-right: 4px solid $white;
+  background-position: bottom right;
+  padding: 0 3px 3px 0;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  box-sizing: border-box;
+  cursor: se-resize;
+}
+
+.resizable-content {
+  height: 90%;
+  overflow-y: scroll;
+  margin-bottom:10px;
+}
+
 .ant-modal {
   margin-top: -50px;
   width: 80% !important;
 }
 
 .ant-modal-body {
-  padding:0 24px!important;
+  padding: 0 24px !important;
 }
 
 .box {
@@ -34,7 +59,7 @@
 
 .ant-modal-content {
   background-color: #1f1f30;
-    .anticon-close {
+  .anticon-close {
     color: $white;
   }
   p {
@@ -46,22 +71,26 @@
 }
 
 .TitleModal {
-  @include primary-title(2em!important, rgba(255, 255, 255, 0.7)!important, 300!important);
-  margin-bottom: 0.5em!important;
-  font-family: 'Open Sans', 'sans-serif'!important;
+  @include primary-title(
+    2em!important,
+    rgba(255, 255, 255, 0.7) !important,
+    300!important
+  );
+  margin-bottom: 0.5em !important;
+  font-family: 'Open Sans', 'sans-serif' !important;
 }
 
 .ant-btn.ant-btn-primary {
-  background: #747FE4;
+  background: #747fe4;
   text-transform: uppercase;
   border: none;
-  color:#1F1F30;
+  color: #1f1f30;
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
   border-radius: 20px;
   &:hover {
-    background: #747FE4;
-    color:#1F1F30;
+    background: #747fe4;
+    color: #1f1f30;
     font-weight: 600;
     font-family: 'Open Sans', sans-serif;
   }
@@ -69,16 +98,16 @@
 
 .ant-btn {
   border-radius: 20px;
-  background: #747FE4;
+  background: #747fe4;
   text-transform: uppercase;
   border: none;
-  color:#1F1F30;
+  color: #1f1f30;
   font-weight: 600;
   font-family: 'Open Sans', sans-serif;
   &:hover {
-    background: #747FE4;
-    color:#1F1F30;
+    background: #747fe4;
+    color: #1f1f30;
     font-weight: 600;
     font-family: 'Open Sans', sans-serif;
   }
-  }
+}
