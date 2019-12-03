@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { message } from 'antd';
 import PieChart from 'react-minimal-pie-chart';
+import StatusMessage from '../../../atoms/StatusMessage/StatusMessage';
 import ButtonPrimary from '../../../atoms/ButtonPrimary/ButtonPrimary';
 import { getMessage } from '../../../../utils/messages';
 import { getStakeInfo } from '../../../../utils/api';
@@ -103,8 +104,8 @@ const StakeInfo = ({ nodeAddress }) => {
           onClick={fetchData}
         />
       </div>
-      {loading && <div>{getMessage('api.status.loading')}</div>}
-      {!loading && !stakeInfo && <div>{getMessage('api.status.noInfo')}</div>}
+      {loading && <StatusMessage status="loading" />}
+      {!loading && !stakeInfo && <StatusMessage status="noInfo" />}
       {!loading && stakeInfo && (
         <div className="data2">
           <div className="Info">
