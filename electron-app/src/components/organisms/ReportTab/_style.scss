@@ -1,5 +1,7 @@
 @import '../../../css/general_styling';
-
+.ant-tabs-bar {
+  border-bottom: none;
+}
 .ContainerApp {
     .containerTabReport {
       margin-top: 0;
@@ -9,6 +11,7 @@
       justify-content: space-around;
       width: 100%;
       padding: 2em;
+      border-radius: 1em;
       .rightColumn {
         width: 50%;
         text-align: center;
