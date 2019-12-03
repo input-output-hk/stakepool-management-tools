@@ -33,7 +33,10 @@ const CreateCertificate = () => (
         executing <code className="inline-code">ls</code> command into the
         terminal
       </li>
-      <li> Change the scripts permissions in order to be able to execute them</li>
+      <li>
+        {' '}
+        Change the scripts permissions in order to be able to execute them
+      </li>
       <br />
       <li className="listStyle">
         <ul>
@@ -48,18 +51,18 @@ const CreateCertificate = () => (
       <br />
       <li>Check the parameters required by the script</li>
       <br />
-      <li  className="listStyle">
+      <li className="listStyle">
         <ul>
           <li className="listStyle code">./createStakePool.sh --help</li>
           <br />
           <li className="listStyle">Output:</li>
           <br />
           <li className="listStyle code">
-          usage: ./createStakePool.sh &lt;REST-LISTEN-PORT&gt; <br />
-          &lt;ACCOUNT_SK&gt; <br />
-          &lt;REST-PORT&gt; The REST Listen Port set in node-config.yaml file
-          (EX: 3101) <br />
-          &lt;SOURCE-SK&gt; The Secret key of the Source address`
+            usage: ./createStakePool.sh &lt;REST-LISTEN-PORT&gt; <br />
+            &lt;ACCOUNT_SK&gt; <br />
+            &lt;REST-PORT&gt; The REST Listen Port set in node-config.yaml file
+            (EX: 3101) <br />
+            &lt;SOURCE-SK&gt; The Secret key of the Source address`
           </li>
         </ul>
       </li>
@@ -69,27 +72,39 @@ const CreateCertificate = () => (
       <strong>2. Execute the createStakePool script</strong>
     </p>
     <ul>
-      <li> For the --host parameter, use the same value you used in node configuration (config.yaml) for the <strong>rest/listen</strong>{' '} parameter.</li>
-      <li>For the second parameter use the <strong>Private Key</strong> of your recently funded stake pool account address.
+      <li>
+        {' '}
+        For the --host parameter, use the same value you used in node
+        configuration (config.yaml) for the <strong>rest/listen</strong>{' '}
+        parameter.
+      </li>
+      <li>
+        For the second parameter use the <strong>Private Key</strong> of your
+        recently funded stake pool account address.
       </li>
       <br />
-      <li className="listStyle code"> ./createStakePool.sh 3100
-        ed25519e_sk1nqh6fk0dm9p3tgvqcgt9had3ajn5pcmme04qp256p3g7tahxd9q9j4wgn2n250huxc5t38u0yjd9rtalrzae9t7xcwzhcz98jf4hamsgfmydk{' '}</li>
+      <li className="listStyle code">
+        {' '}
+        ./createStakePool.sh 3100
+        ed25519e_sk1nqh6fk0dm9p3tgvqcgt9had3ajn5pcmme04qp256p3g7tahxd9q9j4wgn2n250huxc5t38u0yjd9rtalrzae9t7xcwzhcz98jf4hamsgfmydk{' '}
+      </li>
       <br />
       <li>Check the results</li>
       <li className="listStyle">
         <br />
         <ul>
-          <li>If everything is fine and you did not receive any error, the last line
-          of the script output is your <strong>Stake Pool ID</strong>. Now you
-          can check if your stake pool id appears in the list of available stake
-          pools by executing the below command.</li>
+          <li>
+            If everything is fine and you did not receive any error, the last
+            line of the script output is your <strong>Stake Pool ID</strong>.
+            Now you can check if your stake pool id appears in the list of
+            available stake pools by executing the below command.
+          </li>
           <br />
           <li className="listStyle code">
-          <code className="code">
-          ./jcli rest v0 stake-pools get --host
-          &quot;http://127.0.0.1:3100/api&quot;
-        </code>
+            <code className="code">
+              ./jcli rest v0 stake-pools get --host
+              &quot;http://127.0.0.1:3100/api&quot;
+            </code>
           </li>
         </ul>
       </li>
@@ -114,14 +129,20 @@ const CreateCertificate = () => (
       <li className="listStyle">Output</li>
       <br />
       <li className="listStyle" code>
-      usage: send-certificate.sh &lt;CERTIFICATE-PATH&gt;
-      &lt;REST-LISTEN-PORT&gt; &lt;ACCOUNT-SOURCE-SK&gt;
+        usage: send-certificate.sh &lt;CERTIFICATE-PATH&gt;
+        &lt;REST-LISTEN-PORT&gt; &lt;ACCOUNT-SOURCE-SK&gt;
       </li>
       <br />
-      <li className="listStyle code">&lt;CERT-PATH&gt; Path to a readable certificate file</li>
-      <li className="listStyle code">&lt;REST-PORT&gt; The REST Listen Port set in node-config.yaml file
-            (EX: 3101)</li>
-      <li className="listStyle code">&lt;SOURCE-SK&gt; The Secret key of the Source address</li>
+      <li className="listStyle code">
+        &lt;CERT-PATH&gt; Path to a readable certificate file
+      </li>
+      <li className="listStyle code">
+        &lt;REST-PORT&gt; The REST Listen Port set in node-config.yaml file (EX:
+        3101)
+      </li>
+      <li className="listStyle code">
+        &lt;SOURCE-SK&gt; The Secret key of the Source address
+      </li>
     </ul>
 
     <br />
