@@ -25,12 +25,10 @@ const ConfigureNode = () => (
       <br />
       The genesis-hash contains the initial configuration of the testnet. <br />
       <br />
-      <p className="code">
-        <code>
-          curl -sLOJ
-          https://hydra.iohk.io/job/Cardano/jormungandr/jormungandrConfigs.itn_balance_check/latest/download/2/genesis-hash.txt
-        </code>
-      </p>
+      <code className="code">
+        curl -sLOJ
+        https://hydra.iohk.io/job/Cardano/jormungandr/jormungandrConfigs.itn_balance_check/latest/download/2/genesis-hash.txt
+      </code>
     </p>
     <p className="SubTitleModal">3. Edit config.yaml file</p>
     <p>
@@ -70,10 +68,10 @@ const ConfigureNode = () => (
       location where all 3 files were saved.{' '}
     </p>
     <p>
-      <p className="code">
+      <code className="code">
         ./jormungandr --genesis-block-hash $(cat genesis-hash.txt) --config
         config.yaml
-      </p>
+      </code>
     </p>
     <p className="SubTitleModal">5. Check that the node syncing</p>
     <p>

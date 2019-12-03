@@ -61,7 +61,7 @@
   .anticon-close {
     color: $white;
   }
-  p {
+  p, div {
     @include primary-text(1em, rgba(255, 255, 255, 0.7), normal);
     margin-bottom: 1em;
     font-family: 'Open Sans', 'sans-serif';

@@ -128,7 +128,7 @@ const CreateCertificate = () => (
       <br />
       <li className="listStyle">Output</li>
       <br />
-      <li className="listStyle" code>
+      <li className="listStyle code">
         usage: send-certificate.sh &lt;CERTIFICATE-PATH&gt;
         &lt;REST-LISTEN-PORT&gt; &lt;ACCOUNT-SOURCE-SK&gt;
       </li>
