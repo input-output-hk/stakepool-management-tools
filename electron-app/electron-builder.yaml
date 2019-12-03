@@ -1,13 +1,7 @@
 ---
 appId: io.iohk.spm
-dmg:
-  contents:
-  - x: 110
-    y: 150
-  - x: 240
-    y: 150
-    type: link
-    path: "/Applications"
+mac:
+  target: pkg
 linux:
   target:
   - target: deb
