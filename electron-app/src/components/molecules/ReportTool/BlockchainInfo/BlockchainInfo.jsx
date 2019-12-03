@@ -38,7 +38,7 @@ const BlockchainInfo = ({ nodeAddress }) => {
       <div className="titleCard">
         <h4>{getMessage('report.blockchain.title')}</h4>
       </div>
-      {loading && <div>{getMessage('api.status.loading')}</div> //poner el componente cargando
+      {loading && <div>{getMessage('api.status.loading')}</div> 
       }
       {!blockchainInfo && !loading && (
         <Loading text={getMessage('api.status.loading')} /> //<div>{getMessage('api.status.noInfo')}</div> componente que no hay info
