@@ -21,7 +21,7 @@
     "dist:win": "yarn run \"bundle:react\" && electron-builder -w",
     "dist:linux": "yarn run \"bundle:react\" && electron-builder -l",
     "dist:mac": "yarn run \"bundle:react\" && electron-builder -m",
-    "dist:wl": "yarn run \"bundle:react\" && electron-builder -wl",    
+    "dist:wl": "yarn run \"bundle:react\" && electron-builder -wl",
     "dist:all": "yarn run \"bundle:react\" && electron-builder -wml"
   },
   "devDependencies": {
@@ -66,6 +66,7 @@
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "react-minimal-pie-chart": "5.0.2",
+    "react-resizable": "1.10.1",
     "react-router-dom": "5.1.2"
   }
 }
