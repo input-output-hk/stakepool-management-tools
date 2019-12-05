@@ -1,5 +1,12 @@
 const moment = require('moment-timezone');
-const util = require('util')
+const util = require('util');
+const fs = require('fs');
+var marked = require('marked');
+var TerminalRenderer = require('marked-terminal');
+
+marked.setOptions({
+  renderer: new TerminalRenderer()
+});
 
 const {
   getBlockchainInfo,
@@ -18,6 +25,16 @@ const {
 } = require('./formatters');
 
 const TABLE_SIZE = 250;
+
+// TODO : define if we should use one command for all or one for each
+const contentFiles = {
+  understandRequirements: 'content/understandRequirements.md',
+  installNode: 'content/installNode.md',
+  configureNode: 'content/configureNode.md',
+  createCertificate: 'content/createCertificate.md',
+  testStake: 'content/testStake.md',
+  all: 'content/all.md'
+};
 
 const calculateTotalValue = (stakeInfo, noUnassigned) => {
   if (!stakeInfo || !stakeInfo.stake) return 0;
@@ -103,6 +120,17 @@ const findFragments = (fragments, inputFragmentId) =>
 
 const verifyConnection = nodeAddress => checkConnection(nodeAddress);
 
+const showInfoContent = () => {
+  const content = fs.readFile(
+    contentFiles.all,
+    { encoding: 'utf8' },
+    (err, data) => {
+      if (err) return;
+      console.log(marked(data));
+    }
+  );
+};
+
 const showHelp = () => {
   console.log('spm 0.1.0');
   console.log('Stake Pool Management CLI toolkit');
@@ -114,6 +142,9 @@ const showHelp = () => {
     '\tsettings -p <node-rest-port>\testablish a connection with the local node'
   );
   console.log('\t\t\t\t\t<node-rest-port>: node REST listening port');
+  console.log(
+    '\t-i, --info \t\t\tdisplays information on how to set up a stake pool'
+  );
   console.log('\t-h, --help \t\t\tdisplays this help  message');
 };
 
@@ -203,7 +234,9 @@ const showFragmentLogs = async (nodeAddress, fragmentId) => {
   if (!foundFragments || foundFragments.length <= 0) {
     console.log(`Fragment logs not found.`);
   } else {
-    console.log(util.inspect(foundFragments, { maxArrayLength: TABLE_SIZE, colors: true }));
+    console.log(
+      util.inspect(foundFragments, { maxArrayLength: TABLE_SIZE, colors: true })
+    );
   }
 };
 
@@ -216,5 +249,6 @@ module.exports = {
   showStakeState,
   showLeaderSchedules,
   showFragmentLogs,
-  verifyConnection
+  verifyConnection,
+  showInfoContent
 };
