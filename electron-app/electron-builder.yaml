@@ -1,7 +1,10 @@
 ---
 appId: io.iohk.spm
 mac:
-  target: pkg
+  target: zip
+  type: distribution
+  hardenedRuntime: true
+  entitlements: entitlements.mac.inherit.plist
 linux:
   target:
   - target: deb
