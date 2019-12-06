@@ -1,8 +1,8 @@
 const moment = require('moment-timezone');
 const util = require('util');
 const fs = require('fs');
-var marked = require('marked');
-var TerminalRenderer = require('marked-terminal');
+const marked = require('marked');
+const TerminalRenderer = require('marked-terminal');
 
 marked.setOptions({
   renderer: new TerminalRenderer()
@@ -225,7 +225,7 @@ const showLeaderSchedules = async nodeAddress => {
   const formattedSchedules = formatSchedules(leaderSchedules);
   console.log('Leader Schedules: ');
   if (!formattedSchedules || formattedSchedules.length <= 0) {
-    console.log(`Leader schedules not found.`);
+    console.log('Leader schedules not found.');
   } else {
     console.table(formattedSchedules);
   }
@@ -236,7 +236,7 @@ const showFragmentLogs = async (nodeAddress, fragmentId) => {
   const foundFragments = findFragments(fragmentLogs, fragmentId);
   console.log('Fragment Logs: ');
   if (!foundFragments || foundFragments.length <= 0) {
-    console.log(`Fragment logs not found.`);
+    console.log('Fragment logs not found.');
   } else {
     console.log(
       util.inspect(foundFragments, { maxArrayLength: TABLE_SIZE, colors: true })

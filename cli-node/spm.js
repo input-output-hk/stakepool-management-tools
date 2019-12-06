@@ -26,14 +26,13 @@ const start = () => {
     if (Object.keys(infoSections).includes(args[1])) {
       showInfoContent(args[1]);
       return 0;
-    } else {
-      console.log(
-        `'${
-          args[1]
-        }' is not a valid section value. Run \`spm --info\` to list all available sections.`
-      );
-      return 1;
     }
+    console.log(
+      `'${
+        args[1]
+      }' is not a valid section value. Run \`spm --info\` to list all available sections.`
+    );
+    return 1;
   }
 
   if (args.length === 3 && args[0] === 'settings' && args[1] === '-p') {

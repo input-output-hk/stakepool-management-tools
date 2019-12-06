@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node spm",
     "build": "yarn install --prod && yarn pack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "./node_modules/eslint/bin/eslint.js . --ext .js"
   },
   "keywords": [
     "CLI",
@@ -37,6 +38,7 @@
     "eslint-plugin-jsx-a11y": "6.2.1",
     "eslint-plugin-prettier": "3.0.1",
     "eslint-plugin-promise": "4.1.1",
+    "eslint-plugin-react": "7.17.0",
     "prettier": "1.17.0"
   },
   "dependencies": {
