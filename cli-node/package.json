@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node spm",
     "build": "yarn install --prod && yarn pack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "./node_modules/eslint/bin/eslint.js . --ext .js"
   },
   "keywords": [
     "CLI",
