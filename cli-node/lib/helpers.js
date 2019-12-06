@@ -239,12 +239,7 @@ const showFragmentLogs = async (nodeAddress, fragmentId) => {
     console.log(`Fragment logs not found.`);
   } else {
     console.log(
-      util.inspect(foundFragments, {
-        maxArrayLength: TABLE_SIZE,
-        colors: true,
-        compact: 1,
-        breakLength: Infinity
-      })
+      util.inspect(foundFragments, { maxArrayLength: TABLE_SIZE, colors: true })
     );
   }
 };
