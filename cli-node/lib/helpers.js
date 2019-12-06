@@ -24,17 +24,9 @@ const {
   calculateTimeDifference
 } = require('./formatters');
 
-const TABLE_SIZE = 250;
+const { infoSections } = require('./content');
 
-// TODO : define if we should use one command for all or one for each
-const contentFiles = {
-  understandRequirements: 'content/understandRequirements.md',
-  installNode: 'content/installNode.md',
-  configureNode: 'content/configureNode.md',
-  createCertificate: 'content/createCertificate.md',
-  testStake: 'content/testStake.md',
-  all: 'content/all.md'
-};
+const TABLE_SIZE = 250;
 
 const calculateTotalValue = (stakeInfo, noUnassigned) => {
   if (!stakeInfo || !stakeInfo.stake) return 0;
@@ -120,16 +112,27 @@ const findFragments = (fragments, inputFragmentId) =>
 
 const verifyConnection = nodeAddress => checkConnection(nodeAddress);
 
-const showInfoContent = () => {
-  const content = fs.readFile(
-    contentFiles.all,
+const showInfoSections = () => {
+  console.log('spm 0.1.0');
+  console.log('Stake Pool Management CLI toolkit');
+  console.log('');
+  console.log('Get Started:');
+  Object.values(infoSections).forEach(({ topic }) => console.log(topic));
+  console.log('');
+  console.log(
+    'Run `spm --info [topic number]` to display the information about the chosen topic'
+  );
+};
+
+const showInfoContent = option =>
+  fs.readFile(
+    infoSections[option].content,
     { encoding: 'utf8' },
     (err, data) => {
       if (err) return;
       console.log(marked(data));
     }
   );
-};
 
 const showHelp = () => {
   console.log('spm 0.1.0');
@@ -143,8 +146,9 @@ const showHelp = () => {
   );
   console.log('\t\t\t\t\t<node-rest-port>: node REST listening port');
   console.log(
-    '\t-i, --info \t\t\tdisplays information on how to set up a stake pool'
+    '\t-i, --info <topic-number>\tdisplays information on how to set up a stake pool'
   );
+  console.log('\t\t\t\t\t<topic-number>: topic to display information about');
   console.log('\t-h, --help \t\t\tdisplays this help  message');
 };
 
@@ -250,5 +254,6 @@ module.exports = {
   showLeaderSchedules,
   showFragmentLogs,
   verifyConnection,
-  showInfoContent
+  showInfoContent,
+  showInfoSections
 };

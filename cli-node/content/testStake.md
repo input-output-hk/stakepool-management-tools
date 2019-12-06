@@ -1,4 +1,4 @@
-## 5. Check that your stake pool is visible
+# 5. Check that your stake pool is visible
 
 Check that your Stake Pool appears in the list of available stake pools.
 
