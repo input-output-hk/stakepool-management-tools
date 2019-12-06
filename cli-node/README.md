@@ -19,6 +19,8 @@ or `yarn link` and run with `spm [ARGS]`
 ARGS:
   * `settings -p <node-rest-port>` establish a connection with the local node
     * `<node-rest-port>` node REST listening port (e.g, 3100)
+  * `--info <topic-number>` displays info on how to set up a stake pool
+    * `<topic-number>` displays info related to the chosen topic
   * `--help` displays help usage
 
 Once connection is established, you can run these commands:

@@ -1,5 +1,12 @@
 const moment = require('moment-timezone');
 const util = require('util');
+const fs = require('fs');
+var marked = require('marked');
+var TerminalRenderer = require('marked-terminal');
+
+marked.setOptions({
+  renderer: new TerminalRenderer()
+});
 
 const {
   getBlockchainInfo,
@@ -16,6 +23,8 @@ const {
   formatTime,
   calculateTimeDifference
 } = require('./formatters');
+
+const { infoSections } = require('./content');
 
 const TABLE_SIZE = 250;
 
@@ -103,6 +112,28 @@ const findFragments = (fragments, inputFragmentId) =>
 
 const verifyConnection = nodeAddress => checkConnection(nodeAddress);
 
+const showInfoSections = () => {
+  console.log('spm 0.1.0');
+  console.log('Stake Pool Management CLI toolkit');
+  console.log('');
+  console.log('Get Started:');
+  Object.values(infoSections).forEach(({ topic }) => console.log(topic));
+  console.log('');
+  console.log(
+    'Run `spm --info [topic number]` to display the information about the chosen topic'
+  );
+};
+
+const showInfoContent = option =>
+  fs.readFile(
+    infoSections[option].content,
+    { encoding: 'utf8' },
+    (err, data) => {
+      if (err) return;
+      console.log(marked(data));
+    }
+  );
+
 const showHelp = () => {
   console.log('spm 0.1.0');
   console.log('Stake Pool Management CLI toolkit');
@@ -114,6 +145,10 @@ const showHelp = () => {
     '\tsettings -p <node-rest-port>\testablish a connection with the local node'
   );
   console.log('\t\t\t\t\t<node-rest-port>: node REST listening port');
+  console.log(
+    '\t-i, --info <topic-number>\tdisplays information on how to set up a stake pool'
+  );
+  console.log('\t\t\t\t\t<topic-number>: topic to display information about');
   console.log('\t-h, --help \t\t\tdisplays this help  message');
 };
 
@@ -218,5 +253,7 @@ module.exports = {
   showStakeState,
   showLeaderSchedules,
   showFragmentLogs,
-  verifyConnection
+  verifyConnection,
+  showInfoContent,
+  showInfoSections
 };
