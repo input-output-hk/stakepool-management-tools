@@ -129,7 +129,7 @@ const showInfoContent = option =>
     infoSections[option].content,
     { encoding: 'utf8' },
     (err, data) => {
-      if (err) return;
+      if (err) return console.error(err);
       console.log(marked(data));
     }
   );
