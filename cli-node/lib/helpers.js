@@ -129,7 +129,7 @@ const showInfoContent = option =>
     infoSections[option].content,
     { encoding: 'utf8' },
     (err, data) => {
-      if (err) return;
+      if (err) return console.error(err);
       console.log(marked(data));
     }
   );
@@ -239,7 +239,12 @@ const showFragmentLogs = async (nodeAddress, fragmentId) => {
     console.log(`Fragment logs not found.`);
   } else {
     console.log(
-      util.inspect(foundFragments, { maxArrayLength: TABLE_SIZE, colors: true })
+      util.inspect(foundFragments, {
+        maxArrayLength: TABLE_SIZE,
+        colors: true,
+        compact: 1,
+        breakLength: Infinity
+      })
     );
   }
 };
