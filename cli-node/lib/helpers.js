@@ -1,5 +1,5 @@
 const moment = require('moment-timezone');
-const util = require('util')
+const util = require('util');
 
 const {
   getBlockchainInfo,
@@ -128,7 +128,7 @@ const showCommandsHelp = () => {
     '\tnode-info \t\t\tdisplays Node information: up since time, blocks received, last block, date, length'
   );
   console.log(
-    '\ttx \t\t\t\tdisplays Transaction information: tx received, txs, outputs, fees'
+    '\ttx \t\t\t\tdisplays Transaction information: total txs received, txs in last block, outputs in last block, fees in last block'
   );
   console.log(
     '\tstake-state \t\t\tdisplays Stake state Information: total value, total stake'
@@ -167,10 +167,10 @@ const showNodeInfo = async nodeAddress => {
 const showTxInfo = async nodeAddress => {
   const txInfo = await getNodeInfo(nodeAddress);
   console.log('Transaction Info: ', {
-    txReceived: txInfo.txRecvCnt,
-    txs: txInfo.lastBlockTx,
-    outputs: txInfo.lastBlockSum,
-    fees: txInfo.lastBlockFees
+    totalTxsReceived: txInfo.txRecvCnt,
+    txsInLastBlock: txInfo.lastBlockTx,
+    outputsInLastBlock: txInfo.lastBlockSum,
+    feesInLastBlock: txInfo.lastBlockFees
   });
 };
 
@@ -203,7 +203,9 @@ const showFragmentLogs = async (nodeAddress, fragmentId) => {
   if (!foundFragments || foundFragments.length <= 0) {
     console.log(`Fragment logs not found.`);
   } else {
-    console.log(util.inspect(foundFragments, { maxArrayLength: TABLE_SIZE, colors: true }));
+    console.log(
+      util.inspect(foundFragments, { maxArrayLength: TABLE_SIZE, colors: true })
+    );
   }
 };
 
