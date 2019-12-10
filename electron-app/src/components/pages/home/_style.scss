@@ -1,0 +1,302 @@
+@import '../../../css/general_styling';
+
+.ant-tabs {
+  width: 100%;
+  margin-top:1em;
+}
+.ant-tabs-tab {
+  color:grey;
+}
+.ant-tabs-tab {
+  background-color:$background;
+  width: 200px;
+  text-align: center;
+  border-radius: 5px 5px 0 0;
+}
+.ant-tabs-bar {
+  text-align: right;
+  padding:0 250px;
+}
+.ant-tabs-content {
+  margin-top:-1.2em;
+}
+.ant-tabs-ink-bar {
+  display: none!important;
+}
+.ant-tabs-tab-active {
+  color: white!important;
+}
+.ContainerApp {
+  display:flex;
+  flex-direction: row;
+  margin-top: 0;
+  .containerTab {
+    margin-top: 0;
+    background-color: #2d2c2c;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 6em 2em;
+    border-radius: 1em;
+    
+    .rightColumn {
+      width: 50%;
+      text-align: center;
+      //border-right: 1px solid $black;
+      .card {
+        width: 90%;
+        margin:1em auto;
+        @include container(#3d3737, $border, 10px);
+        padding-bottom: 2em;
+        .titleCard4 {
+          display: flex;
+          flex-direction: row;
+          background: #302828;
+          border-radius: 10px 10px 0 0;
+          padding:0.5em 1em;
+          margin-bottom: 1em;
+          justify-content: space-between;
+          h4 {
+            @include primary-text($body, $white, bold);
+            width: 30%;
+            text-align: left;
+          }
+          button {
+            padding:0 2em!important;
+            margin:0;
+            height: 23px;
+            align-self: center;
+            width: 100px;
+          }
+          input {
+            width:40%;
+            height:25px;
+          }
+        }
+        .titleCard3 {
+          background: #302828;
+          border-radius: 10px 10px 0 0;
+          padding:0.5em 1em;
+          margin-bottom: 1em;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          h4 {
+            @include primary-text($body, $white, bold);
+          }
+          button {
+            padding:0 2em;
+          }
+        }
+        .titleCard {
+          background: #302828;
+          border-radius: 10px 10px 0 0;
+          padding:0.5em 1em;
+          margin-bottom: 1em;
+          text-align: left;
+          h4 {
+            @include primary-text($body, $white, bold);
+          }
+        }
+
+
+        .bottomBar {
+          background: #302828;
+          border-radius:0 0 10px 10px;
+          padding:0.5em 1em;
+          margin-bottom: -2em;
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          button {
+            padding:0 0.1em;
+          }
+          p {
+            margin:0 2em;
+          }
+        }
+        .data5 {
+          margin:2em;
+          border-radius: 10px;
+          background: #575353;
+          padding:6.6em;
+          .anticon {
+            font-size: 40px;
+            color: #302828;
+          } 
+          p {
+            font-size: $body;
+            color:#302828;
+          }
+        }
+        .data4 {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          padding:0.5em;
+          width: 100%;
+          .col {
+            text-align: left;
+             width: 30%;
+             padding:0 1em;
+             h4 {
+              @include primary-text($body, $white, bold);
+             }
+            p {
+              @include primary-text($label, $white, 100);
+              margin: 1em 0;
+            }
+          }
+        }
+        .data {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .col1 {
+            text-align: right;
+             width: 30%;
+             padding:0 1em;
+            p {
+              @include primary-text($body, $white, 100);
+            }
+          }
+          .col2 {
+            text-align: left;
+             width: 70%;
+             padding:0 1em;
+            p {
+              @include primary-text($body, $white, 100);
+            }
+          }
+        }
+        .circle {
+          width: 100px;
+          height: 100px;
+          border-radius: 100%;
+          background-color:$primary-color;
+        }
+      }
+      
+      img {
+        margin-bottom: 5em;
+      }
+      h4 {
+        font-size: 14px;
+        color:$primary-color;
+      }
+      p {
+        @include primary-text($label, $white, 500);
+      }
+      ul {
+        text-align: left;
+        @include primary-text($label, $primary-color, bold);
+        margin: 1em auto;
+        width: 50%;
+        li {
+          @include primary-text($label, $primary-color, bold);
+        }
+      }
+    }
+    
+    .leftColumn {
+      width: 50%;
+      text-align: center;
+      padding: 0 2em;
+      border-left: 1px solid $black;
+      h2 {
+        @include primary-title($title-secondary, $primary-color, 700);
+        margin-bottom: 1em;
+      }
+      button{ margin-top:1em;
+      float: right;}
+    }
+    .dataContainer {
+      text-align: left;
+      p {
+        @include primary-text($label, $white, normal);
+        margin-bottom: 1em;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  .ant-tabs-bar {
+    padding:0;
+  }
+  .ant-tabs-bar {
+    text-align: center;
+  }
+  .ContainerApp {
+    .containerTab {
+      display: flex;
+      flex-direction: column;
+      padding:2.9em;
+      
+      .rightColumn {
+        width: 100%;
+        img {
+          margin-bottom: 2em;
+        }
+        margin-bottom: 2em;
+      }
+      
+      .leftColumn {
+        width: 100%;
+        text-align: center;
+        padding: 2em 8em;
+        border-top: 1px solid $black;
+        border-left: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .ant-tabs-bar {
+    padding:0;
+  }
+  .ant-tabs-bar {
+    text-align: center;
+  }
+  .ContainerApp {
+    .containerTab {
+      display: flex;
+      flex-direction: column;
+      padding:2.9em;
+      
+      .rightColumn {
+        width: 100%;
+        img {
+          margin-bottom: 2em;
+        }
+        margin-bottom: 2em;
+      }
+      
+      .leftColumn {
+        width: 100%;
+        text-align: center;
+        padding: 2em 8em;
+        border-top: 1px solid $black;
+        border-left: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .ContainerApp {
+    .containerTab {
+      padding:1em;
+      
+      .rightColumn {
+        margin-bottom: 2em;
+      }
+      
+      .leftColumn {
+        padding: 2em;
+      }
+    }
+  }
+}

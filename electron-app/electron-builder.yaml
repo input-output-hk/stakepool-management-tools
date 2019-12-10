@@ -1,0 +1,35 @@
+---
+appId: io.iohk.spm
+mac:
+  target: zip
+  type: distribution
+  hardenedRuntime: true
+  entitlements: entitlements.mac.inherit.plist
+linux:
+  target:
+  - target: deb
+    arch:
+    - x64
+    - ia32
+  - target: rpm
+    arch:
+    - x64
+    - ia32
+  - target: AppImage
+    arch:
+    - x64
+    - ia32
+  - snap
+  category: Development
+  executableArgs:
+    - --no-sandbox
+win:
+  target:
+    - target: nsis
+      arch:
+      - x64
+      - ia32
+    - target: zip
+      arch:
+      - x64
+      - ia32

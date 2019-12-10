@@ -1,0 +1,50 @@
+{
+  "name": "spm",
+  "version": "0.1.0",
+  "description": "CLI tool for stake pool operators",
+  "main": "spm.js",
+  "scripts": {
+    "start": "node spm",
+    "build": "yarn install --prod && yarn pack",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "./node_modules/eslint/bin/eslint.js . --ext .js"
+  },
+  "keywords": [
+    "CLI",
+    "stake",
+    "stake",
+    "pool",
+    "jormungandr",
+    "cardano",
+    "iohk",
+    "blockchain"
+  ],
+  "author": {
+    "name": "Leonel Gobbi",
+    "email": "leonel.gobbi@iohk.io",
+    "url": "https://iohk.io"
+  },
+  "license": "ISC",
+  "homepage": "https://github.com/input-output-hk/stakepool-management-tools#readme",
+  "bin": {
+    "spm": "./spm.js"
+  },
+  "devDependencies": {
+    "eslint": "5.16.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "4.2.0",
+    "eslint-plugin-flowtype": "3.8.1",
+    "eslint-plugin-import": "2.17.2",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-prettier": "3.0.1",
+    "eslint-plugin-promise": "4.1.1",
+    "eslint-plugin-react": "7.17.0",
+    "prettier": "1.17.0"
+  },
+  "dependencies": {
+    "marked": "0.7.0",
+    "marked-terminal": "3.3.0",
+    "moment-timezone": "0.5.27",
+    "node-fetch": "2.6.0"
+  }
+}

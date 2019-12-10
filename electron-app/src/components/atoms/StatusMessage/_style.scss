@@ -1,0 +1,17 @@
+@import '../../../css/general_styling';
+
+
+.StatusIcon {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding:20px 0;
+    font-size: 40px;
+    color: $primary-color;
+    p {
+        margin-top: 1em!important;
+        color: #302828!important;
+        font-weight:bold!important;
+        font-size: 0.3em!important;
+    }
+}
