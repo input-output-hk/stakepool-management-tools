@@ -31,7 +31,9 @@ Operating System:
 </ul>
 
 Cardano:
-Install RUST version called Jormungandr
+<ul>
+  <li>Install RUST version called Jormungandr</li>
+</ul>
 
 ## License
 
