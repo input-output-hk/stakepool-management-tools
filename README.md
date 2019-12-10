@@ -1,7 +1,3 @@
-### Summary
-
-An Electron + React app that enables the ability to provide the same info as the CLI in a running desktop app that can be pointed to the localhost on a specific port for stake pool testing.
-
 # Stake Pool Management Tools
 The purpose of these tools is to provide stake pool operators with an easy way to install, configure, test and deploy their stake pools. These applications are alpha instances of a prototype to understand user needs and are not supported per typical IOHK Testnet or Mainnet deployments (see section V. Technical Support). 
 
