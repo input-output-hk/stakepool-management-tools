@@ -55,8 +55,8 @@ DNS settings to download these packages must be correct. If you fail to download
 
 All applications in this repository are currently working prototypes that have been created with the intent to capture user feedback. To provide input for product development, please contact the product owner. 
 
-## Terms and conditions 
-By downloading this software you agree to the terms and conditions of Input Output HK Limited here:
+## Terms of Service Agreement
+<b>By downloading this software you agree to the terms and conditions of Input Output HK Limited here:</b>
 
 Terms of Service Agreement
 THIS TERMS OF SERVICE AGREEMENT ("Agreement") is made between Input Output HK Limited ("Company") and any person ("User") who completes the process to download, utilize, or operate any software or application created or offered by Company, including, but not limited to, the Daedalus Wallet application and the IOHK Incentivised Testnet ("Software"). Company and User are collectively referred to as the "parties."
