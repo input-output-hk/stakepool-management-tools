@@ -1,5 +1,5 @@
 {
-  "name": "spm",
+  "name": "cli-spm",
   "version": "0.1.0",
   "description": "CLI tool for stake pool operators",
   "main": "spm.js",
