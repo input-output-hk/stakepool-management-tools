@@ -35,5 +35,5 @@ export const menuItems = [
 
 export const tosAgreement = {
   topic: 'Terms of Service Agreement',
-  content: TosAgreement
+  content: TosAgreement()
 };
