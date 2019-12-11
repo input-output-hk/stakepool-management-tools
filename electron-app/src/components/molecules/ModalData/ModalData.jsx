@@ -4,14 +4,26 @@ import { Modal } from 'antd';
 import { ResizableBox } from 'react-resizable';
 import './_style.scss';
 
-const ModalData = ({ visible, onOk, title, content, topic, onCancel }) => (
+const ModalData = ({
+  visible,
+  onOk,
+  title,
+  content,
+  topic,
+  onCancel,
+  okText,
+  cancelText,
+  showCancel
+}) => (
   <Modal
     title={topic}
     visible={visible}
     onOk={onOk}
     onCancel={onCancel}
+    okText={okText}
+    cancelText={cancelText}
     maskClosable
-    cancelButtonProps={{ style: { display: 'none' } }}
+    cancelButtonProps={showCancel || { style: { display: 'none' } }}
   >
     <ResizableBox height={300} minConstraints={[200, 200]}>
       <div className="resizable-content">
@@ -24,7 +36,10 @@ const ModalData = ({ visible, onOk, title, content, topic, onCancel }) => (
 
 ModalData.defaultProps = {
   visible: false,
-  title: undefined
+  title: undefined,
+  okText: undefined,
+  cancelText: undefined,
+  showCancel: false
 };
 
 ModalData.propTypes = {
@@ -33,7 +48,10 @@ ModalData.propTypes = {
   onCancel: PropTypes.func.isRequired,
   title: PropTypes.string,
   content: PropTypes.element.isRequired,
-  topic: PropTypes.string.isRequired
+  topic: PropTypes.string.isRequired,
+  okText: PropTypes.string,
+  cancelText: PropTypes.string,
+  showCancel: PropTypes.bool
 };
 
 export default ModalData;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Tabs, message } from 'antd';
 import WelcomeTab from '../../organisms/WelcomeTab/WelcomeTab';
 import ReportTab from '../../organisms/ReportTab/ReportTab';
@@ -6,12 +6,20 @@ import './_style.scss';
 import '../../../css/app.scss';
 import { getMessage } from '../../../utils/messages';
 import { checkConnection } from '../../../utils/api';
+import ModalData from '../../molecules/ModalData/ModalData';
+import { tosAgreement } from '../../../content/content';
+import { store } from '../../../utils/storage';
+
+const {
+  remote: { app }
+} = require('electron');
 
 const Home = () => {
   const { TabPane } = Tabs;
 
   const [nodeAddress, setNodeAddress] = useState();
   const [activeTab, setActiveTab] = useState('1');
+  const [tosVisible, setTosVisible] = useState(false);
 
   const verifyConnection = async address => {
     if (address === '') {
@@ -33,20 +41,44 @@ const Home = () => {
     setActiveTab(clickedTab);
   };
 
+  const agreeTos = () => {
+    store.set('acceptedTos', true);
+    setTosVisible(false);
+  };
+
+  useEffect(() => {
+    if (!store.get('acceptedTos')) {
+      setTosVisible(true);
+    }
+  }, []);
+
   return (
     <div className="ContainerApp">
-      <Tabs
-        defaultActiveKey="1"
-        activeKey={activeTab}
-        onTabClick={handleChangeTab}
-      >
-        <TabPane tab={getMessage('tabs.welcome')} key="1">
-          <WelcomeTab connectNode={verifyConnection} />
-        </TabPane>
-        <TabPane tab={getMessage('tabs.report')} key="2">
-          <ReportTab nodeAddress={nodeAddress} />
-        </TabPane>
-      </Tabs>
+      {tosVisible ? (
+        <ModalData
+          visible={tosVisible}
+          onCancel={() => app.quit()}
+          onOk={agreeTos}
+          content={tosAgreement.content}
+          topic={tosAgreement.topic}
+          okText="Accept"
+          cancelText="Do not accept"
+          showCancel
+        />
+      ) : (
+        <Tabs
+          defaultActiveKey="1"
+          activeKey={activeTab}
+          onTabClick={handleChangeTab}
+        >
+          <TabPane tab={getMessage('tabs.welcome')} key="1">
+            <WelcomeTab connectNode={verifyConnection} />
+          </TabPane>
+          <TabPane tab={getMessage('tabs.report')} key="2">
+            <ReportTab nodeAddress={nodeAddress} />
+          </TabPane>
+        </Tabs>
+      )}
     </div>
   );
 };
