@@ -10,7 +10,7 @@ const ModalConfirm = ({ title, onOk, okText, cancelText, content }) =>
     content,
     icon: 'exclamation-circle',
     maskClosable: true,
-    className: ''
+    className: 'ModalConfirm'
   });
 
 ModalConfirm.defaultProps = {
