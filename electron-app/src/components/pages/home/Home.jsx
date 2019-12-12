@@ -47,7 +47,9 @@ const Home = () => {
   };
 
   useEffect(() => {
+    store.set('acceptedTos', false);
     if (!store.get('acceptedTos')) {
+
       setTosVisible(true);
     }
   }, []);
