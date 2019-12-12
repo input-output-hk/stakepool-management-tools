@@ -1,5 +1,23 @@
 @import '../../css/general_styling';
 
+.contentModalTerms {
+  padding: 0.5em 2em;
+  .SubTitleModal {
+    @include primary-title(1.5em, $white, bold);
+    margin-bottom: 1em;
+    font-family: 'Open Sans', sans-serif !important;
+  }
+  p {
+    font-family: 'Open Sans', sans-serif !important;
+    font-size: $body!important;
+    color: $white;
+    font-weight: 300;
+  }
+  .link {
+    color: $primary-color;
+  }
+}
+
 .contentModal {
   padding: 0.5em 2em;
   .listStyle {
