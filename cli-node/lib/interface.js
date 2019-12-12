@@ -14,8 +14,14 @@ const checkConnection = async nodeAddress => {
   console.log(`Connecting to ${nodeAddress}...`);
   const connected = await verifyConnection(nodeAddress);
   if (connected) {
+    console.log('Connected!');
+    console.log('Please input a command:');
     return true;
   }
+
+  console.log(
+    `Could not connect to ${nodeAddress}. Please check if this is the correct node REST address.`
+  );
 
   return false;
 };
@@ -25,14 +31,7 @@ const connectToNode = async restPort => {
   const couldConnect = await checkConnection(nodeAddress);
 
   if (couldConnect) {
-    console.log('Connected!');
-    console.log('');
-    console.log('Please input a command:');
     createInterface(nodeAddress);
-  } else {
-    console.log(
-      `Could not connect to ${nodeAddress}. Please check if this is the correct node REST address.`
-    );
   }
 };
 
@@ -113,31 +112,8 @@ const createInterface = nodeAddress => {
   rl.on('close', () => console.log('')); // enter new line
 };
 
-const agreeTOS = () => {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  });
-  const question = () => {
-    rl.question('DO YOU ACCEPT THE TERMS? (Y/N): ', async answer => {
-      if (answer.toLowerCase() === 'n' || answer.toLowerCase() === 'no') {
-        process.exit(1);
-      }
-
-      if (answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
-        rl.close();
-      } else {
-        question();
-      }
-    });
-  };
-  question();
-  rl.on('SIGINT', () => process.exit(1));
-};
-
 module.exports = {
   checkConnection,
   connectToNode,
-  createInterface,
-  agreeTOS
+  createInterface
 };
