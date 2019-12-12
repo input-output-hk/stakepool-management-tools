@@ -6,13 +6,13 @@ const TosAgreement = () => (
     <h2 className="TitleModal">Terms of Service Agreement</h2>
 
     <p>
-      <strong>THIS TERMS OF SERVICE AGREEMENT</strong> ("Agreement") is made
-      between Input Output HK Limited ("Company") and any person ("User") who
-      completes the process to download, utilize, or operate any software or
-      application created or offered by Company, including, but not limited to,
-      the Daedalus Wallet application and the IOHK Incentivised Testnet
-      ("Software"). Company and User are collectively referred to as the
-      "parties."
+      <strong>THIS TERMS OF SERVICE AGREEMENT</strong> (&quot;Agreement&quot;)
+      is made between Input Output HK Limited (&quot;Company&quot;) and any
+      person (&quot;User&quot;) who completes the process to download, utilize,
+      or operate any software or application created or offered by Company,
+      including, but not limited to, the Daedalus Wallet application and the
+      IOHK Incentivised Testnet (&quot;Software&quot;). Company and User are
+      collectively referred to as the &quot;parties.&quot;
     </p>
 
     <h3 className="SubTitleModal">General Terms - All Products</h3>
@@ -32,7 +32,7 @@ const TosAgreement = () => (
 
     <p>
       (a) User is over the age of eighteen (18) and has the power and authority
-      to enter into and perform User's obligations under this Agreement;
+      to enter into and perform User&apos;s obligations under this Agreement;
     </p>
     <p>
       (b) all information provided by User to Company is truthful, accurate and
@@ -40,8 +40,8 @@ const TosAgreement = () => (
     </p>
     <p>
       (c) User will comply with all laws and regulations of any applicable
-      jurisdiction with regard to the User's access, use or installation of the
-      Software;
+      jurisdiction with regard to the User&apos;s access, use or installation of
+      the Software;
     </p>
     <p>
       (d) User shall comply with all terms and conditions of this Agreement,
@@ -56,23 +56,28 @@ const TosAgreement = () => (
     <p>
       <strong>1.3 Reservation of Rights.</strong> The Company retains all
       intellectual property rights, title, and interest in and to all of the
-      Company's work, the Software, brands, logos, and trademarks, including but
-      not limited to, Input Output HK Limited, IOHK, Daedalus, Daedalus
-      Cryptocurrency Wallet, Daedalus Wallet, Daedalus App, and variations of
-      the wording of the aforementioned brands, logos, and trademarks. User
-      acknowledges and agrees that this Agreement conveys no title or ownership
-      rights and User does not acquire any rights over the Company’s
-      intellectual property law, express or implied, other than those expressly
-      granted in this Agreement. All rights not expressly granted to User are
-      reserved by the Company.{' '}
+      Company&apos;s work, the Software, brands, logos, and trademarks,
+      including but not limited to, Input Output HK Limited, IOHK, Daedalus,
+      Daedalus Cryptocurrency Wallet, Daedalus Wallet, Daedalus App, and
+      variations of the wording of the aforementioned brands, logos, and
+      trademarks. User acknowledges and agrees that this Agreement conveys no
+      title or ownership rights and User does not acquire any rights over the
+      Company’s intellectual property law, express or implied, other than those
+      expressly granted in this Agreement. All rights not expressly granted to
+      User are reserved by the Company.{' '}
     </p>
 
     <p>
       <strong>1.4 Grant of a License.</strong> The Software is licensed to User
-      under the terms of the Apache License, Version 2.0 (the "License"). The
-      Software may not be used except in compliance with the License. User may
-      obtain a copy of the License at{' '}
-      <a className="link" href="http://www.apache.org/licenses/LICENSE-2.0">
+      under the terms of the Apache License, Version 2.0 (the
+      &quot;License&quot;). The Software may not be used except in compliance
+      with the License. User may obtain a copy of the License at{' '}
+      <a
+        className="link"
+        href="http://www.apache.org/licenses/LICENSE-2.0"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         http://www.apache.org/licenses/LICENSE-2.0.
       </a>{' '}
       User acknowledges and agrees that the Company shall not be responsible for
@@ -84,21 +89,23 @@ const TosAgreement = () => (
     <p>
       <strong>1.5 Customer Obligations.</strong> User is solely responsible for
       providing, maintaining and ensuring compatibility with the Software, all
-      hardware, software, electrical and other physical requirements for User's
-      use of the Software, including, without limitation, telecommunications and
-      internet access connections and links, web browsers or other equipment,
-      programs and services required to access and use the Software; the
-      security, confidentiality and integrity of all information and content
-      that User receives, transmits through or stores on the Software; and any
-      authorized or unauthorized access to any account of User by any person.{' '}
+      hardware, software, electrical and other physical requirements for
+      User&apos;s use of the Software, including, without limitation,
+      telecommunications and internet access connections and links, web browsers
+      or other equipment, programs and services required to access and use the
+      Software; the security, confidentiality and integrity of all information
+      and content that User receives, transmits through or stores on the
+      Software; and any authorized or unauthorized access to any account of User
+      by any person.{' '}
     </p>
 
     <p>
       <strong>1.6 Privacy.</strong> When reasonably practicable, Company will
-      endeavor to respect User's privacy. Company will not monitor, edit, or
-      disclose any personal information about User or User's account, including
-      its contents or User's use of the Software, without User's prior consent
-      unless Company has a good faith belief that such action is necessary to:
+      endeavor to respect User&apos;s privacy. Company will not monitor, edit,
+      or disclose any personal information about User or User&apos;s account,
+      including its contents or User&apos;s use of the Software, without
+      User&apos;s prior consent unless Company has a good faith belief that such
+      action is necessary to:
     </p>
 
     <p>
@@ -116,8 +123,8 @@ const TosAgreement = () => (
     </p>
 
     <p>
-      (v) operate or conduct maintenance and repair of Company's services or
-      equipment, including the Software as authorized by law. User has no
+      (v) operate or conduct maintenance and repair of Company&apos;s services
+      or equipment, including the Software as authorized by law. User has no
       expectation of privacy with respect to the Internet generally. User
       acknowledges that IP addresses are transmitted and recorded with each
       message or other information User sends from the Software.
@@ -125,7 +132,7 @@ const TosAgreement = () => (
 
     <p>
       <strong>1.7 Prohibited Uses.</strong> User is solely responsible for any
-      and all acts and omissions that occur under User's account, security
+      and all acts and omissions that occur under User&apos;s account, security
       information, keys or password, and User agrees not to engage in
       unacceptable use of the Software, which includes, without limitation, use
       of the Software to:
@@ -162,22 +169,23 @@ const TosAgreement = () => (
 
     <p>
       (f) interfere, disrupt or attempt to gain unauthorized access to other
-      accounts on the Software or any other computer network; or (g)
-      disseminate, store or transmit viruses, trojan horses or any other
+      accounts on the Software or any other computer network; or
+    </p>
+    <p>
+      (g) disseminate, store or transmit viruses, trojan horses or any other
       malicious code or program.{' '}
     </p>
-
     <p>
       1.8 Warranties. While the Software has undergone beta testing and
       continues to be improved by feedback from the developers community,
       open-source contributors and beta-testers, the Company cannot guarantee
       there will not be bugs in the Software. Unless required by applicable law
-      or agreed to in writing, the Software is distributed on an "AS IS" BASIS,
-      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-      See the License for the specific language governing permissions and
-      limitations under the License. User agrees that from time to time the
-      Software may be inaccessible or inoperable for any reason, including,
-      without limitation:
+      or agreed to in writing, the Software is distributed on an &quot;AS
+      IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+      express or implied. See the License for the specific language governing
+      permissions and limitations under the License. User agrees that from time
+      to time the Software may be inaccessible or inoperable for any reason,
+      including, without limitation:
     </p>
 
     <p>(i) equipment malfunctions;</p>
@@ -189,8 +197,8 @@ const TosAgreement = () => (
 
     <p>
       (iii) causes beyond the control of Company or which are not reasonably
-      foreseeable by Company. User acknowledges that User's use of this Software
-      is at User's risk and discretion.{' '}
+      foreseeable by Company. User acknowledges that User&apos;s use of this
+      Software is at User&apos;s risk and discretion.{' '}
     </p>
 
     <p>
@@ -212,27 +220,28 @@ const TosAgreement = () => (
       THE COMPANY OR ITS SHAREHOLDERS, DIRECTORS, OFFICERS, EMPLOYEES,
       AFFILIATES OR AGENTS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
       WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM OR IN
-      ANY WAY RELATED TO USER'S ACCESS, USE OR INSTALLATION OF THE SOFTWARE.
-      SOME JURISDICTIONS PROHIBIT THE EXCLUSION OR LIMITATION OF INCIDENTAL OR
-      CONSEQUENTIAL DAMAGES, THUS THIS LIMITATION OF LIABILITY MAY NOT APPLY TO
-      USER. IF USER IS DISSATISFIED WITH THE SOFTWARE, USER'S SOLE AND EXCLUSIVE
-      REMEDY SHALL BE FOR USER TO DISCONTINUE USE OF THE SOFTWARE.
+      ANY WAY RELATED TO USER&apos;S ACCESS, USE OR INSTALLATION OF THE
+      SOFTWARE. SOME JURISDICTIONS PROHIBIT THE EXCLUSION OR LIMITATION OF
+      INCIDENTAL OR CONSEQUENTIAL DAMAGES, THUS THIS LIMITATION OF LIABILITY MAY
+      NOT APPLY TO USER. IF USER IS DISSATISFIED WITH THE SOFTWARE, USER&apos;S
+      SOLE AND EXCLUSIVE REMEDY SHALL BE FOR USER TO DISCONTINUE USE OF THE
+      SOFTWARE.
     </p>
 
     <p>
       <strong>1.10 Indemnification.</strong> User agrees to indemnify, hold
       harmless and defend Company, its shareholders, directors, officers,
-      employees, affiliates and agents ("Indemnified Parties") from and against
-      any action, cause, claim, damage, debt, demand or liability, including
-      reasonable costs and attorney's fees, asserted by any person, arising out
-      of or relating to:
+      employees, affiliates and agents (&quot;Indemnified Parties&quot;) from
+      and against any action, cause, claim, damage, debt, demand or liability,
+      including reasonable costs and attorney&apos;s fees, asserted by any
+      person, arising out of or relating to:
     </p>
 
     <p>(a) this Agreement;</p>
 
     <p>
-      (b) User's access, use or installation of the Software, including any data
-      or work transmitted or received by User; and
+      (b) User&apos;s access, use or installation of the Software, including any
+      data or work transmitted or received by User; and
     </p>
 
     <p>
@@ -250,8 +259,8 @@ const TosAgreement = () => (
       third party fees, sales, use, value-added, personal property or other tax,
       duty or levy of any kind, including interest and penalties thereon,
       whether imposed now or hereinafter by any governmental entity fees
-      incurred by User by reason of User's access, use or installation of the
-      Software shall be the sole responsibility of User.
+      incurred by User by reason of User&apos;s access, use or installation of
+      the Software shall be the sole responsibility of User.
     </p>
 
     <p>
@@ -263,8 +272,8 @@ const TosAgreement = () => (
 
     <p>(a) remove or disable access to all or any portion of the Software;</p>
     <p>
-      (b) suspend User's access to or use of all or any portion of the Software;
-      and
+      (b) suspend User&apos;s access to or use of all or any portion of the
+      Software; and
     </p>
     <p>(c) terminate this Agreement.</p>
 
@@ -338,49 +347,50 @@ const TosAgreement = () => (
 
     <p>
       (ii) that the underlying protocols are subject to sudden changes in
-      operating rules ("forks"), and that such forks may materially affect the
-      value, and/or function of the ada or any other cryptocurrency that User
-      stores on Daedalus. In the event of a fork, User agrees that the Company
-      may temporarily suspend Daedalus operations (with or without notice to
-      User) and that the Company may, in its sole discretion, (a) configure or
-      reconfigure its systems or (b) decide not to support (or cease supporting)
-      the forked protocol entirely, provided, however, that User will have an
-      opportunity to withdraw funds from Daedalus. User acknowledges and agrees
-      that the Company assumes absolutely no responsibility whatsoever in
-      respect of an unsupported branch of a forked protocol.
+      operating rules (&quot;forks&quot;), and that such forks may materially
+      affect the value, and/or function of the ada or any other cryptocurrency
+      that User stores on Daedalus. In the event of a fork, User agrees that the
+      Company may temporarily suspend Daedalus operations (with or without
+      notice to User) and that the Company may, in its sole discretion, (a)
+      configure or reconfigure its systems or (b) decide not to support (or
+      cease supporting) the forked protocol entirely, provided, however, that
+      User will have an opportunity to withdraw funds from Daedalus. User
+      acknowledges and agrees that the Company assumes absolutely no
+      responsibility whatsoever in respect of an unsupported branch of a forked
+      protocol.
     </p>
     <p>
       <strong>2.3 Customer Obligations.</strong> User is solely responsible for
-      the confidentiality of User's security devices, information, keys, or
-      passwords including safekeeping User's wallet recovery phrases, passwords,
-      private keys, and any other codes User uses to access Daedalus or any
-      information, ada, or other cryptocurrency unit. If User loses access to
-      User's cryptocurrency wallet or private keys and has not separately stored
-      a backup of User's wallet recovery phrase(s), User acknowledges and agrees
-      that any ada or any other cryptocurrencies User has associated with that
-      cryptocurrency wallet will become inaccessible. All transactions accepted
-      by Cardano network are irreversible except transactions reversed by
-      temporary forks in Cardano network.{' '}
+      the confidentiality of User&apos;s security devices, information, keys, or
+      passwords including safekeeping User&apos;s wallet recovery phrases,
+      passwords, private keys, and any other codes User uses to access Daedalus
+      or any information, ada, or other cryptocurrency unit. If User loses
+      access to User&apos;s cryptocurrency wallet or private keys and has not
+      separately stored a backup of User&apos;s wallet recovery phrase(s), User
+      acknowledges and agrees that any ada or any other cryptocurrencies User
+      has associated with that cryptocurrency wallet will become inaccessible.
+      All transactions accepted by Cardano network are irreversible except
+      transactions reversed by temporary forks in Cardano network.{' '}
     </p>
 
     <p>
       <strong>2.4 User Wallet Recovery Phrases.</strong> User agrees that User
-      should never share User's wallet recovery phrases (secret keys) with any
-      natural or legal person, including the Company. Further, User acknowledges
-      that sharing User's wallet recovery phrase may result in loss of User's
-      ada or any other cryptocurrency, and User agrees that the Company shall
-      not be responsible for such loss.
+      should never share User&apos;s wallet recovery phrases (secret keys) with
+      any natural or legal person, including the Company. Further, User
+      acknowledges that sharing User&apos;s wallet recovery phrase may result in
+      loss of User&apos;s ada or any other cryptocurrency, and User agrees that
+      the Company shall not be responsible for such loss.
     </p>
     <p>
       <strong>2.5 Liability.</strong> The Company and its shareholders,
       directors, officers, employees, affiliates and agents cannot guarantee
-      transaction confirmation or the ability to retrieve User's cryptocurrency
-      or wallet recovery phrases, private keys or passwords if User loses or
-      forgets them. The Company shall not be responsible for such loss howsoever
-      caused. User acknowledges and agrees that ada or any other cryptocurrency
-      transactions facilitated by Daedalus and/or the Company may be delayed or
-      rejected, and that the Company shall not be responsible for any associated
-      loss arising from such delay.
+      transaction confirmation or the ability to retrieve User&apos;s
+      cryptocurrency or wallet recovery phrases, private keys or passwords if
+      User loses or forgets them. The Company shall not be responsible for such
+      loss howsoever caused. User acknowledges and agrees that ada or any other
+      cryptocurrency transactions facilitated by Daedalus and/or the Company may
+      be delayed or rejected, and that the Company shall not be responsible for
+      any associated loss arising from such delay.
     </p>
 
     <h3 className="SubTitleModal">
@@ -391,7 +401,7 @@ const TosAgreement = () => (
       <strong>3.1 Incentivised Testnet.</strong> Company is testing and making
       available to Users a test rewards and incentivization mechanism which is
       intended to mimic the rewards and incentivization mechanism in the
-      upcoming Shelley release (the "Incentivized Testnet"). Users may
+      upcoming Shelley release (the &quot;Incentivized Testnet&quot;). Users may
       participate in the Incentivized Testnet by delegating their ada stake to
       their own stake pool or to a third party stake pool in exchange for a
       reward equivalent to a percentage of the proceeds generated by the stake

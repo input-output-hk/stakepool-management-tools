@@ -9,10 +9,13 @@ import { checkConnection } from '../../../utils/api';
 import ModalData from '../../molecules/ModalData/ModalData';
 import { tosAgreement } from '../../../content/content';
 import { store } from '../../../utils/storage';
+import ModalConfirm from '../../molecules/ModalData/ModalConfirm';
 
 const {
   remote: { app }
 } = require('electron');
+
+const ACCEPTED_TOS = 'acceptedTos';
 
 const Home = () => {
   const { TabPane } = Tabs;
@@ -42,14 +45,24 @@ const Home = () => {
   };
 
   const agreeTos = () => {
-    store.set('acceptedTos', true);
+    store.set(ACCEPTED_TOS, true);
     setTosVisible(false);
   };
 
-  useEffect(() => {
-    store.set('acceptedTos', false);
-    if (!store.get('acceptedTos')) {
+  const rejectTos = () =>
+    ModalConfirm({
+      title: getMessage('tos.popup.title'),
+      onOk: app.quit,
+      okText: getMessage('tos.popup.quit'),
+      cancelText: getMessage('tos.popup.cancel'),
+      content: getMessage('tos.popup.content'),
+      icon: 'exclamation-circle',
+      maskClosable: true
+    });
 
+  useEffect(() => {
+    store.set(ACCEPTED_TOS, false);
+    if (!store.get(ACCEPTED_TOS)) {
       setTosVisible(true);
     }
   }, []);
@@ -59,12 +72,12 @@ const Home = () => {
       {tosVisible ? (
         <ModalData
           visible={tosVisible}
-          onCancel={() => app.quit()}
+          onCancel={rejectTos}
           onOk={agreeTos}
           content={tosAgreement.content}
           topic={tosAgreement.topic}
-          okText="Accept"
-          cancelText="Do not accept"
+          okText={getMessage('tos.modal.accept')}
+          cancelText={getMessage('tos.modal.doNotAccept')}
           showCancel
         />
       ) : (
