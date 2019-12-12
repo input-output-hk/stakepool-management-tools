@@ -8,6 +8,8 @@ The purpose of these tools is to provide stake pool operators an easy way to ins
 
 Command line interface that returns read only items to query transactions, rewards and fragments to insure reliable delegation for ADA holders.
 
+Refer to [cli-node/README.md](cli-node/README.md) for more details.
+
 <hr>
 
 ## SPM Desktop
@@ -15,3 +17,5 @@ Command line interface that returns read only items to query transactions, rewar
 ### Summary
 
 An Electron + React app that enables the ability to provide the same info as the CLI in a running desktop app that can be pointed to the localhost on a specific port for stake pool testing.
+
+Refer to [electron-app/README.md](electron-app/README.md) for more details.
