@@ -5,9 +5,10 @@
   "main": "spm.js",
   "scripts": {
     "start": "node spm",
-    "build": "yarn install --prod && yarn pack",
+    "build": "SKIP_PREINSTALL=true yarn install --prod && yarn pack",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "eslint": "./node_modules/eslint/bin/eslint.js . --ext .js"
+    "eslint": "./node_modules/eslint/bin/eslint.js . --ext .js",
+    "preinstall": "node preinstall"
   },
   "keywords": [
     "CLI",
