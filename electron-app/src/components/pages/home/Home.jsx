@@ -61,7 +61,6 @@ const Home = () => {
     });
 
   useEffect(() => {
-    store.set(ACCEPTED_TOS, false);
     if (!store.get(ACCEPTED_TOS)) {
       setTosVisible(true);
     }
