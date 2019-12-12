@@ -1,11 +1,14 @@
 ---
 appId: io.iohk.spm
+productName: GUI-stake-pool-management
 mac:
+  artifactName: ${productName}-v${version}-apple-darwin.${ext}
   target: zip
   type: distribution
   hardenedRuntime: true
   entitlements: entitlements.mac.inherit.plist
 linux:
+  artifactName: ${productName}-v${version}-linux-${arch}.${ext}
   target:
   - target: deb
     arch:
@@ -24,6 +27,7 @@ linux:
   executableArgs:
     - --no-sandbox
 win:
+  artifactName: ${productName}-v${version}-windows-${arch}.${ext}
   target:
     - target: nsis
       arch:
