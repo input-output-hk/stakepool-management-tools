@@ -40,7 +40,7 @@ const showTOSAgreement = callback => {
 };
 
 const showInfoSections = () => {
-  console.log('spm 0.1.0');
+  console.log('spm 0.1.1');
   console.log('Stake Pool Management CLI toolkit');
   console.log('');
   console.log('Get Started:');
@@ -62,7 +62,7 @@ const showInfoContent = option =>
   );
 
 const showHelp = () => {
-  console.log('spm 0.1.0');
+  console.log('spm 0.1.1');
   console.log('Stake Pool Management CLI toolkit');
   console.log('');
   console.log('USAGE:');
