@@ -13,13 +13,7 @@ THIS TERMS OF SERVICE AGREEMENT ("**Agreement**") is made between Input Output H
 
 1.4     **Grant of a License**. The Software is licensed to User under the terms of the Apache License, Version 2.0 (the "**License**"). The Software may not be used except in compliance with the License. User may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0. User acknowledges and agrees that the Company shall not be responsible for any aspect of the information, content, or services contained in any third-party materials or on any third party sites accessible or linked to the Software and/or the Company.
 
-1.5     **Customer Obligations**. User is solely responsible for
-
-  (a) providing, maintaining and ensuring compatibility with the Software, all hardware, software, electrical and other physical requirements for User's use of the Software, including, without limitation, telecommunications and internet access connections and links, web browsers or other equipment, programs and services required to access and use the Software;
-
-  (b) the security, confidentiality and integrity of all information and content that User receives, transmits through or stores on the Software; and  
-
-  (c) any authorized or unauthorized access to any account of User by any person. 
+1.5     **Customer Obligations**. User is solely responsible for (a) providing, maintaining and ensuring compatibility with the Software, all hardware, software, electrical and other physical requirements for User's use of the Software, including, without limitation, telecommunications and internet access connections and links, web browsers or other equipment, programs and services required to access and use the Software; (b) the security, confidentiality and integrity of all information and content that User receives, transmits through or stores on the Software; and (c) any authorized or unauthorized access to any account of User by any person. 
 
 1.6     **Privacy**. When reasonably practicable, Company will endeavor to respect User's privacy. Company will not monitor, edit, or disclose any personal information about User or User's account, including its contents or User's use of the Software, without User's prior consent unless Company has a good faith belief that such action is necessary to: (i) comply with legal process or other legal requirements of any governmental authority; (ii) protect and defend the rights or property of Company; (iii) enforce this Agreement; (iv) protect the interests of users of the Software other than User or any other person; or (v) operate or conduct maintenance and repair of Company's services or equipment, including the Software as authorized by law. User has no expectation of privacy with respect to the Internet generally. User acknowledges that IP addresses are transmitted and recorded with each message or other information User sends from the Software.
 

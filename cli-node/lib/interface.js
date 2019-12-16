@@ -125,7 +125,7 @@ const agreeTOS = () => {
       }
 
       if (answer.toLowerCase() === 'y' || answer.toLowerCase() === 'yes') {
-        rl.close();
+        process.exit(0);
       } else {
         question();
       }
