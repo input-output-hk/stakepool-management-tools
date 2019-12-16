@@ -1,6 +1,6 @@
 {
   "name": "stake-pool-management",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "public/main.js",
   "description": "Node management application for stake pool operators",
   "productName": "Stake Pool Management",
@@ -9,6 +9,7 @@
     "email": "leonel.gobbi@iohk.io",
     "url": "https://iohk.io"
   },
+  "license": "Apache-2.0",
   "homepage": "https://github.com/input-output-hk/stakepool-management-tools",
   "scripts": {
     "start": "npm-run-all --parallel start:react start:electron",
@@ -58,6 +59,7 @@
   "dependencies": {
     "antd": "3.25.1",
     "electron-is-dev": "1.1.0",
+    "electron-store": "5.1.0",
     "less": "3.10.3",
     "lodash": "4.17.15",
     "moment": "2.24.0",

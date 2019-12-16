@@ -110,3 +110,24 @@
     font-family: 'Open Sans', sans-serif;
   }
 }
+
+.ModalConfirm {
+  padding-top:8em;
+  padding-bottom:1em;
+  padding-left:5em;
+  padding-right: 5em;
+  .ant-modal-content {
+    padding:3em 3em 1em 3em;
+    .ant-modal-confirm-title {
+      @include primary-title(1.5em, $white, 300);
+      margin-bottom: 1em;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .anticon {
+      margin-top: 5px;
+    }
+    .ant-modal-confirm-content {
+      color: $white;
+    }
+  }
+}

@@ -84,6 +84,20 @@ const messages = {
     report: 'Report Tool',
     welcome: 'Welcome'
   },
+  tos: {
+    modal: {
+      accept: 'ACCEPT',
+      doNotAccept: 'DO NOT ACCEPT'
+    },
+    popup: {
+      quit: 'QUIT SPM',
+      cancel: 'BACK',
+      title: 'ATTENTION',
+      content:
+        'To use this software you need to agree to the Terms of Service first.\n' +
+        'If you do not accept the app will close.'
+    }
+  },
   welcome: {
     getStarted: {
       title: 'Get Started'

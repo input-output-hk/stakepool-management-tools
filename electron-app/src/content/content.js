@@ -3,6 +3,7 @@ import InstallNode from './modals/InstallNode';
 import ConfigureNode from './modals/ConfigureNode';
 import TestStake from './modals/TestStake';
 import CreateCertificate from './modals/CreateCertificate';
+import TosAgreement from './modals/TosAgreement';
 
 export const menuItems = [
   {
@@ -31,3 +32,8 @@ export const menuItems = [
     content: TestStake
   }
 ];
+
+export const tosAgreement = {
+  topic: 'Terms of Service Agreement',
+  content: TosAgreement()
+};

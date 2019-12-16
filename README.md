@@ -4,8 +4,12 @@ The purpose of these tools is to provide stake pool operators with an easy way t
 ## SPM CLI
 A command-line interface that returns read-only items to query transactions, rewards and fragments to insure reliable delegation for ADA holders.
 
+Refer to [cli-node/README.md](cli-node/README.md) for more details.
+
 ## SPM Desktop
 An Electron + React app that enables the ability to provide the same info as the CLI in a running desktop app that can be pointed to the localhost on a specific port for stake pool testing.
+
+Refer to [electron-app/README.md](electron-app/README.md) for more details.
 
 ## System and Network Requirements
 
@@ -102,12 +106,3 @@ Special Terms - Incentivised Testnet, Delegation and Staking
 3.8 	Warranty.  The Service are provided to User on an “as is” and “as available” basis and all warranties, express, implied, statutory or otherwise, with respect to the Service are hereby excluded. User acknowledges that the Incentivized Testnet may not operate properly and that it may contain errors, design flaws or other issues. User’s use of the Incentivized Testnet remains at User’s risk and discretion. IOHK reserves the right to restart the Incentivised Testnet and reverse all or some Rewards in the case of errors and/or malicious behaviour in the system. 
 3.9 	Termination of the Incentivised Testnet. User understands and agrees that Company may change, withdraw, terminate access to and/or discontinue the Incentivized Testnet (or any portion thereof) at any time and in its sole discretion. User may end participation in the Incentivized Testnet at any time and any Rewards gained up to that time will still be transferred to User’s Daedalus or Yoroi mainet wallet once the Incentivized Testnet is discontinued. 
 3.10 	Feedback. Users may provide suggestions, comments or ideas and report issues or problems related to their use of the Incentivized Testnet at any time by using any of the official feedback channels.
-
-
-
-
-
-
-
-
-

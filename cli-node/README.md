@@ -38,8 +38,8 @@ Once connection is established, you can run these commands:
 
 * Install production dependencies: `yarn install --prod`
 
-* Create distribution package (spm-v0.1.0.tgz): `yarn pack`
+* Create distribution package (cli-spm-v0.1.1.tgz): `yarn pack`
 
 > **NOTE**: you can also omit these two previous steps by using the `build` script located in the `package.json` file by running `yarn run build`.
 
-* Install spm globally: `npm install -g spm-v0.1.0.tgz`
+* Install spm globally: `npm install -g cli-spm-v0.1.1.tgz`

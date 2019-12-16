@@ -22,3 +22,8 @@ exports.infoSections = {
     content: path.join(__dirname, '../content/testStake.md')
   }
 };
+
+exports.tosAgreementContent = path.join(
+  __dirname,
+  '../content/tosAgreement.md'
+);
