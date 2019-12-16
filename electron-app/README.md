@@ -66,13 +66,13 @@ pkgbuild --install-location /Applications --component dist/mac/GUI-stake-pool-ma
 Sign the `.pkg` file with a Developer ID Installer certificate:
 
 ```console
-productsign -s "<certificate name>" dist/SPM-unsigned.pkg dist/GUI-stake-pool-management-v0.1.0-apple-darwin.pkg
+productsign -s "<certificate name>" dist/SPM-unsigned.pkg dist/GUI-stake-pool-management-v0.1.1-apple-darwin.pkg
 ```
 
 You can check if the package was correctly signed with:
 
 ```console
-pkgutil --check-signature dist/GUI-stake-pool-management-v0.1.0-apple-darwin.pkg
+pkgutil --check-signature dist/GUI-stake-pool-management-v0.1.1-apple-darwin.pkg
 ```
 
 #### Notarize the macOS installer (.pkg)
@@ -80,7 +80,7 @@ pkgutil --check-signature dist/GUI-stake-pool-management-v0.1.0-apple-darwin.pkg
 Submit package to notarize:
 
 ```console 
-xcrun altool --notarize-app -f dist/GUI-stake-pool-management-v0.1.0-apple-darwin.pkg --primary-bundle-id io.iohk.spm -u <apple-developer-username> -p <password>
+xcrun altool --notarize-app -f dist/GUI-stake-pool-management-v0.1.1-apple-darwin.pkg --primary-bundle-id io.iohk.spm -u <apple-developer-username> -p <password>
 ```
 
 If it was uploaded successfully the last command will return a `RequestUUID` token, copy it and use it with the following command to get the notarization status:
@@ -92,14 +92,14 @@ xcrun altool --notarization-info <request-uuid> -u <apple-developer-username> -p
 Once it succeeds, staple and validate the noratization to the `.pkg`:
 
 ```console
-xcrun stapler staple dist/GUI-stake-pool-management-v0.1.0-apple-darwin.pkg
+xcrun stapler staple dist/GUI-stake-pool-management-v0.1.1-apple-darwin.pkg
 ```
 ```console
-xcrun stapler validate dist/GUI-stake-pool-management-v0.1.0-apple-darwin.pkg
+xcrun stapler validate dist/GUI-stake-pool-management-v0.1.1-apple-darwin.pkg
 ```
 
 You can check if the notarization was successful running:
 
 ```console
-spctl -a -v -t install dist/GUI-stake-pool-management-v0.1.0-apple-darwin.pkg 
+spctl -a -v -t install dist/GUI-stake-pool-management-v0.1.1-apple-darwin.pkg 
 ```
