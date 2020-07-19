@@ -61,7 +61,7 @@
     "electron-is-dev": "1.1.0",
     "electron-store": "5.1.0",
     "less": "3.10.3",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "moment": "2.24.0",
     "moment-timezone": "0.5.27",
     "node-sass": "4.13.0",
